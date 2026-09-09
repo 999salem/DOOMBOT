@@ -1,7 +1,6 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-09-09",
-  "notice": "Fictional starter content for the DOOMBOT War Room. Seed profiles, threads and replies are not real users.",
   "profiles": [
     {
       "id": "seed-doomscroll",

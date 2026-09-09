@@ -677,3 +677,30 @@
     font-size:5.5px!important;
   }
 }
+
+
+/* V18.6.2 // Natural starter discussion presentation */
+.war-v182 .wr-card.seed{
+  opacity:1!important;
+  border-color:var(--wr-line)!important;
+}
+.war-v182 .wr-card.seed .wr-avatar{
+  background:rgba(24,40,28,.45)!important;
+  color:#c5b778!important;
+}
+.war-v182 .wr-card.seed .wr-author-sub{
+  color:#526358!important;
+}
+.war-v182 .wr-seed-tag{
+  display:none!important;
+}
+.wr-simulated-note{
+  margin:16px 0 4px;
+  padding-top:8px;
+  border-top:1px solid rgba(123,151,130,.06);
+  color:rgba(104,120,109,.46);
+  font-size:5.5px;
+  line-height:1.45;
+  text-align:center;
+  letter-spacing:.015em;
+}

@@ -1,0 +1,14 @@
+DOOMBOT V18.6.2 // FLAT ROOT PATCH
+
+Upload EVERY file in this folder directly into the ROOT of the DOOMBOT GitHub repo.
+No folders.
+
+This includes:
+- hard-pinned bottom nav on HOME / LEAKS / WAR ROOM / THEORIES / ACCOUNT
+- War Room starter accounts/posts/replies presented naturally
+- no per-post ARCHIVE SEED labels
+- no big fictional-warning panels
+- one tiny disclosure at the bottom of the War Room
+- fresh service-worker cache
+
+Replace matching files.

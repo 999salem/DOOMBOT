@@ -92,7 +92,7 @@
     }).slice(0,5);
     const box=$('#warHotThreads');
     box.innerHTML=hot.map((t,i)=>`<a class="wr-hot-item" href="${isSeed(t)?'#':'./warroom.html?thread='+t.id}" ${isSeed(t)?'data-open-seed="'+D.attr(t.id)+'"':'data-open-thread="'+t.id+'"'}>
-      <span>0${i+1}</span><div><b>${D.esc(t.title)}</b><small>${voteCount(t)} votes · ${repliesFor(t)} replies${isSeed(t)?' · seed':''}</small></div>
+      <span>0${i+1}</span><div><b>${D.esc(t.title)}</b><small>${voteCount(t)} votes · ${repliesFor(t)} replies</small></div>
     </a>`).join('');
   }
 
@@ -120,9 +120,9 @@
           <div class="wr-author">
             <div class="wr-author-line">
               ${userLink(p)} ${roleBadge(p)}
-              ${seed?'<span class="wr-seed-tag">ARCHIVE SEED</span>':''}
+             
             </div>
-            <div class="wr-author-sub"><span>${D.channelLabel(t.channel)}</span><span>${seed?'FOUNDING ARCHIVE':D.relative(t.created_at)}</span></div>
+            <div class="wr-author-sub"><span>${D.channelLabel(t.channel)}</span><span>${D.relative(t.created_at)}</span></div>
           </div>
           <div class="wr-flags">
             ${t.pinned?'<span class="war-badge pin">PINNED</span>':''}
@@ -217,8 +217,8 @@
         <div class="wr-card-head" style="padding:0 0 9px">
           <div class="wr-avatar">${D.esc(p.seed_avatar||'?')}</div>
           <div class="wr-author">
-            <div class="wr-author-line"><span>@${D.esc(p.username)}</span><span class="wr-seed-tag">ARCHIVE SEED</span></div>
-            <div class="wr-author-sub"><span>${D.channelLabel(t.channel)}</span><span>FOUNDING ARCHIVE</span></div>
+            <div class="wr-author-line"><span>@${D.esc(p.username)}</span></div>
+            <div class="wr-author-sub"><span>${D.channelLabel(t.channel)}</span><span>${D.relative(t.created_at)}</span></div>
           </div>
         </div>
         <h2>${D.esc(t.title)}</h2>${bodyHtml(t)}
@@ -231,8 +231,7 @@
             <div class="v18-between">
               <div class="war-meta">
                 <span>@${D.esc(rp.username)}</span>
-                <span class="wr-seed-tag">ARCHIVE SEED</span>
-                <span>FOUNDING ARCHIVE</span>
+                <span>${D.relative(r.created_at)}</span>
               </div>
               <span class="wr-link seed-static">▲ ${Number(r.votes||0)}</span>
             </div>
@@ -242,8 +241,8 @@
       </div>
 
       <div class="war-account-gate">
-        <b>FICTIONAL FOUNDING ARCHIVE</b>
-        <span>These starter accounts, posts and replies are intentionally labeled ARCHIVE SEED. They keep the room populated while real discussions grow and automatically phase out as real threads are added.</span>
+        <b>STARTER THREAD</b>
+        <span>Voting and replies are disabled on this starter discussion.</span>
       </div>
     `;
     detail.classList.add('open');
