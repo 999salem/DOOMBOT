@@ -985,83 +985,131 @@ window.addEventListener('beforeinstallprompt',function(e){
       </div>
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="active" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
-    <main class="main">
-<section class="v12-page-hero">
-  <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-  <div class="eyebrow">DOOMBOT V18 // COMMUNITY</div>
-  <h1>The War Room</h1>
-  <p>Public Doomsday discussion without locking the archive behind an account. Guests can read everything; permanent members can post, reply, vote, save and share theories.</p>
-</section>
+    <main class="main war-v182">
+<section class="wr-shell">
+  <header class="wr-top">
+    <div>
+      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
+      <div class="eyebrow">DOOMBOT V18.2 // COMMUNITY INTELLIGENCE</div>
+      <h1>WAR ROOM</h1>
+      <p>Leaks, theories and spoiler discussion in one live intelligence feed.</p>
+    </div>
+    <div class="wr-status">
+      <i></i>
+      <div><b>ROOM ONLINE</b><span id="warIdentity">CONNECTING IDENTITY…</span></div>
+    </div>
+  </header>
 
-<section class="section">
-  <div class="v18-between">
-    <div><div class="section-title"><span>WAR ROOM FEED</span></div><div id="warIdentity"></div></div>
-    <div class="v18-actions">
-      <button id="newThreadButton" class="v18-btn primary" type="button">＋ NEW THREAD</button><button id="refreshWarRoom" class="v18-btn" type="button">REFRESH</button>
-      <button id="toggleModQueue" class="v18-btn gold" type="button" hidden>MOD QUEUE</button>
+  <div class="wr-stats">
+    <div><span>THREADS</span><b id="warThreadTotal">—</b></div>
+    <div><span>REPLIES</span><b id="warReplyTotal">—</b></div>
+    <div><span>MEMBERS ONLINE</span><b id="warOnlineTotal">—</b></div>
+  </div>
+
+  <div id="warGuestGate" class="wr-guest" hidden>
+    <div><b>GUEST MODE</b><span>Read everything. Sign in only when you want to post, vote or reply.</span></div>
+    <a href="./account.html">CREATE / SIGN IN →</a>
+  </div>
+
+  <div class="wr-controls">
+    <div class="wr-tabs">
+      <button class="v18-channel active" data-channel="all"><span>ALL</span><em data-channel-count="all">0</em></button>
+      <button class="v18-channel" data-channel="general"><span>GENERAL</span><em data-channel-count="general">0</em></button>
+      <button class="v18-channel" data-channel="leaks"><span>LEAKS</span><em data-channel-count="leaks">0</em></button>
+      <button class="v18-channel" data-channel="plot"><span>PLOT</span><em data-channel-count="plot">0</em></button>
+      <button class="v18-channel" data-channel="theory"><span>THEORY LAB</span><em data-channel-count="theory">0</em></button>
+      <button class="v18-channel" data-channel="secret-wars"><span>SECRET WARS</span><em data-channel-count="secret-wars">0</em></button>
+    </div>
+
+    <div class="wr-tools">
+      <label class="wr-search"><span>⌕</span><input id="threadSearch" placeholder="Search War Room…"></label>
+      <button id="refreshWarRoom" class="wr-icon-action" type="button" aria-label="Refresh">↻</button>
+      <button id="newThreadButton" class="wr-create" type="button"><span>＋</span> NEW THREAD</button>
+      <button id="toggleModQueue" class="wr-icon-action" type="button" hidden aria-label="Moderation">◆</button>
     </div>
   </div>
 
-  <div id="warGuestGate" class="war-account-gate" hidden>
-    <b>GUEST MODE // READ EVERYTHING FREE</b>
-    <span>Create or link an account only when you want to post, reply, vote or save threads.</span>
-    <a class="v18-btn gold" href="./account.html" style="display:inline-block;margin-top:8px">CREATE / SIGN IN →</a>
-  </div>
-
-  <div id="warComposer" class="war-composer v18-card gold">
-    <div class="v18-between"><div><div class="eyebrow">NEW WAR ROOM FILE</div><h2>Start a discussion</h2></div><button id="cancelThreadButton" class="v18-btn ghost" type="button">CANCEL</button></div>
+  <div id="warComposer" class="war-composer wr-composer">
+    <div class="wr-composer-top">
+      <div><span>NEW TRANSMISSION</span><h2>Start a discussion</h2></div>
+      <button id="cancelThreadButton" class="wr-close" type="button">×</button>
+    </div>
     <div id="theoryDraftPreview" class="war-theory-snapshot" hidden></div>
     <form id="threadForm">
       <div class="v18-form-grid">
-        <label class="v18-label">CHANNEL<select id="threadChannel" class="v18-select">
-          <option value="general">GENERAL</option><option value="leaks">LEAK ROOM</option><option value="plot">PLOT SPOILERS</option><option value="theory">THEORY LAB</option><option value="secret-wars">SECRET WARS</option>
-        </select></label>
-        <label class="v18-label">TITLE<input id="threadTitle" class="v18-input" maxlength="140" required placeholder="What are we discussing?"></label>
+        <label class="v18-label">CHANNEL
+          <select id="threadChannel" class="v18-select">
+            <option value="general">GENERAL</option>
+            <option value="leaks">LEAK ROOM</option>
+            <option value="plot">PLOT SPOILERS</option>
+            <option value="theory">THEORY LAB</option>
+            <option value="secret-wars">SECRET WARS</option>
+          </select>
+        </label>
+        <label class="v18-label">TITLE
+          <input id="threadTitle" class="v18-input" maxlength="140" required placeholder="What are we discussing?">
+        </label>
       </div>
-      <label class="v18-label">POST<textarea id="threadBody" class="v18-textarea" maxlength="5000" required placeholder="Make your case, post your theory, react to a leak…"></textarea></label>
-      <label class="v18-check"><input id="threadSpoiler" type="checkbox"> This thread contains spoilers</label>
-      <button class="v18-btn primary" type="submit">POST TO WAR ROOM</button>
+      <label class="v18-label">POST
+        <textarea id="threadBody" class="v18-textarea" maxlength="5000" required placeholder="Make your case, react to the leak, drop the theory…"></textarea>
+      </label>
+      <div class="wr-composer-bottom">
+        <label class="v18-check"><input id="threadSpoiler" type="checkbox"> Hide behind spoiler shield</label>
+        <button class="wr-send" type="submit">POST TO WAR ROOM →</button>
+      </div>
     </form>
   </div>
 
-  <div class="v18-card" style="margin-top:10px">
-    <div class="v18-channel-row">
-      <button class="v18-channel active" data-channel="all">ALL</button>
-      <button class="v18-channel" data-channel="general">GENERAL</button>
-      <button class="v18-channel" data-channel="leaks">LEAK ROOM</button>
-      <button class="v18-channel" data-channel="plot">PLOT SPOILERS</button>
-      <button class="v18-channel" data-channel="theory">THEORY LAB</button>
-      <button class="v18-channel" data-channel="secret-wars">SECRET WARS</button>
-    </div>
-    <label class="v18-label">SEARCH<input id="threadSearch" class="v18-input" placeholder="Search War Room threads…"></label>
-  </div>
+  <div class="wr-layout">
+    <section class="wr-feed-pane">
+      <div class="wr-feed-title">
+        <div><span>ACTIVE FEED</span><b id="warFeedLabel">ALL FILES</b></div>
+        <small id="warFeedStatus">SYNCING…</small>
+      </div>
 
-  <div id="warFeed" class="war-feed"></div>
+      <div id="warFeed" class="war-feed wr-feed"></div>
 
-  <div id="warDetail" class="war-detail v18-card">
-    <div class="v18-between"><div class="section-title"><span>DISCUSSION FILE</span></div><button class="v18-btn ghost" type="button" onclick="document.getElementById('warDetail').classList.remove('open')">CLOSE</button></div>
-    <div id="warDetailContent"></div>
-  </div>
+      <div id="warDetail" class="war-detail wr-detail">
+        <div class="wr-detail-bar">
+          <div><span>DISCUSSION FILE</span><b>THREAD DETAIL</b></div>
+          <button class="wr-close" type="button" onclick="document.getElementById('warDetail').classList.remove('open')">×</button>
+        </div>
+        <div id="warDetailContent"></div>
+      </div>
+    </section>
 
-  <div id="warModPanel" class="war-mod-panel v18-card red">
-    <div class="section-title"><span>MODERATION QUEUE</span></div>
-    <div id="warModReports"></div>
-  </div>
-</section>
+    <aside class="wr-side">
+      <section class="wr-panel">
+        <div class="wr-panel-head"><span>HOT FILES</span><small>ENGAGEMENT</small></div>
+        <div id="warHotThreads" class="wr-hot"><div class="v18-loading">ANALYZING…</div></div>
+      </section>
 
-<section class="section">
-  <div class="section-title"><span>WAR ROOM RULES</span></div>
-  <div class="v18-card war-rules">
-    <div class="war-rule"><b>01 // LABEL SPOILERS</b><span>Use the spoiler switch for plot leaks, unreleased footage and major story details.</span></div>
-    <div class="war-rule"><b>02 // SOURCE YOUR “LEAKS”</b><span>A theory is fine. Passing a theory off as insider information is not.</span></div>
-    <div class="war-rule"><b>03 // ARGUE THE THEORY, NOT THE PERSON</b><span>No harassment, threats, slurs, doxxing or targeted abuse.</span></div>
-    <div class="war-rule"><b>04 // NO SPAM</b><span>Don’t flood threads, impersonate staff or repeatedly repost the same content.</span></div>
+      <section class="wr-panel">
+        <div class="wr-panel-head"><span>ROOM PROTOCOL</span><small>READ FIRST</small></div>
+        <div class="wr-rules">
+          <p><b>01</b><span>Tag unreleased footage and plot spoilers.</span></p>
+          <p><b>02</b><span>Source leaks. Theory is not insider info.</span></p>
+          <p><b>03</b><span>Debate the idea, not the person.</span></p>
+          <p><b>04</b><span>No spam, impersonation or doxxing.</span></p>
+        </div>
+      </section>
+
+      <section class="wr-panel wr-seed-note">
+        <div class="wr-panel-head"><span>FOUNDING ARCHIVE</span><small>SEED DATA</small></div>
+        <p>Starter posts are fictional archive seeds used to keep the War Room populated while the real community grows. They are marked <b>ARCHIVE SEED</b>.</p>
+      </section>
+
+      <section id="warModPanel" class="war-mod-panel wr-panel">
+        <div class="wr-panel-head"><span>MOD QUEUE</span><small>REPORTS</small></div>
+        <div id="warModReports"></div>
+      </section>
+    </aside>
   </div>
 </section>
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 18</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 18.4</span>
     </footer>
   </div>
 </div>

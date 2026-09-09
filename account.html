@@ -985,48 +985,103 @@ window.addEventListener('beforeinstallprompt',function(e){
       </div>
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="active" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
-    <main class="main">
-<section class="v12-page-hero">
+    <main class="main account-v181-page">
+<section class="account-command-hero">
   <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-  <div class="eyebrow">DOOMBOT V18 // IDENTITY SYSTEM</div>
-  <h1>Account & Profile</h1>
-  <p>Keep browsing as a guest, upgrade your existing guest cloud save into a permanent account, or sign back into an existing DOOMBOT identity.</p>
+  <div class="eyebrow">DOOMBOT V18.1 // IDENTITY BRIDGE</div>
+  <div class="account-hero-grid">
+    <div>
+      <h1>DOOMBOT IDENTITY</h1>
+      <p>Your guest save already has a private Supabase identity. Upgrade links an email to that same identity so your locks, notes, favorites and personal theories stay attached.</p>
+    </div>
+    <div class="account-route">
+      <div><b>01</b><span>GUEST SAVE</span></div><i>→</i>
+      <div><b>02</b><span>VERIFY EMAIL</span></div><i>→</i>
+      <div><b>03</b><span>WAR ROOM MEMBER</span></div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-  <div class="section-title"><span>IDENTITY STATUS</span></div>
-  <div class="v18-card v18-auth-panel">
-    <div class="v18-between">
-      <div><div id="accountStatus"><span class="v18-status">CONNECTING</span></div><p id="accountStatusCopy" class="v18-muted">Checking your DOOMBOT identity…</p></div>
-      <a class="v18-btn gold" href="./warroom.html">OPEN WAR ROOM →</a>
+  <div class="account-status-console">
+    <div>
+      <span>IDENTITY STATUS</span>
+      <div id="accountStatus"><span class="v18-status">CONNECTING…</span></div>
     </div>
-    <div id="accountMessage" class="v18-auth-message"></div>
+    <p id="accountStatusCopy">S.A.L.E.M. is checking your current cloud session.</p>
+    <a class="account-war-link" href="./warroom.html">WAR ROOM →</a>
   </div>
 
-  <div id="accountAuthView" hidden>
-    <div class="v18-auth-options">
-      <form id="upgradeGuestForm" class="v18-auth-option">
-        <div class="eyebrow">RECOMMENDED // KEEP THIS SAVE</div>
-        <h3>Upgrade this guest</h3>
-        <p class="v18-muted">Links an email identity to the guest you already use. Your Supabase user ID stays the same, so locks, notes and theories remain attached.</p>
-        <label class="v18-label">EMAIL<input id="upgradeGuestEmail" class="v18-input" type="email" autocomplete="email" required placeholder="you@example.com"></label>
-        <button class="v18-btn primary" type="submit">CREATE / UPGRADE ACCOUNT</button>
-      </form>
+  <div id="accountMessage" class="v18-auth-message"></div>
 
-      <form id="existingAccountForm" class="v18-auth-option">
-        <div class="eyebrow">RETURNING MEMBER</div>
-        <h3>Sign in to an existing account</h3>
-        <p class="v18-muted">Use this when the email already belongs to a DOOMBOT account. We’ll send a magic link and restore that account’s cloud state.</p>
-        <label class="v18-label">EMAIL<input id="existingAccountEmail" class="v18-input" type="email" autocomplete="email" required placeholder="you@example.com"></label>
-        <button class="v18-btn gold" type="submit">SEND MAGIC LINK</button>
-      </form>
+  <div id="accountAuthView" hidden>
+    <div class="account-upgrade-shell">
+      <section class="account-primary-card">
+        <div class="account-card-kicker">KEEP YOUR CURRENT SAVE</div>
+        <h2>Upgrade this guest</h2>
+        <p>Your recommended path. DOOMBOT asks Supabase to link your email to the anonymous user you already have instead of starting you over.</p>
+
+        <form id="upgradeGuestForm">
+          <label class="v18-label">EMAIL ADDRESS
+            <div class="account-input-action">
+              <input id="upgradeGuestEmail" class="v18-input" type="email" autocomplete="email" required placeholder="you@example.com">
+              <button id="upgradeGuestButton" class="account-primary-btn" type="submit">SEND VERIFICATION →</button>
+            </div>
+          </label>
+        </form>
+
+        <div id="upgradePendingPanel" class="account-pending-panel" hidden>
+          <div class="account-pending-head">
+            <span class="account-check">✓</span>
+            <div><b>VERIFICATION SENT</b><small id="upgradePendingEmail">Check your email</small></div>
+          </div>
+          <p>Tap the confirmation link in the email. If Supabase gives you a 6-digit email-change code instead, enter it below.</p>
+          <form id="upgradeOtpForm" class="account-code-row">
+            <input id="upgradeOtpCode" class="v18-input" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="6-digit code">
+            <button class="v18-btn primary" type="submit">VERIFY CODE</button>
+          </form>
+          <div class="v18-actions">
+            <button id="upgradeCheckButton" class="v18-btn" type="button">I CONFIRMED THE EMAIL</button>
+            <button id="upgradeResendButton" class="v18-btn ghost" type="button">RESEND</button>
+          </div>
+        </div>
+
+        <div class="account-preserve-strip">
+          <span>WHAT STAYS</span>
+          <b>Locks · Notes · Favorites · Watchlist · Custom theories · Cloud save</b>
+        </div>
+      </section>
+
+      <aside class="account-side-stack">
+        <section class="account-secondary-card">
+          <div class="account-card-kicker">ALREADY HAVE AN ACCOUNT?</div>
+          <h3>Sign in to existing identity</h3>
+          <p>Use this only for an email you previously linked to DOOMBOT.</p>
+          <form id="existingAccountForm">
+            <label class="v18-label">EMAIL
+              <input id="existingAccountEmail" class="v18-input" type="email" autocomplete="email" required placeholder="you@example.com">
+            </label>
+            <button class="v18-btn gold" type="submit">SEND MAGIC LINK</button>
+          </form>
+        </section>
+
+        <section class="account-secondary-card diagnostic">
+          <div class="account-card-kicker">ACCOUNT DIAGNOSTICS</div>
+          <div class="account-diag-row"><span>GUEST SESSION</span><b id="diagGuest">CHECKING</b></div>
+          <div class="account-diag-row"><span>CLOUD CLIENT</span><b id="diagCloud">CHECKING</b></div>
+          <div class="account-diag-row"><span>UPGRADE PATH</span><b id="diagUpgrade">READY</b></div>
+          <p id="diagHelp">If Supabase blocks linking, DOOMBOT will tell you exactly which Auth setting needs to be enabled.</p>
+        </section>
+      </aside>
     </div>
   </div>
 
   <div id="accountMemberView" hidden>
-    <div class="v18-grid">
-      <form id="profileForm" class="v18-card">
-        <div class="section-title"><span>EDIT PROFILE</span></div>
+    <div class="account-member-shell">
+      <form id="profileForm" class="account-primary-card">
+        <div class="account-card-kicker">PERMANENT IDENTITY</div>
+        <div class="v18-between"><div><h2>Edit your profile</h2><p>What other members see inside the War Room.</p></div><span id="profileRole" class="v18-role">MEMBER</span></div>
+
         <div class="v18-form-grid">
           <label class="v18-label">USERNAME<input id="profileUsername" class="v18-input" maxlength="20" required></label>
           <label class="v18-label">DISPLAY NAME<input id="profileDisplayName" class="v18-input" maxlength="50"></label>
@@ -1038,17 +1093,21 @@ window.addEventListener('beforeinstallprompt',function(e){
         </div>
         <label class="v18-check"><input id="profileHideSpoilers" type="checkbox"> Hide War Room spoiler posts until I tap reveal</label>
         <label class="v18-check"><input id="profileShowOnline" type="checkbox"> Show when I’m online in the War Room</label>
-        <div class="v18-actions"><button class="v18-btn primary" type="submit">SAVE PROFILE</button><a id="openMyProfile" class="v18-btn" href="./profile.html">VIEW PUBLIC PROFILE</a></div>
+        <div class="v18-actions">
+          <button class="account-primary-btn" type="submit">SAVE PROFILE</button>
+          <a id="openMyProfile" class="v18-btn" href="./profile.html">VIEW PUBLIC PROFILE</a>
+        </div>
       </form>
 
-      <aside class="v18-card gold">
+      <aside class="account-member-card">
         <div class="v18-profile-head">
           <div id="profileAvatarPreview" class="v18-avatar">?</div>
-          <div><div id="profileHandlePreview" class="v18-handle">@member</div><div id="profileNamePreview" class="v18-muted">DOOMBOT MEMBER</div><span id="profileRole" class="v18-role">MEMBER</span></div>
+          <div><div id="profileHandlePreview" class="v18-handle">@member</div><div id="profileNamePreview" class="v18-muted">DOOMBOT MEMBER</div></div>
         </div>
-        <p class="v18-small">ACCOUNT EMAIL</p><b id="accountEmail">—</b>
-        <div class="v18-actions"><button id="signOutButton" class="v18-btn red" type="button">SIGN OUT ON THIS DEVICE</button></div>
-        <p class="v18-small">Signing out clears this device’s private local theory data so another guest can’t see it. Your permanent account keeps its cloud copy.</p>
+        <div class="account-member-info"><span>ACCOUNT EMAIL</span><b id="accountEmail">—</b></div>
+        <div class="account-member-info"><span>CLOUD STATUS</span><b>PERMANENT IDENTITY</b></div>
+        <button id="signOutButton" class="v18-btn red" type="button">SIGN OUT ON THIS DEVICE</button>
+        <p>Signing out removes private local profile data from this device. Your cloud copy remains attached to your account.</p>
       </aside>
     </div>
   </div>
@@ -1056,7 +1115,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 18</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 18.4</span>
     </footer>
   </div>
 </div>

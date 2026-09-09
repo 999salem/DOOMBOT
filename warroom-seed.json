@@ -1,0 +1,899 @@
+{
+  "version": 2,
+  "updated": "2026-09-09",
+  "notice": "Fictional starter content for the DOOMBOT War Room. Seed profiles, threads and replies are not real users.",
+  "profiles": [
+    {
+      "id": "seed-doomscroll",
+      "username": "doomscroll",
+      "display_name": "Doomscroll",
+      "role": "member",
+      "avatar": "DS"
+    },
+    {
+      "id": "seed-latveria",
+      "username": "latverianlogic",
+      "display_name": "Latverian Logic",
+      "role": "member",
+      "avatar": "LL"
+    },
+    {
+      "id": "seed-incursion",
+      "username": "incursionwatch",
+      "display_name": "Incursion Watch",
+      "role": "member",
+      "avatar": "IW"
+    },
+    {
+      "id": "seed-webhead",
+      "username": "webhead616",
+      "display_name": "Webhead 616",
+      "role": "member",
+      "avatar": "W6"
+    },
+    {
+      "id": "seed-richards",
+      "username": "richardsfiles",
+      "display_name": "Richards Files",
+      "role": "member",
+      "avatar": "RF"
+    },
+    {
+      "id": "seed-yggdrasil",
+      "username": "yggdrasilwatch",
+      "display_name": "Yggdrasil Watch",
+      "role": "member",
+      "avatar": "YW"
+    },
+    {
+      "id": "seed-battleworld",
+      "username": "battleworlddept",
+      "display_name": "Battleworld Dept.",
+      "role": "member",
+      "avatar": "BD"
+    },
+    {
+      "id": "seed-doombot",
+      "username": "archivebot",
+      "display_name": "DOOMBOT Archive",
+      "role": "member",
+      "avatar": "DB"
+    },
+    {
+      "id": "seed-mutant",
+      "username": "mutantarchive",
+      "display_name": "Mutant Archive",
+      "role": "member",
+      "avatar": "MA"
+    },
+    {
+      "id": "seed-sorcerer",
+      "username": "sanctumfiles",
+      "display_name": "Sanctum Files",
+      "role": "member",
+      "avatar": "SF"
+    },
+    {
+      "id": "seed-future",
+      "username": "futurefoundation",
+      "display_name": "Future Foundation",
+      "role": "member",
+      "avatar": "FF"
+    },
+    {
+      "id": "seed-rafter",
+      "username": "raftobserver",
+      "display_name": "Raft Observer",
+      "role": "member",
+      "avatar": "RO"
+    },
+    {
+      "id": "seed-616",
+      "username": "earth616desk",
+      "display_name": "Earth-616 Desk",
+      "role": "member",
+      "avatar": "E6"
+    },
+    {
+      "id": "seed-838",
+      "username": "earth838watch",
+      "display_name": "Earth-838 Watch",
+      "role": "member",
+      "avatar": "E8"
+    },
+    {
+      "id": "seed-void",
+      "username": "voidsignal",
+      "display_name": "Void Signal",
+      "role": "member",
+      "avatar": "VS"
+    },
+    {
+      "id": "seed-anchor",
+      "username": "anchorbeing",
+      "display_name": "Anchor Being",
+      "role": "member",
+      "avatar": "AB"
+    },
+    {
+      "id": "seed-baxter",
+      "username": "baxterfiles",
+      "display_name": "Baxter Files",
+      "role": "member",
+      "avatar": "BF"
+    },
+    {
+      "id": "seed-goddoom",
+      "username": "godemperordoom",
+      "display_name": "God Emperor Doom",
+      "role": "member",
+      "avatar": "GD"
+    }
+  ],
+  "threads": [
+    {
+      "id": "seed-101",
+      "author_id": "seed-doomscroll",
+      "channel": "theory",
+      "title": "RDJ Doom is still a Tony Stark smokescreen and I’m locking it",
+      "body": "Marvel gets the casting surprise out in public while still protecting the bigger Secret Wars reveal. RDJ can be photographed, scheduled and seen on set without anyone proving whether a scene is Victor or Tony. That flexibility feels way too useful to ignore.",
+      "spoiler": false,
+      "pinned": true,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T18:47:00Z",
+      "votes": 27
+    },
+    {
+      "id": "seed-102",
+      "author_id": "seed-incursion",
+      "channel": "plot",
+      "title": "The Incursion has to be the actual first-act problem",
+      "body": "Every road keeps coming back to worlds physically colliding. If Doomsday opens with heroes trying to save their own universe before they even understand Doom, Avengers vs X-Men happens naturally instead of feeling forced.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T18:40:00Z",
+      "votes": 19
+    },
+    {
+      "id": "seed-103",
+      "author_id": "seed-latveria",
+      "channel": "general",
+      "title": "Doom should be RIGHT about the problem and completely insane about the solution",
+      "body": "The best version of this movie is not Doom wanting to destroy reality. He should be the one person who fully understands that everything is collapsing — then decides only he deserves to choose what survives.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T17:33:00Z",
+      "votes": 34
+    },
+    {
+      "id": "seed-104",
+      "author_id": "seed-yggdrasil",
+      "channel": "theory",
+      "title": "Loki is not just a cameo — Doom needs what he is holding together",
+      "body": "If Loki is literally stabilizing branching timelines, he is either the battery, the map or the obstacle. Doom getting to Battleworld without interacting with Loki’s role in the multiverse would feel like skipping the biggest piece on the board.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T17:26:00Z",
+      "votes": 22
+    },
+    {
+      "id": "seed-105",
+      "author_id": "seed-webhead",
+      "channel": "general",
+      "title": "Where do we think Peter actually is after Brand New Day?",
+      "body": "The tracker leaving Earth feels too deliberate to be nothing. My guess is Peter is already displaced somewhere that becomes important in Doomsday, but they do not reveal exactly where until the Avengers movie.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T16:19:00Z",
+      "votes": 14
+    },
+    {
+      "id": "seed-106",
+      "author_id": "seed-richards",
+      "channel": "leaks",
+      "title": "Franklin keeps showing up in way too many rumor chains",
+      "body": "Different rumors disagree on almost everything else, but Franklin being valuable to Doom keeps surviving. That does not prove the exact plot, but it makes the Doom/Franklin post-credit scene feel even more important.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T16:12:00Z",
+      "votes": 18
+    },
+    {
+      "id": "seed-107",
+      "author_id": "seed-battleworld",
+      "channel": "secret-wars",
+      "title": "I want Doomsday to END on Battleworld, not tease it",
+      "body": "Give us the full collapse. Last ten minutes: reality is gone, survivors wake up somewhere impossible, Doom’s rule is already established. Secret Wars should be able to start with Battleworld functioning instead of spending another hour getting there.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T15:05:00Z",
+      "votes": 31
+    },
+    {
+      "id": "seed-108",
+      "author_id": "seed-doombot",
+      "channel": "leaks",
+      "title": "Archive note: AI-upscaled leak images are not new evidence",
+      "body": "A cleaner-looking version of a blurry leak is still the same source. DOOMBOT tracks the original source trail separately from AI enhancement so an upscale does not accidentally increase confidence.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": true,
+      "locked": false,
+      "created_at": "2026-09-09T15:58:00Z",
+      "votes": 41
+    },
+    {
+      "id": "seed-109",
+      "author_id": "seed-doomscroll",
+      "channel": "general",
+      "title": "Which reveal gets the biggest theater reaction: Tony, Battleworld or old X-Men?",
+      "body": "I still think Tony wins if they actually hide it until the movie. Battleworld is the bigger comic moment, but general audiences seeing Tony again would blow the roof off.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T14:51:00Z",
+      "votes": 16
+    },
+    {
+      "id": "seed-110",
+      "author_id": "seed-incursion",
+      "channel": "secret-wars",
+      "title": "Secret Wars should open AFTER everyone already lost",
+      "body": "No recap-heavy setup. Cold open on a functioning Battleworld where characters have adapted to the new reality. Let the audience slowly realize who remembers the old multiverse and who does not.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T14:44:00Z",
+      "votes": 25
+    },
+    {
+      "id": "seed-111",
+      "author_id": "seed-mutant",
+      "channel": "plot",
+      "title": "The X-Men cannot just be cameos if their universe is one of the worlds at risk",
+      "body": "If an Incursion puts their Earth against 616, they instantly have a reason to fight the Avengers without anyone becoming randomly evil. Both teams can be completely justified from their own point of view.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T13:37:00Z",
+      "votes": 29
+    },
+    {
+      "id": "seed-112",
+      "author_id": "seed-sorcerer",
+      "channel": "theory",
+      "title": "Strange may understand Doom before the Avengers do",
+      "body": "Doctor Strange already knows what Incursions are. If Doom arrives claiming the multiverse is dying, Strange should be one of the few heroes who cannot immediately dismiss him as a lunatic.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T13:30:00Z",
+      "votes": 17
+    },
+    {
+      "id": "seed-113",
+      "author_id": "seed-future",
+      "channel": "theory",
+      "title": "Franklin is probably the reconstruction key, not just a hostage",
+      "body": "The simple version is Doom kidnaps Franklin. The more interesting version is Doom genuinely needs Franklin’s reality power to make a survivable world after the collapse.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T12:23:00Z",
+      "votes": 24
+    },
+    {
+      "id": "seed-114",
+      "author_id": "seed-rafter",
+      "channel": "general",
+      "title": "That Brave New World stinger makes more sense now than it did in theaters",
+      "body": "The 'other worlds' warning felt vague at release, but in a Doomsday context it sounds like the MCU quietly telling Sam that the next war is not country versus country — it is universe versus universe.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T12:16:00Z",
+      "votes": 12
+    },
+    {
+      "id": "seed-115",
+      "author_id": "seed-616",
+      "channel": "leaks",
+      "title": "What leak would actually convince you the Battleworld ending is real?",
+      "body": "For me it would need to be something production-side: a set description, call sheet language, or multiple unrelated sources describing the same final location. Another anonymous plot paragraph is not enough.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T11:09:00Z",
+      "votes": 21
+    },
+    {
+      "id": "seed-116",
+      "author_id": "seed-838",
+      "channel": "theory",
+      "title": "What if the movie makes 616 the universe that looks dangerous to everyone else?",
+      "body": "We naturally follow 616 so we treat it as the home that deserves saving. But from another universe, 616 has been involved in a ridiculous amount of multiversal damage. That perspective could make the conflict hit harder.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T11:02:00Z",
+      "votes": 26
+    },
+    {
+      "id": "seed-117",
+      "author_id": "seed-void",
+      "channel": "secret-wars",
+      "title": "The Void would be an easy bridge between Loki and Battleworld",
+      "body": "The TVA already gave Marvel a visual language for things being pruned out of reality. I would not be shocked if the Void, or something like it, becomes the dumping ground Doom repurposes into the foundation of Battleworld.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T10:55:00Z",
+      "votes": 15
+    },
+    {
+      "id": "seed-118",
+      "author_id": "seed-anchor",
+      "channel": "theory",
+      "title": "Are Anchor Beings actually going to matter or was that only a Deadpool device?",
+      "body": "I can see Marvel using the concept as a shortcut for why some universes collapse faster than others, but I do not want every reality to suddenly have one magic person holding it together.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T10:48:00Z",
+      "votes": 13
+    },
+    {
+      "id": "seed-119",
+      "author_id": "seed-baxter",
+      "channel": "leaks",
+      "title": "The Fantastic Four ship arriving in 616 is still the cleanest bridge to Doomsday",
+      "body": "No theory required. Their ship literally crosses into the main MCU right before the Avengers crossover. Whatever happens next, that is the handoff.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T09:41:00Z",
+      "votes": 32
+    },
+    {
+      "id": "seed-120",
+      "author_id": "seed-goddoom",
+      "channel": "secret-wars",
+      "title": "If Doom gets the throne shot in Doomsday I’m done",
+      "body": "I do not need the full white costume yet. Just end the movie with survivors looking up and Doom sitting above Battleworld. Cut to black. Make everyone wait for Secret Wars.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T09:34:00Z",
+      "votes": 38
+    },
+    {
+      "id": "seed-121",
+      "author_id": "seed-mutant",
+      "channel": "general",
+      "title": "Who should actually lead the X-Men side of the conflict?",
+      "body": "Cyclops makes the most sense dramatically. If he believes saving his universe means fighting 616, let him be completely committed. Xavier can be the one trying to find another way.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T08:27:00Z",
+      "votes": 20
+    },
+    {
+      "id": "seed-122",
+      "author_id": "seed-sorcerer",
+      "channel": "plot",
+      "title": "I think Doom's first big win happens because the heroes refuse to cooperate",
+      "body": "The movie needs a reason this enormous cast cannot just overwhelm him. The easiest answer is that the universes are already fighting each other, and Doom uses that division to take control of the situation.",
+      "spoiler": true,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T08:20:00Z",
+      "votes": 18
+    },
+    {
+      "id": "seed-123",
+      "author_id": "seed-future",
+      "channel": "secret-wars",
+      "title": "Who remembers the old multiverse on Battleworld?",
+      "body": "My pick is a tiny group: Strange, Loki, maybe Reed, and one or two displaced characters. Everyone else should initially think Battleworld has always existed.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T07:13:00Z",
+      "votes": 23
+    },
+    {
+      "id": "seed-124",
+      "author_id": "seed-616",
+      "channel": "general",
+      "title": "DOOMBOT confidence scores are more useful when they can go DOWN",
+      "body": "I like that a rumor can lose confidence when later information contradicts it. Leak pages get annoying when every old scoop stays up forever like it was equally valid.",
+      "spoiler": false,
+      "pinned": false,
+      "verified": false,
+      "locked": false,
+      "created_at": "2026-09-09T07:06:00Z",
+      "votes": 11
+    }
+  ],
+  "replies": [
+    {
+      "id": "seed-r001",
+      "thread_id": "seed-101",
+      "author_id": "seed-latveria",
+      "body": "That is exactly why the casting announcement being so early never bothered me. The surprise can be WHAT RDJ is doing, not whether he is there.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:09:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r002",
+      "thread_id": "seed-101",
+      "author_id": "seed-webhead",
+      "body": "If Tony appears I want literally zero marketing footage of it.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:18:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r003",
+      "thread_id": "seed-101",
+      "author_id": "seed-616",
+      "body": "Counterpoint: Marvel may have announced RDJ early because hiding him on a movie this huge was impossible.",
+      "spoiler": false,
+      "created_at": "2026-09-09T13:27:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r004",
+      "thread_id": "seed-102",
+      "author_id": "seed-mutant",
+      "body": "This is the only Avengers vs X-Men setup I really want. Nobody mind-controlled, nobody randomly hostile.",
+      "spoiler": true,
+      "created_at": "2026-09-09T14:36:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r005",
+      "thread_id": "seed-102",
+      "author_id": "seed-incursion",
+      "body": "Yep. Two worlds, two teams, one impossible choice.",
+      "spoiler": true,
+      "created_at": "2026-09-09T15:45:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r006",
+      "thread_id": "seed-103",
+      "author_id": "seed-goddoom",
+      "body": "Doom saving existence and then saying 'therefore I rule what remains' is peak Doom.",
+      "spoiler": false,
+      "created_at": "2026-09-09T16:54:00Z",
+      "votes": 12
+    },
+    {
+      "id": "seed-r007",
+      "thread_id": "seed-103",
+      "author_id": "seed-sorcerer",
+      "body": "It also gives Strange a reason to hesitate before fighting him.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:03:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r008",
+      "thread_id": "seed-103",
+      "author_id": "seed-richards",
+      "body": "Reed should hate that Doom was partly correct.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:12:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r009",
+      "thread_id": "seed-104",
+      "author_id": "seed-void",
+      "body": "Would be cool if Loki refuses because he knows Doom's solution technically works but destroys free will.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:21:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r010",
+      "thread_id": "seed-104",
+      "author_id": "seed-sorcerer",
+      "body": "Loki as the thing keeping the map together makes more sense to me than just 'power battery'.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:30:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r011",
+      "thread_id": "seed-105",
+      "author_id": "seed-webhead",
+      "body": "My dumb theory is he is already somewhere outside normal spacetime and does not know it.",
+      "spoiler": true,
+      "created_at": "2026-09-09T13:39:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r012",
+      "thread_id": "seed-105",
+      "author_id": "seed-616",
+      "body": "Could also be a Secret Wars setup rather than Doomsday itself.",
+      "spoiler": true,
+      "created_at": "2026-09-09T14:48:00Z",
+      "votes": 2
+    },
+    {
+      "id": "seed-r013",
+      "thread_id": "seed-106",
+      "author_id": "seed-future",
+      "body": "Franklin is basically a giant flashing Secret Wars sign if they choose to use his comic-level power.",
+      "spoiler": true,
+      "created_at": "2026-09-09T15:57:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r014",
+      "thread_id": "seed-106",
+      "author_id": "seed-baxter",
+      "body": "The credit scene makes the rumors harder to dismiss even if none of the exact leaks are right.",
+      "spoiler": true,
+      "created_at": "2026-09-09T16:06:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r015",
+      "thread_id": "seed-107",
+      "author_id": "seed-goddoom",
+      "body": "YES. Doomsday should be the Infinity War ending of this saga.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:15:00Z",
+      "votes": 10
+    },
+    {
+      "id": "seed-r016",
+      "thread_id": "seed-107",
+      "author_id": "seed-battleworld",
+      "body": "Exactly. Secret Wars should not spend half the movie creating the place named in the premise.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:24:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r017",
+      "thread_id": "seed-107",
+      "author_id": "seed-mutant",
+      "body": "Imagine the X-Men waking up there and thinking this is just their world now.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:33:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r018",
+      "thread_id": "seed-108",
+      "author_id": "seed-616",
+      "body": "This needs to stay pinned somewhere because Twitter turns every upscale into 'new HD leak'.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:42:00Z",
+      "votes": 9
+    },
+    {
+      "id": "seed-r019",
+      "thread_id": "seed-108",
+      "author_id": "seed-doomscroll",
+      "body": "Same with cropped reposts. New watermark does not equal new source.",
+      "spoiler": false,
+      "created_at": "2026-09-09T13:51:00Z",
+      "votes": 8
+    },
+    {
+      "id": "seed-r020",
+      "thread_id": "seed-109",
+      "author_id": "seed-webhead",
+      "body": "Tony and it is not close for casual audiences.",
+      "spoiler": false,
+      "created_at": "2026-09-09T14:00:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r021",
+      "thread_id": "seed-109",
+      "author_id": "seed-mutant",
+      "body": "Old X-Men for me personally.",
+      "spoiler": false,
+      "created_at": "2026-09-09T15:09:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r022",
+      "thread_id": "seed-109",
+      "author_id": "seed-goddoom",
+      "body": "Throne shot if they actually commit to God Emperor Doom.",
+      "spoiler": false,
+      "created_at": "2026-09-09T16:18:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r023",
+      "thread_id": "seed-110",
+      "author_id": "seed-battleworld",
+      "body": "Open on a normal day in Battleworld and make it slowly feel wrong.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:27:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r024",
+      "thread_id": "seed-110",
+      "author_id": "seed-sorcerer",
+      "body": "Strange being one of the only people who knows something is off would be perfect.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:36:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r025",
+      "thread_id": "seed-111",
+      "author_id": "seed-838",
+      "body": "And from their POV the Avengers are literally trying to save the universe that keeps causing incursions.",
+      "spoiler": true,
+      "created_at": "2026-09-09T11:45:00Z",
+      "votes": 8
+    },
+    {
+      "id": "seed-r026",
+      "thread_id": "seed-111",
+      "author_id": "seed-mutant",
+      "body": "Exactly. Let both teams be heroes.",
+      "spoiler": true,
+      "created_at": "2026-09-09T12:54:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r027",
+      "thread_id": "seed-112",
+      "author_id": "seed-latveria",
+      "body": "Strange agreeing with Doom for even five minutes would make the team distrust him instantly.",
+      "spoiler": false,
+      "created_at": "2026-09-09T13:03:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r028",
+      "thread_id": "seed-112",
+      "author_id": "seed-sorcerer",
+      "body": "Especially if Doom's diagnosis is completely accurate.",
+      "spoiler": false,
+      "created_at": "2026-09-09T14:12:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r029",
+      "thread_id": "seed-113",
+      "author_id": "seed-richards",
+      "body": "I prefer this because Franklin becomes an active piece of the solution instead of a plot coupon.",
+      "spoiler": true,
+      "created_at": "2026-09-09T15:21:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r030",
+      "thread_id": "seed-113",
+      "author_id": "seed-future",
+      "body": "Same. Doom can care about preserving him AND exploit him.",
+      "spoiler": true,
+      "created_at": "2026-09-09T16:30:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r031",
+      "thread_id": "seed-114",
+      "author_id": "seed-rafter",
+      "body": "The wording was so broad it felt like sequel bait. Now the target is obvious.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:39:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r032",
+      "thread_id": "seed-115",
+      "author_id": "seed-doombot",
+      "body": "Production evidence > reposted anonymous synopsis. Always.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:48:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r033",
+      "thread_id": "seed-115",
+      "author_id": "seed-incursion",
+      "body": "A location call sheet saying something like 'Battleworld' would break the internet.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:57:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r034",
+      "thread_id": "seed-116",
+      "author_id": "seed-838",
+      "body": "This is why I want at least one full sequence from another universe's perspective.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:06:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r035",
+      "thread_id": "seed-116",
+      "author_id": "seed-616",
+      "body": "616 has absolutely not been behaving responsibly with the multiverse lol.",
+      "spoiler": false,
+      "created_at": "2026-09-09T13:15:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r036",
+      "thread_id": "seed-117",
+      "author_id": "seed-yggdrasil",
+      "body": "The visual transition from Loki's tree to the Void to Battleworld could actually be really clean.",
+      "spoiler": false,
+      "created_at": "2026-09-09T14:24:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r037",
+      "thread_id": "seed-118",
+      "author_id": "seed-anchor",
+      "body": "Yeah I like it as a Deadpool rule more than a universal law.",
+      "spoiler": false,
+      "created_at": "2026-09-09T15:33:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r038",
+      "thread_id": "seed-118",
+      "author_id": "seed-incursion",
+      "body": "Incursions already give them enough rules. No need to overcomplicate it.",
+      "spoiler": false,
+      "created_at": "2026-09-09T16:42:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r039",
+      "thread_id": "seed-119",
+      "author_id": "seed-baxter",
+      "body": "Exactly. This is why I rank it above basically every scooper claim.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:51:00Z",
+      "votes": 8
+    },
+    {
+      "id": "seed-r040",
+      "thread_id": "seed-119",
+      "author_id": "seed-616",
+      "body": "An actual movie scene beats twenty 'trusted source says' posts.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:00:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r041",
+      "thread_id": "seed-120",
+      "author_id": "seed-doomscroll",
+      "body": "If the mask comes on right before the throne reveal I will lose it.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:09:00Z",
+      "votes": 11
+    },
+    {
+      "id": "seed-r042",
+      "thread_id": "seed-120",
+      "author_id": "seed-goddoom",
+      "body": "No joke that can be the last image. Just commit.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:18:00Z",
+      "votes": 8
+    },
+    {
+      "id": "seed-r043",
+      "thread_id": "seed-121",
+      "author_id": "seed-mutant",
+      "body": "Cyclops 100%. Give him the impossible leadership decision.",
+      "spoiler": false,
+      "created_at": "2026-09-09T13:27:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r044",
+      "thread_id": "seed-121",
+      "author_id": "seed-838",
+      "body": "And let Xavier disagree without undermining him.",
+      "spoiler": false,
+      "created_at": "2026-09-09T14:36:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r045",
+      "thread_id": "seed-122",
+      "author_id": "seed-latveria",
+      "body": "Doom winning because everyone else is fighting is more interesting than him just being stronger.",
+      "spoiler": true,
+      "created_at": "2026-09-09T15:45:00Z",
+      "votes": 6
+    },
+    {
+      "id": "seed-r046",
+      "thread_id": "seed-122",
+      "author_id": "seed-incursion",
+      "body": "Also very Hickman. The problem gets worse because nobody can cooperate fast enough.",
+      "spoiler": true,
+      "created_at": "2026-09-09T16:54:00Z",
+      "votes": 5
+    },
+    {
+      "id": "seed-r047",
+      "thread_id": "seed-123",
+      "author_id": "seed-sorcerer",
+      "body": "Strange remembering is almost mandatory if they borrow his 2015 role.",
+      "spoiler": false,
+      "created_at": "2026-09-09T17:03:00Z",
+      "votes": 7
+    },
+    {
+      "id": "seed-r048",
+      "thread_id": "seed-123",
+      "author_id": "seed-yggdrasil",
+      "body": "Loki remembering would make sense too because he is outside the normal timeline structure.",
+      "spoiler": false,
+      "created_at": "2026-09-09T10:12:00Z",
+      "votes": 4
+    },
+    {
+      "id": "seed-r049",
+      "thread_id": "seed-123",
+      "author_id": "seed-webhead",
+      "body": "Let Peter NOT remember at first. That would hurt more.",
+      "spoiler": false,
+      "created_at": "2026-09-09T11:21:00Z",
+      "votes": 3
+    },
+    {
+      "id": "seed-r050",
+      "thread_id": "seed-124",
+      "author_id": "seed-doombot",
+      "body": "That is the idea. Confidence is a living score, not a trophy.",
+      "spoiler": false,
+      "created_at": "2026-09-09T12:30:00Z",
+      "votes": 5
+    }
+  ]
+}

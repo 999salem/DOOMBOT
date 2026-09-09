@@ -1,0 +1,33 @@
+DOOMBOT V18.4 // CUMULATIVE UPDATE FROM ORIGINAL V18
+
+You said the LIVE SITE is still on the original V18.
+This patch includes EVERYTHING from:
+- V18.1 account upgrade hotfix
+- V18.2 populated War Room
+- V18.3 background/surface blending
+- V18.4 expanded fictional founding archive + real seed conversations
+
+Upload ALL of these:
+- warroom.html
+- account.html
+- sw.js
+- assets/v18-community.css
+- assets/v18-warroom.js
+- assets/v18-account.js
+- data/warroom-seed.json
+
+No new Supabase SQL is required if the original V18 SQL already ran.
+
+Supabase still needs:
+- Anonymous sign-ins ON
+- Email provider ON
+- Allow manual linking ON
+- Redirect URL: https://999salem.github.io/DOOMBOT/account.html
+
+Founding archive:
+- 18 fictional seed accounts
+- 24 fictional starter threads
+- 50+ fictional replies
+- every seed identity/conversation is labeled ARCHIVE SEED
+- seed content gradually phases out as real members create threads
+- 24+ real threads = fully real feed

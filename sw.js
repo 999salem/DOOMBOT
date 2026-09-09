@@ -1,4 +1,4 @@
-const CACHE='doombot-v18-war-room-1';
+const CACHE='doombot-v18-4-cumulative-community';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
   './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
@@ -79,3 +79,5 @@ const DOOMBOT_V18_SHELL=[
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(DOOMBOT_V18_SHELL).catch(()=>{})));
 });
+
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.add('./data/warroom-seed.json').catch(()=>{}))));
