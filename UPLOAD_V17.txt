@@ -1,0 +1,7 @@
+DOOMBOT V17
+
+Upload everything inside this folder to the ROOT of your current DOOMBOT GitHub repo. Let GitHub merge folders and replace matching files. Do not delete the repo first.
+
+New pages: plot.html and credits.html
+
+Test: https://999salem.github.io/DOOMBOT/?v=17

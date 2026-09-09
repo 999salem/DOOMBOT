@@ -1032,13 +1032,7 @@ window.addEventListener('beforeinstallprompt',function(e){
         <span class="chip">S.A.L.E.M. ONLINE</span>
       </div>
     </header>
-    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a>
-<a class="" href="./intel.html">INTEL</a>
-<a class="" href="./leaks.html">LEAKS</a>
-<a class="active" href="./theories.html">THEORIES</a>
-<a class="" href="./analyst.html">ANALYST</a>
-<a class="" href="./index.html#evidence">MAP</a>
-<a class="" href="./about.html">ABOUT</a><a class="" href="./settings.html">SETTINGS</a></nav>
+    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="active" href="./theories.html">THEORIES</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main">
       <section class="v12-page-hero">
       <a class="back-command" href="./index.html">← COMMAND CENTER</a>
@@ -1053,13 +1047,14 @@ window.addEventListener('beforeinstallprompt',function(e){
         </p>
 
 
+        <div class="theory-create-row js-only"><div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButton" type="button">＋ ADD THEORY</button></div>
         <div class="toolbar2">
           <div class="filter-row">
             <button class="filter2 active theory-filter" data-theory-filter="all" type="button">ALL FILES</button>
             <button class="filter2 theory-filter" data-theory-filter="core" type="button">ORIGINALS</button>
             <button class="filter2 theory-filter" data-theory-filter="remix" type="button">REMIXES</button>
             <button class="filter2 theory-filter" data-theory-filter="locked" type="button">LOCKED PICKS</button>
-            <button class="filter2 theory-filter" data-theory-filter="favorites" type="button">★ FAVORITES</button>
+            <button class="filter2 theory-filter" data-theory-filter="favorites" type="button">★ FAVORITES</button><button class="filter2 theory-filter" data-theory-filter="custom" type="button">MY ADDED</button>
           </div>
           <input class="search2" id="theorySearch" placeholder="Search Stark, Loki, Battleworld, Franklin...">
         </div>
@@ -1255,7 +1250,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 14</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 17</span>
     </footer>
   </div>
 </div>
@@ -1316,7 +1311,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   read().forEach(t=>grid.insertAdjacentHTML('beforeend',renderCard(t)));
 
   // Add MY ADDED filter before the app binds filter listeners.
-  const filters=$('.theory-toolbar .filter-row')||$('.theory-toolbar');
+  const filters=$('.toolbar2 .filter-row')||$('.toolbar2');
   if(filters&&!$('[data-theory-filter="custom"]')){
     const b=document.createElement('button');
     b.className='filter2 theory-filter';b.type='button';b.dataset.theoryFilter='custom';b.textContent='MY ADDED';
@@ -1324,10 +1319,10 @@ window.addEventListener('beforeinstallprompt',function(e){
   }
 
   // Creator strip
-  const toolbar=$('.theory-toolbar');
-  if(toolbar&&!$('#addTheoryButton')){
+  const toolbar=$('.toolbar2');
+  if(false&&toolbar&&!$('#addTheoryButton')){
     const row=document.createElement('div');row.className='theory-create-row js-only';
-    row.innerHTML='<div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButton" type="button">＋ ADD THEORY</button>';
+    row.innerHTML='<div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButtonLegacy" type="button">＋ ADD THEORY</button>';
     toolbar.parentNode.insertBefore(row,toolbar);
   }
 

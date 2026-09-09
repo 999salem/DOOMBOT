@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updated": "2026-09-08",
+  "version": 3,
+  "updated": "2026-09-09",
   "items": [
     {
       "id": "ship-control-room",
@@ -376,6 +376,81 @@
       "alt": "",
       "description": "A later higher-quality Sentinel-footage thread that helped reinforce the earlier X-Mansion set-photo interpretation.",
       "cache_path": ""
+    },
+    {
+      "id": "sentinel-clearer-june",
+      "title": "Clearer Sentinel / X-Mansion set batch",
+      "kind": "production",
+      "label": "SET PHOTO",
+      "confidence": 90,
+      "status": "SET PHOTO / REPORTING",
+      "date": "2026-06-28",
+      "image_url": "https://maxblizz.com/wp-content/uploads/2025/05/Avengers-Doomsdaydd.jpg",
+      "source_url": "https://maxblizz.com/new-avengers-doomsday-set-photos-reveal-sentinels-from-last-years-filming/",
+      "source_name": "Maxblizz",
+      "alt": "Avengers Doomsday Sentinel set image",
+      "description": "A later published batch gives another look at the Sentinel/X-Mansion filming material. The visual set material is stronger than the article’s added story interpretation.",
+      "cache_path": "assets/images/leaks/sentinel-clearer-june.jpg"
+    },
+    {
+      "id": "greenwich-production-a",
+      "title": "Greenwich period shoot — production street",
+      "kind": "production",
+      "label": "PRODUCTION PHOTO",
+      "confidence": 98,
+      "status": "PRODUCTION CONFIRMED",
+      "date": "2026-01-12",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/JMSzn2PfyEYeqGZZBJA3FL.jpg",
+      "source_url": "https://www.shortlist.com/entertainment/avengers-doomsday-filming-in-south-londons-greenwich-lets-all-speculate-wildly",
+      "source_name": "Shortlist / Gerald Lynch",
+      "alt": "Avengers Doomsday production filming in Greenwich",
+      "description": "Shortlist photographed the Greenwich period shoot, including crew and practical street dressing. This is production evidence rather than a story leak.",
+      "cache_path": "assets/images/leaks/greenwich-production-a.jpg"
+    },
+    {
+      "id": "multi-shot-august",
+      "title": "August multi-shot leak chain",
+      "kind": "social",
+      "label": "LEAK CHAIN",
+      "confidence": 58,
+      "status": "LOW-RES / UNVERIFIED",
+      "date": "2026-08-20",
+      "image_url": "https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com%2Fr%2FMarvelStudiosSpoilers%2Fcomments%2F1vt6iqd%2Fmultiple_shots_of_doomsday_have_leaked%2F&screenshot=true&embed=screenshot.url",
+      "source_url": "https://www.reddit.com/r/MarvelStudiosSpoilers/comments/1vt6iqd/multiple_shots_of_doomsday_have_leaked/",
+      "source_name": "r/MarvelStudiosSpoilers",
+      "alt": "Screenshot of Avengers Doomsday multiple leaked shots thread",
+      "description": "A major August leak chain claiming images of Spider-Man/Wolverine, Loki/TVA and other scenes. The individual images remain low-resolution and require separate authenticity checks.",
+      "cache_path": "assets/images/leaks/multi-shot-august.jpg"
+    },
+    {
+      "id": "potential-images-july",
+      "title": "July potential-image batch",
+      "kind": "social",
+      "label": "LEAKED IMAGES",
+      "confidence": 52,
+      "status": "AI-ENHANCEMENT CONCERN",
+      "date": "2026-07-20",
+      "image_url": "https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLeaksAndRumors%2Fcomments%2F1v20d6u%2Fpotencial_images_for_avengers_doomsday%2F&screenshot=true&embed=screenshot.url",
+      "source_url": "https://www.reddit.com/r/LeaksAndRumors/comments/1v20d6u/potencial_images_for_avengers_doomsday/",
+      "source_name": "r/LeaksAndRumors",
+      "alt": "Screenshot of potential Avengers Doomsday images thread",
+      "description": "A high-engagement image batch whose own thread warns that enhancement may have been used. DOOMBOT keeps enhancement and underlying authenticity as separate questions.",
+      "cache_path": "assets/images/leaks/potential-images-july.jpg"
+    },
+    {
+      "id": "full-set-sentinel-may",
+      "title": "Full X-Mansion / destroyed Sentinel set view",
+      "kind": "production",
+      "label": "SET PHOTO",
+      "confidence": 92,
+      "status": "SET PHOTO / MULTIPLE REPORTS",
+      "date": "2025-05-23",
+      "image_url": "https://maxblizz.com/wp-content/uploads/2025/05/Avengers-Doomsdaydd.jpg",
+      "source_url": "https://maxblizz.com/leaked-first-full-look-at-the-set-of-marvels-avengers-doomsday/",
+      "source_name": "Maxblizz / UnBoxPHD source trail",
+      "alt": "Avengers Doomsday destroyed Sentinel set photo",
+      "description": "A wider source trail for the practical Sentinel/X-Mansion set material circulated during principal photography.",
+      "cache_path": "assets/images/leaks/full-set-sentinel-may.jpg"
     }
   ]
 }

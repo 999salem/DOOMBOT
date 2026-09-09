@@ -1,7 +1,7 @@
-const CACHE='doombot-v14-2-repair';
+const CACHE='doombot-v17-1';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
-  './analyst.html','./about.html','./settings.html','./offline.html',
+  './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
   './manifest.webmanifest',
   './assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/salem-mark.svg',
   './data/live-intel.json','./data/leak-images.json'
