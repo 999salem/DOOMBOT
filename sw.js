@@ -1,17 +1,34 @@
-const CACHE='doombot-v18-6-2-natural-feed-navfix';
+const CACHE='doombot-v18-6-3-hard-repair';
+
 const CORE=[
-  './','./index.html','./intel.html','./leaks.html','./theories.html',
-  './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
+  './',
+  './index.html',
+  './leaks.html',
+  './warroom.html',
+  './theories.html',
+  './account.html',
+  './offline.html',
   './manifest.webmanifest',
-  './icon-192.png','./icon-512.png','./salem-mark.svg',
-  './live-intel.json','./leak-images.json'
+  './v18-community.css',
+  './v18-common.js',
+  './v18-warroom.js',
+  './v18-account.js',
+  './v18-theory-share.js',
+  './warroom-seed.json',
+  './icon-192.png',
+  './icon-512.png',
+  './salem-mark.svg'
 ];
 
 self.addEventListener('install',event=>{
   event.waitUntil(
-    caches.open(CACHE).then(async cache=>{
-      for(const url of CORE){try{await cache.add(url)}catch(e){}}
-    }).then(()=>self.skipWaiting())
+    caches.open(CACHE)
+      .then(async cache=>{
+        for(const url of CORE){
+          try{await cache.add(new Request(url,{cache:'reload'}));}catch(e){}
+        }
+      })
+      .then(()=>self.skipWaiting())
   );
 });
 
@@ -25,59 +42,44 @@ self.addEventListener('activate',event=>{
 
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
+
   const url=new URL(event.request.url);
   if(url.origin!==self.location.origin)return;
 
-  if(event.request.mode==='navigate'){
+  const changingAsset =
+    event.request.mode==='navigate' ||
+    /\.(?:html|css|js|json)$/.test(url.pathname);
+
+  if(changingAsset){
     event.respondWith(
       fetch(event.request,{cache:'no-store'})
-        .then(res=>{
-          const copy=res.clone();
-          caches.open(CACHE).then(c=>c.put(event.request,copy)).catch(()=>{});
-          return res;
+        .then(response=>{
+          if(response && response.ok){
+            const copy=response.clone();
+            caches.open(CACHE).then(cache=>cache.put(event.request,copy)).catch(()=>{});
+          }
+          return response;
         })
-        .catch(async()=>
-          (await caches.match(event.request)) ||
-          (await caches.match('./index.html')) ||
-          (await caches.match('./offline.html'))
-        )
-    );
-    return;
-  }
-
-  // Timestamped live-data requests should always try network first.
-  if(url.pathname.endsWith('/data/live-intel.json') || url.pathname.endsWith('/data/leak-images.json')){
-    event.respondWith(
-      fetch(event.request,{cache:'no-store'}).then(res=>{
-        const clean=new Request(url.origin+url.pathname);
-        const copy=res.clone();
-        caches.open(CACHE).then(c=>c.put(clean,copy)).catch(()=>{});
-        return res;
-      }).catch(()=>caches.match(new Request(url.origin+url.pathname)))
+        .catch(async()=>{
+          return (await caches.match(event.request,{ignoreSearch:true})) ||
+                 (event.request.mode==='navigate'
+                   ? (await caches.match('./offline.html')) || (await caches.match('./index.html'))
+                   : Response.error());
+        })
     );
     return;
   }
 
   event.respondWith(
     caches.match(event.request).then(cached=>{
-      const fresh=fetch(event.request).then(res=>{
-        const copy=res.clone();
-        caches.open(CACHE).then(c=>c.put(event.request,copy)).catch(()=>{});
-        return res;
-      }).catch(()=>cached);
-      return cached||fresh;
+      if(cached)return cached;
+      return fetch(event.request).then(response=>{
+        if(response && response.ok){
+          const copy=response.clone();
+          caches.open(CACHE).then(cache=>cache.put(event.request,copy)).catch(()=>{});
+        }
+        return response;
+      });
     })
   );
 });
-
-
-const DOOMBOT_V18_SHELL=[
-  './warroom.html','./account.html','./profile.html',
-  './v18-community.css','./v18-common.js','./v18-account.js',
-  './v18-warroom.js','./v18-profile.js','./v18-theory-share.js'
-];
-self.addEventListener('install',event=>{
-  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(DOOMBOT_V18_SHELL).catch(()=>{})));
-});
-
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.add('./warroom-seed.json').catch(()=>{}))));

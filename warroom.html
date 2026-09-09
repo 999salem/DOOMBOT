@@ -965,7 +965,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
-<link rel="stylesheet" href="./v18-community.css">
+<link rel="stylesheet" href="./v18-community.css?v=18.6.3">
 
 <style id="doombot-v18-6-1-nav-hotfix">
 /* DOOMBOT V18.6.1 // HARD-PINNED BOTTOM NAV */
@@ -1053,7 +1053,7 @@ body{padding-bottom:calc(86px + env(safe-area-inset-bottom))!important}
   <header class="wr-top">
     <div>
       <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">DOOMBOT V18.2 // COMMUNITY INTELLIGENCE</div>
+      <div class="eyebrow">DOOMBOT V18.6.3 // COMMUNITY INTELLIGENCE</div>
       <h1>WAR ROOM</h1>
       <p>Leaks, theories and spoiler discussion in one live intelligence feed.</p>
     </div>
@@ -1172,7 +1172,7 @@ body{padding-bottom:calc(86px + env(safe-area-inset-bottom))!important}
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 18.6.2.2.1</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 18.6.3</span>
     </footer>
   </div>
 </div>
@@ -1963,7 +1963,32 @@ body{padding-bottom:calc(86px + env(safe-area-inset-bottom))!important}
 })();
 </script>
 
-<script src="./v18-common.js"></script>
-<script src="./v18-warroom.js"></script>
+<script src="./v18-common.js?v=18.6.3"></script>
+<script src="./v18-warroom.js?v=18.6.3"></script>
+
+<script id="doombot-v18-6-3-nav-runtime">
+(function(){
+  function hardPinBottomNav(){
+    var nav=document.querySelector('.bottom-nav');
+    if(!nav)return;
+    if(nav.parentElement!==document.body)document.body.appendChild(nav);
+    nav.style.setProperty('position','fixed','important');
+    nav.style.setProperty('left','8px','important');
+    nav.style.setProperty('right','8px','important');
+    nav.style.setProperty('bottom','calc(8px + env(safe-area-inset-bottom))','important');
+    nav.style.setProperty('z-index','2147483000','important');
+    nav.style.setProperty('display','grid','important');
+    document.body.style.setProperty('padding-bottom','calc(86px + env(safe-area-inset-bottom))','important');
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',hardPinBottomNav,{once:true});
+  }else{
+    hardPinBottomNav();
+  }
+  window.addEventListener('pageshow',hardPinBottomNav);
+  window.addEventListener('orientationchange',function(){setTimeout(hardPinBottomNav,50)});
+})();
+</script>
+
 </body>
 </html>
