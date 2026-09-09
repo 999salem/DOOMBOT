@@ -966,6 +966,69 @@ window.addEventListener('beforeinstallprompt',function(e){
 </script>
 
 <link rel="stylesheet" href="./v18-community.css">
+
+<style id="doombot-v18-6-1-nav-hotfix">
+/* DOOMBOT V18.6.1 // HARD-PINNED BOTTOM NAV */
+html,body{min-height:100%}
+body{padding-bottom:calc(86px + env(safe-area-inset-bottom))!important}
+.bottom-nav{
+  display:grid!important;
+  position:fixed!important;
+  left:8px!important;
+  right:8px!important;
+  bottom:calc(8px + env(safe-area-inset-bottom))!important;
+  width:auto!important;
+  max-width:none!important;
+  margin:0!important;
+  z-index:2147483000!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:3px!important;
+  padding:5px!important;
+  border:1px solid rgba(91,125,99,.30)!important;
+  border-radius:15px!important;
+  background:rgba(5,10,7,.97)!important;
+  -webkit-backdrop-filter:blur(22px)!important;
+  backdrop-filter:blur(22px)!important;
+  box-shadow:0 12px 42px rgba(0,0,0,.62)!important;
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  isolation:isolate!important;
+}
+.bottom-nav a{
+  display:grid!important;
+  place-items:center!important;
+  align-content:center!important;
+  min-width:0!important;
+  min-height:49px!important;
+  gap:2px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  color:#66796c!important;
+  text-decoration:none!important;
+}
+.bottom-nav a b{font-size:16px!important;line-height:1!important}
+.bottom-nav a span{
+  display:block!important;
+  font-size:6px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:.055em!important;
+  white-space:nowrap!important
+}
+.bottom-nav a.active{
+  background:rgba(38,74,45,.34)!important;
+  box-shadow:inset 0 0 0 1px rgba(104,166,113,.18)!important;
+  color:#8fd798!important
+}
+@media(max-width:380px){
+  .bottom-nav{left:5px!important;right:5px!important;padding:4px!important;gap:2px!important}
+  .bottom-nav a{min-height:47px!important}
+  .bottom-nav a b{font-size:15px!important}
+  .bottom-nav a span{font-size:5.5px!important}
+}
+</style>
+
 </head><body class="v12-page v13-page about-page">
 <div class="wrap">
   <div class="shell">
@@ -1115,7 +1178,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 18.6</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 18.6.1</span>
     </footer>
   </div>
 </div>

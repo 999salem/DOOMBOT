@@ -1,0 +1,25 @@
+DOOMBOT V18.6.1 // HARD-PINNED NAV HOTFIX
+
+I checked the live GitHub repo before making this patch.
+HOME / LEAKS / THEORIES had updated, but WAR ROOM and ACCOUNT were still old,
+and sw.js was still V18.4.
+
+Upload EVERY file in this ZIP directly into the ROOT of the DOOMBOT repo.
+
+IMPORTANT:
+- replace warroom.html
+- replace account.html
+- replace sw.js
+- replace the other matching files too
+
+The fixed nav CSS is now embedded directly inside:
+- index.html
+- leaks.html
+- warroom.html
+- theories.html
+- account.html
+
+That means the bottom nav stays fixed even if v18-community.css fails to load.
+
+After GitHub deploys, test:
+https://999salem.github.io/DOOMBOT/warroom.html?v=18.6.1

@@ -1,4 +1,4 @@
-const CACHE='doombot-v18-6-persistent-bottom-nav';
+const CACHE='doombot-v18-6-1-hard-pinned-nav';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
   './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
