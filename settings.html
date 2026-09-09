@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="DOOMBOT">
-<meta name="description" content="DOOMBOT Avengers: Doomsday leak image database.">
-<title>DOOMBOT // Leak Database</title>
+<meta name="description" content="DOOMBOT app settings.">
+<title>DOOMBOT // Settings</title>
 <link rel="icon" href="./assets/icons/salem-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -823,7 +823,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
-</head><body class="v12-page v13-page leaks-page">
+</head><body class="v12-page v13-page settings-page">
 <div class="wrap">
   <div class="shell">
     <div class="topline"></div>
@@ -843,408 +843,82 @@ window.addEventListener('beforeinstallprompt',function(e){
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a>
 <a class="" href="./intel.html">INTEL</a>
-<a class="active" href="./leaks.html">LEAKS</a>
+<a class="" href="./leaks.html">LEAKS</a>
 <a class="" href="./theories.html">THEORIES</a>
 <a class="" href="./analyst.html">ANALYST</a>
 <a class="" href="./index.html#evidence">MAP</a>
-<a class="" href="./about.html">ABOUT</a><a class="" href="./settings.html">SETTINGS</a></nav>
-    <main class="main">
-      <section class="v12-page-hero">
-      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">VISUAL ARCHIVE // SOURCE TRAILS ATTACHED</div>
-      <h1>Leak Database</h1>
-      <p>Set photos, production images, concepts and social leak chains — searchable and confidence graded.</p>
-    </section><section class="section" id="leak-gallery">
-        <div class="section-title"><span>VISUAL LEAK DATABASE // 25 FILES</span></div>
-        <p class="section-intro">A searchable archive of set photos, social images, early concept art, production clues, official comparison frames and source-only leak threads. Every file keeps its source trail and confidence grade.</p>
+<a class="active" href="./about.html">ABOUT</a><a class="active" href="./settings.html">SETTINGS</a></nav>
+    
+<main class="main">
+  <section class="v12-page-hero">
+    <a class="back-command" href="./index.html">← COMMAND CENTER</a>
+    <div class="eyebrow">DOOMBOT // APP CONTROL</div>
+    <h1>Settings</h1>
+    <p>Personalize how DOOMBOT behaves on this device. Nothing here changes 999SALEM's master archive for anybody else.</p>
+  </section>
 
-        <div class="warning">
-          <b>LEAK ≠ FACT.</b> Some 2026 image batches are low-resolution or have AI-manipulation concerns. S.A.L.E.M. keeps those files visible but downgrades them instead of silently treating them as real.
-        </div>
+  <section class="section">
+    <div class="section-title"><span>APP EXPERIENCE</span></div>
+    <div class="settings-grid">
+      <div class="settings-panel">
+        <h3>Interface</h3>
+        <p>These preferences stay on your device.</p>
 
-        <div class="database-stats">
-          <div><span>TOTAL FILES</span><b>25</b></div>
-          <div><span>IMAGE RECORDS</span><b>20</b></div>
-          <div><span>SOURCE-ONLY THREADS</span><b>5</b></div>
-          <div><span>IMAGE MODE</span><b id="imageMode">CACHE + FALLBACK</b></div>
-        </div>
+        <label class="setting-row">
+          <span class="setting-copy"><b>Reduce Motion</b><span>Minimizes page fades, scanning effects and animated UI.</span></span>
+          <span class="switch"><input type="checkbox" data-setting="reduceMotion"><i></i></span>
+        </label>
 
-        <div class="toolbar2">
-          <div class="filter-row">
-            <button class="filter2 active leak-filter" data-leak-filter="all" type="button">ALL FILES</button>
-            <button class="filter2 leak-filter" data-leak-filter="set" type="button">SET PHOTOS</button>
-            <button class="filter2 leak-filter" data-leak-filter="concept" type="button">CONCEPT / COSTUME</button>
-            <button class="filter2 leak-filter" data-leak-filter="social" type="button">X / REDDIT</button>
-            <button class="filter2 leak-filter" data-leak-filter="production" type="button">PRODUCTION</button>
-            <button class="filter2 leak-filter" data-leak-filter="official" type="button">OFFICIAL COMPARE</button>
-            <button class="filter2 leak-filter" data-leak-filter="favorites" type="button">★ FAVORITES</button>
-          </div>
-          <input class="search2" id="leakSearch" placeholder="Search Sentinel, Doom, Tobey, Loki, Battleworld, costumes...">
-        </div>
-        <div class="db-sort-row js-only">
-          <span id="leakVisibleCount">25 FILES VISIBLE</span>
-          <div class="filter-row">
-            <button class="filter2 active leak-sort" data-leak-sort="default" type="button">ARCHIVE ORDER</button>
-            <button class="filter2 leak-sort" data-leak-sort="confidence" type="button">HIGHEST CONFIDENCE</button>
-          </div>
-        </div>
+        <label class="setting-row">
+          <span class="setting-copy"><b>Compact Leak Cards</b><span>Fits more files on screen and hides long descriptions.</span></span>
+          <span class="switch"><input type="checkbox" data-setting="compactLeaks"><i></i></span>
+        </label>
 
-        <div class="gallery gallery-database" id="leakGallery">
-<article class="leak-card database-card" data-leak-type="set" data-confidence="90" data-id="ship-control-room" data-order="0">
-          <a class="leak-img db-image" href="https://kawerna.pl/news-avengers-doomsday-wycieklo-pierwsze-zdjecie-z-planu-jest-thing-falcon-u-s-agent-i-stopa-shuri/" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fkawerna.s3.waw.io.cloud.ovh.net%2F2025%2F07%2FGvWN4y0WgAA-0k6.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://kawerna.s3.waw.io.cloud.ovh.net/2025/07/GvWN4y0WgAA-0k6.jpg" data-fallback-stage="1" alt="Avengers Doomsday blue-screen interior set with performers and curved control console" loading="lazy" decoding="async">
-              <span class="overlay-tag green">SET PHOTO</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-07</span><span class="db-confidence green">90%</span></div>
-            <h3>Blue-screen ship / control-room set</h3>
-            <p>A practical futuristic interior with large blue-screen windows and a curved console. Useful evidence for a cross-team ship or control-room sequence.</p>
-            <div class="leak-meta"><span>CREDIBLE SET LEAK</span><span>Kawerna / circulating set image</span></div>
-            <a class="source-link" href="https://kawerna.pl/news-avengers-doomsday-wycieklo-pierwsze-zdjecie-z-planu-jest-thing-falcon-u-s-agent-i-stopa-shuri/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="set" data-confidence="94" data-id="sentinel-fallen" data-order="1">
-          <a class="leak-img db-image" href="https://maxblizz.com/marvels-avengers-doomsday-set-leak-reveals-fallen-sentinels-at-x-mansion/" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fmaxblizz.com%2Fwp-content%2Fuploads%2F2025%2F05%2FAvengers-Doomsdaydd.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://maxblizz.com/wp-content/uploads/2025/05/Avengers-Doomsdaydd.jpg" data-fallback-stage="1" alt="Large fallen Sentinel prop covered by blue tarp on Avengers Doomsday set" loading="lazy" decoding="async">
-              <span class="overlay-tag green">SET PHOTO</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-05-15</span><span class="db-confidence green">94%</span></div>
-            <h3>Fallen Sentinel practical set piece</h3>
-            <p>One of the clearest physical-production clues: a giant downed robot component photographed on the X-Mansion-like set.</p>
-            <div class="leak-meta"><span>HIGH-VALUE SET EVIDENCE</span><span>Maxblizz / UnBoxPHD mirror</span></div>
-            <a class="source-link" href="https://maxblizz.com/marvels-avengers-doomsday-set-leak-reveals-fallen-sentinels-at-x-mansion/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="45" data-id="doom-social-mask" data-order="2">
-          <a class="leak-img db-image" href="https://x.com/Culture3ase/status/1991247516931661865" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FG6JVEFNa8AAXvKw.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://pbs.twimg.com/media/G6JVEFNa8AAXvKw.jpg" data-fallback-stage="1" alt="Doctor Doom hooded mask image circulated on X" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">SOCIAL IMAGE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-11</span><span class="db-confidence purple">45%</span></div>
-            <h3>Doom design circulated on X</h3>
-            <p>A polished Doom image circulated through social channels. Kept in the archive as a visual claim, not promoted to official evidence.</p>
-            <div class="leak-meta"><span>VERIFY ORIGIN</span><span>Culture Base on X</span></div>
-            <a class="source-link" href="https://x.com/Culture3ase/status/1991247516931661865" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="set" data-confidence="64" data-id="outdoor-cast" data-order="3">
-          <a class="leak-img db-image" href="https://www.cbcyt.com/home/2025/4/12/avengers-doomsday-set-photo-shows-james-marsden-and-secret-actor-on-set" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F5b468551266c0757375ead0c%2F1744478776541-BV1AI71VODFPHN26VDFG%2FGoVl0o6WwAEOZie.png&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://images.squarespace-cdn.com/content/v1/5b468551266c0757375ead0c/1744478776541-BV1AI71VODFPHN26VDFG/GoVl0o6WwAEOZie.png" data-fallback-stage="1" alt="Outdoor Avengers Doomsday set image with performers" loading="lazy" decoding="async">
-              <span class="overlay-tag gold">SET IMAGE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-04</span><span class="db-confidence gold">64%</span></div>
-            <h3>Outdoor cast / costume set image</h3>
-            <p>A circulating outdoor production image. Useful as a costume/location clue, but identities and scene context should stay provisional.</p>
-            <div class="leak-meta"><span>LIMITED CONTEXT</span><span>CBCYT</span></div>
-            <a class="source-link" href="https://www.cbcyt.com/home/2025/4/12/avengers-doomsday-set-photo-shows-james-marsden-and-secret-actor-on-set" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="production" data-confidence="96" data-id="greenwich-crew" data-order="4">
-          <a class="leak-img db-image" href="https://www.shortlist.com/entertainment/avengers-doomsday-filming-in-south-londons-greenwich-lets-all-speculate-wildly" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FJMSzn2PfyEYeqGZZBJA3FL.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://cdn.mos.cms.futurecdn.net/JMSzn2PfyEYeqGZZBJA3FL.jpg" data-fallback-stage="1" alt="Avengers Doomsday crew jacket during Greenwich filming" loading="lazy" decoding="async">
-              <span class="overlay-tag green">PRODUCTION</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025</span><span class="db-confidence green">96%</span></div>
-            <h3>Doomsday crew jacket / Greenwich filming</h3>
-            <p>Production-branded crew imagery from the Greenwich location. Not a plot leak, but a strong filming-location anchor.</p>
-            <div class="leak-meta"><span>PRODUCTION CONFIRMED</span><span>Shortlist</span></div>
-            <a class="source-link" href="https://www.shortlist.com/entertainment/avengers-doomsday-filming-in-south-londons-greenwich-lets-all-speculate-wildly" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="production" data-confidence="92" data-id="greenwich-period" data-order="5">
-          <a class="leak-img db-image" href="https://www.shortlist.com/entertainment/avengers-doomsday-filming-in-south-londons-greenwich-lets-all-speculate-wildly" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FskKRszUdh4WdRnyDXig3JL.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://cdn.mos.cms.futurecdn.net/skKRszUdh4WdRnyDXig3JL.jpg" data-fallback-stage="1" alt="Period vehicles and Avengers Doomsday crew filming in Greenwich" loading="lazy" decoding="async">
-              <span class="overlay-tag green">PRODUCTION</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025</span><span class="db-confidence green">92%</span></div>
-            <h3>Greenwich period street set</h3>
-            <p>A wider production look showing period vehicles and crew. Helpful when judging rumors involving historical or alternate-era sequences.</p>
-            <div class="leak-meta"><span>LOCATION EVIDENCE</span><span>Shortlist</span></div>
-            <a class="source-link" href="https://www.shortlist.com/entertainment/avengers-doomsday-filming-in-south-londons-greenwich-lets-all-speculate-wildly" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="68" data-id="latverian-witches" data-order="6">
-          <a class="leak-img db-image" href="https://geektyrant.com/news/leaked-avengers-doomsday-images-reveal-look-at-latverian-witches-and-a-mystery-masked-character" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F51b3dc8ee4b051b96ceb10de%2F41219793-722a-47b1-ad06-0abfdfd1a01c%2FLeaked%252BAVENGERS-%252BDOOMSDAY%252BImages%252BReveal%252BLook%252Bat%252BLatverian%252BWitches%252Band%252Ba%252BMystery%252BMasked%252BCharacter.jpg%3Fformat%3D1000w&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/41219793-722a-47b1-ad06-0abfdfd1a01c/Leaked%2BAVENGERS-%2BDOOMSDAY%2BImages%2BReveal%2BLook%2Bat%2BLatverian%2BWitches%2Band%2Ba%2BMystery%2BMasked%2BCharacter.jpg?format=1000w" data-fallback-stage="1" alt="Leaked hooded masked Latverian costume designs" loading="lazy" decoding="async">
-              <span class="overlay-tag gold">COSTUME LEAK</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026</span><span class="db-confidence gold">68%</span></div>
-            <h3>Latverian witch / masked follower costumes</h3>
-            <p>Hooded metallic-mask costume images tied online to Doom and Latveria. Strong visual fit, but still kept below official/trade evidence.</p>
-            <div class="leak-meta"><span>UNVERIFIED COSTUME FILE</span><span>GeekTyrant</span></div>
-            <a class="source-link" href="https://geektyrant.com/news/leaked-avengers-doomsday-images-reveal-look-at-latverian-witches-and-a-mystery-masked-character" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="52" data-id="doom-throne-social" data-order="7">
-          <a class="leak-img db-image" href="https://x.com/Culture3ase/status/2005956741767295331" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FG9aXBMkXAAA-6hA.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://pbs.twimg.com/media/G9aXBMkXAAA-6hA.jpg" data-fallback-stage="1" alt="Doctor Doom seated on a throne in circulated concept image" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">CONCEPT / SOCIAL</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-12</span><span class="db-confidence purple">52%</span></div>
-            <h3>Doom throne concept image circulated on X</h3>
-            <p>A dramatic throne image circulated as Doomsday concept material. Stored as inspiration/evidence trail, not treated as a final-film still.</p>
-            <div class="leak-meta"><span>ATTRIBUTION UNCERTAIN</span><span>Culture Base on X</span></div>
-            <a class="source-link" href="https://x.com/Culture3ase/status/2005956741767295331" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="54" data-id="black-panther-concept" data-order="8">
-          <a class="leak-img db-image" href="https://universoheroico.ig.com.br/artes-vazadas-de-vingadores-doomsday/" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Funiversoheroico.ig.com.br%2Fwp-content%2Fuploads%2F2025%2F03%2FArtes-conceituais-de-Vingadores-Doomsday-6.jpeg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://universoheroico.ig.com.br/wp-content/uploads/2025/03/Artes-conceituais-de-Vingadores-Doomsday-6.jpeg" data-fallback-stage="1" alt="Leaked Marvel concept art with a Black Panther figure and monumental panther landscape" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">CONCEPT ART</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">54%</span></div>
-            <h3>Black Panther / monumental panther concept</h3>
-            <p>Part of the 2025 concept-art batch. Visually useful for Battleworld speculation, but the Russos later disputed the batch as art from their Avengers films.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>Universo Heroico / concept-art batch</span></div>
-            <a class="source-link" href="https://universoheroico.ig.com.br/artes-vazadas-de-vingadores-doomsday/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="54" data-id="hulk-village" data-order="9">
-          <a class="leak-img db-image" href="https://x.com/AgentAAA4/status/1895832839230546373" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FGk9Zh4yWkAACe1E%3Fformat%3Djpg%26name%3D4096x4096&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://pbs.twimg.com/media/Gk9Zh4yWkAACe1E?format=jpg&amp;name=4096x4096" data-fallback-stage="1" alt="Leaked concept art showing Hulk and She-Hulk in a medieval village" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">CONCEPT ART</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">54%</span></div>
-            <h3>Hulk Village medieval concept</h3>
-            <p>The Hulk Village image became a major Battleworld clue. Kept as early-development art rather than proof of the current movie plot.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>MarvelNEWS on X / concept-art batch</span></div>
-            <a class="source-link" href="https://x.com/AgentAAA4/status/1895832839230546373" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="54" data-id="vision-starlord" data-order="10">
-          <a class="leak-img db-image" href="https://comicbook.com/tv-shows/news/marvel-avengers-doomsday-concept-art-star-lord-vision-tv-show/" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fcomicbook.com%2Fwp-content%2Fuploads%2Fsites%2F4%2F2025%2F03%2FAvengers-Doomsday-concept-art-showing-White-Vision-and-Star-Lord.jpg%3Fresize%3D425&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://comicbook.com/wp-content/uploads/sites/4/2025/03/Avengers-Doomsday-concept-art-showing-White-Vision-and-Star-Lord.jpg?resize=425" data-fallback-stage="1" alt="Leaked concept art showing White Vision and Star-Lord on a couch" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">CONCEPT ART</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">54%</span></div>
-            <h3>White Vision + Star-Lord concept</h3>
-            <p>An unusual pairing from the early concept-art batch. Useful for tracking discarded or evolving story ideas.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>ComicBook / concept-art batch</span></div>
-            <a class="source-link" href="https://comicbook.com/tv-shows/news/marvel-avengers-doomsday-concept-art-star-lord-vision-tv-show/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="25" data-id="alleged-doom-fullbody" data-order="11">
-          <a class="leak-img db-image" href="https://www.radiok1.com/post/as%C3%AD-se-ver%C3%ADa-oficialmente-robert-downey-jr-como-dr-doom-para-avengers-doomsday" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2Fd19936_8da1ded5cae64d18a36db89aed513c77~mv2.png%2Fv1%2Ffill%2Fw_980%252Ch_984%252Cal_c%252Cq_90%252Cusm_0.66_1.00_0.01%252Cenc_avif%252Cquality_auto%2Fd19936_8da1ded5cae64d18a36db89aed513c77~mv2.png&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://static.wixstatic.com/media/d19936_8da1ded5cae64d18a36db89aed513c77~mv2.png/v1/fill/w_980%2Ch_984%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/d19936_8da1ded5cae64d18a36db89aed513c77~mv2.png" data-fallback-stage="1" alt="Alleged Robert Downey Jr Doctor Doom full body render" loading="lazy" decoding="async">
-              <span class="overlay-tag red">ALLEGED IMAGE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026</span><span class="db-confidence red">25%</span></div>
-            <h3>Alleged full-body RDJ Doom render</h3>
-            <p>Included specifically because it circulated as a leak. S.A.L.E.M. flags it as high-risk until provenance is established.</p>
-            <div class="leak-meta"><span>HIGH MANIPULATION RISK</span><span>Radio K1 / circulating render</span></div>
-            <a class="source-link" href="https://www.radiok1.com/post/as%C3%AD-se-ver%C3%ADa-oficialmente-robert-downey-jr-como-dr-doom-para-avengers-doomsday" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-01" data-order="12">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F1%2F13394300.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/1/13394300.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file one" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 01</h3>
-            <p>One of several mirrors preserving the deleted 2025 Marvel concept-art batch. Exact final-film relevance is uncertain.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-02" data-order="13">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F0%2F02033518.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/0/02033518.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file two" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 02</h3>
-            <p>Preserved mirror from the early concept-art leak. Stored for comparison against later official imagery.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-03" data-order="14">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F7%2F79910be6.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/7/79910be6.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file three" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 03</h3>
-            <p>Preserved mirror from the deleted concept-art batch, maintained as an early-development reference.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-04" data-order="15">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F6%2F662d7075.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/6/662d7075.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file four" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 04</h3>
-            <p>Preserved mirror from the deleted concept-art batch. Treat as design exploration, not a scene confirmation.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-05" data-order="16">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F5%2F5d4bc930.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/5/5d4bc930.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file five" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 05</h3>
-            <p>Another preserved image from the early concept-art batch, useful for checking whether old ideas resurface later.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-06" data-order="17">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2Fc%2Fc4718482.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/c/c4718482.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file six" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 06</h3>
-            <p>Preserved mirror from the 2025 batch. S.A.L.E.M. keeps it separated from confirmed production design.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="concept" data-confidence="50" data-id="concept-archive-07" data-order="18">
-          <a class="leak-img db-image" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fgamefaqs.gamespot.com%2Fa%2Fforum%2F5%2F5d174260.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://gamefaqs.gamespot.com/a/forum/5/5d174260.jpg" data-fallback-stage="1" alt="Archived leaked Marvel concept art file seven" loading="lazy" decoding="async">
-              <span class="overlay-tag purple">ARCHIVE FILE</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2025-03</span><span class="db-confidence purple">50%</span></div>
-            <h3>Concept Art Archive — File 07</h3>
-            <p>Final preserved file in this mirror set. Kept for visual comparison rather than treated as current plot evidence.</p>
-            <div class="leak-meta"><span>EARLY ART / DISPUTED</span><span>GameFAQs mirror of deleted art batch</span></div>
-            <a class="source-link" href="https://gamefaqs.gamespot.com/boards/206-comics-and-graphic-novels/80942946" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="official" data-confidence="100" data-id="cyclops-official-compare" data-order="19">
-          <a class="leak-img db-image" href="https://x.com/i/trending/2008562314883334526" target="_blank" rel="noopener">
-              <img src="https://images.weserv.nl/?url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FG9_E6qoaQAAZaBc.jpg&amp;w=1200&amp;h=750&amp;fit=cover&amp;output=jpg&amp;q=82" data-remote="https://pbs.twimg.com/media/G9_E6qoaQAAZaBc.jpg" data-fallback-stage="1" alt="Cyclops using optic blast in official Avengers Doomsday teaser imagery" loading="lazy" decoding="async">
-              <span class="overlay-tag green">OFFICIAL COMPARISON</span><span class="image-open">OPEN SOURCE ↗</span>
-              <span class="image-status" data-image-status>IMAGE PROXY</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026</span><span class="db-confidence green">100%</span></div>
-            <h3>Cyclops official-image comparison file</h3>
-            <p>Not a leak. Kept beside the archive as a visual anchor for checking whether earlier costume/set claims actually matched released material.</p>
-            <div class="leak-meta"><span>REFERENCE ANCHOR</span><span>Official teaser imagery mirror</span></div>
-            <a class="source-link" href="https://x.com/i/trending/2008562314883334526" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="38" data-id="thread-multiple-shots" data-order="20">
-          <a class="leak-img source-only" href="https://www.reddit.com/r/MarvelStudiosSpoilers/comments/1vt6iqd/multiple_shots_of_doomsday_have_leaked/" target="_blank" rel="noopener">
-              <div class="source-only-inner"><div class="source-glyph">⌁</div><b>REDDIT THREAD</b><span>r/MarvelStudiosSpoilers</span></div>
-              <span class="overlay-tag red">REDDIT THREAD</span><span class="image-open">OPEN THREAD ↗</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026-08-20</span><span class="db-confidence red">38%</span></div>
-            <h3>Multiple leaked shots: Spider-Man/Wolverine + Loki/TVA</h3>
-            <p>Thread discussing faint images said to show Tobey Maguire Spider-Man vs Wolverine and Loki inside the TVA.</p>
-            <div class="leak-meta"><span>VERY LOW-RES / UNVERIFIED</span><span>r/MarvelStudiosSpoilers</span></div>
-            <a class="source-link" href="https://www.reddit.com/r/MarvelStudiosSpoilers/comments/1vt6iqd/multiple_shots_of_doomsday_have_leaked/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="26" data-id="thread-tobey-wolverine" data-order="21">
-          <a class="leak-img source-only" href="https://www.reddit.com/r/LeaksAndRumors/comments/1vr9wf2/potential_set_images_of_the_deadpool_wolverine_vs/" target="_blank" rel="noopener">
-              <div class="source-only-inner"><div class="source-glyph">⌁</div><b>REDDIT THREAD</b><span>r/LeaksAndRumors</span></div>
-              <span class="overlay-tag red">REDDIT THREAD</span><span class="image-open">OPEN THREAD ↗</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026-08-18</span><span class="db-confidence red">26%</span></div>
-            <h3>Potential Tobey / Wolverine / Deadpool set images</h3>
-            <p>A highly circulated image batch tied to the rumored opening fight. Later discussions raised AI/SynthID concerns around related images.</p>
-            <div class="leak-meta"><span>AI CONCERN</span><span>r/LeaksAndRumors</span></div>
-            <a class="source-link" href="https://www.reddit.com/r/LeaksAndRumors/comments/1vr9wf2/potential_set_images_of_the_deadpool_wolverine_vs/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="42" data-id="thread-opening-details" data-order="22">
-          <a class="leak-img source-only" href="https://www.reddit.com/r/MarvelStudiosSpoilers/comments/1vs6hqr/details_about_the_opening_of_avengers_doomsday/" target="_blank" rel="noopener">
-              <div class="source-only-inner"><div class="source-glyph">⌁</div><b>REDDIT REPORT</b><span>r/MarvelStudiosSpoilers</span></div>
-              <span class="overlay-tag purple">REDDIT REPORT</span><span class="image-open">OPEN THREAD ↗</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026-08-19</span><span class="db-confidence purple">42%</span></div>
-            <h3>Opening-scene leak: destroyed Daily Bugle / bomb set</h3>
-            <p>Detailed thread claiming the opening uses a destroyed Daily Bugle environment, a practical bomb, Spider-Man, Wolverine, Deadpool and Magneto.</p>
-            <div class="leak-meta"><span>UNVERIFIED DETAILS</span><span>r/MarvelStudiosSpoilers</span></div>
-            <a class="source-link" href="https://www.reddit.com/r/MarvelStudiosSpoilers/comments/1vs6hqr/details_about_the_opening_of_avengers_doomsday/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="66" data-id="thread-costume-match" data-order="23">
-          <a class="leak-img source-only" href="https://www.reddit.com/r/marvelstudios/comments/1v08fo1/i_compared_the_old_avengers_doomsday_costume/" target="_blank" rel="noopener">
-              <div class="source-only-inner"><div class="source-glyph">⌁</div><b>REDDIT COMPARISON</b><span>r/marvelstudios</span></div>
-              <span class="overlay-tag gold">REDDIT COMPARISON</span><span class="image-open">OPEN THREAD ↗</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026-07-18</span><span class="db-confidence gold">66%</span></div>
-            <h3>Old costume leaks compared with later concept art</h3>
-            <p>Fan comparison claiming earlier costume-test images matched later revealed concept designs. Useful corroboration, but still community analysis.</p>
-            <div class="leak-meta"><span>COMMUNITY CORROBORATION</span><span>r/marvelstudios</span></div>
-            <a class="source-link" href="https://www.reddit.com/r/marvelstudios/comments/1v08fo1/i_compared_the_old_avengers_doomsday_costume/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
-<article class="leak-card database-card" data-leak-type="social" data-confidence="72" data-id="thread-sentinel-hq" data-order="24">
-          <a class="leak-img source-only" href="https://www.reddit.com/r/LeaksAndRumors/comments/1u98ydf/the_avengers_doomsday_sentinel_footage_has_leaked/" target="_blank" rel="noopener">
-              <div class="source-only-inner"><div class="source-glyph">⌁</div><b>REDDIT FOOTAGE</b><span>r/LeaksAndRumors</span></div>
-              <span class="overlay-tag gold">REDDIT FOOTAGE</span><span class="image-open">OPEN THREAD ↗</span>
-            </a>
-          <div class="leak-body">
-            <div class="db-card-top"><span class="db-date">2026-06-18</span><span class="db-confidence gold">72%</span></div>
-            <h3>Higher-quality Sentinel footage discussion</h3>
-            <p>A later higher-quality Sentinel-footage thread that helped reinforce the earlier X-Mansion set-photo interpretation.</p>
-            <div class="leak-meta"><span>STRONG VISUAL CORROBORATION</span><span>r/LeaksAndRumors</span></div>
-            <a class="source-link" href="https://www.reddit.com/r/LeaksAndRumors/comments/1u98ydf/the_avengers_doomsday_sentinel_footage_has_leaked/" target="_blank" rel="noopener">OPEN SOURCE TRAIL ↗</a>
-          </div>
-        </article>
+        <label class="setting-row">
+          <span class="setting-copy"><b>Hide Disputed Visuals</b><span>Hides leak cards below 50% confidence from the gallery.</span></span>
+          <span class="switch"><input type="checkbox" data-setting="hideDisputed"><i></i></span>
+        </label>
+
+        <label class="setting-row">
+          <span class="setting-copy"><b>Haptic Feedback</b><span>Uses a tiny vibration on supported devices when controls are tapped.</span></span>
+          <span class="switch"><input type="checkbox" data-setting="haptics"><i></i></span>
+        </label>
+      </div>
+
+      <div class="settings-panel">
+        <h3>DOOMBOT App</h3>
+        <p>Install, reset local onboarding or clean up your personal watchlist.</p>
+        <div class="settings-actions">
+          <button type="button" data-settings-install>＋ SHOW INSTALL / HOME SCREEN INSTRUCTIONS</button>
+          <button type="button" data-reset-badges>↻ RESET “NEW” BADGES</button>
+          <button type="button" data-clear-favorites>☆ CLEAR MY WATCHLIST</button>
+          <button class="danger" type="button" data-reset-welcome>↻ RESET WELCOME + INSTALL PROMPTS</button>
         </div>
-      </section>
-    </main>
+      </div>
+
+      <div class="settings-panel">
+        <h3>Privacy</h3>
+        <p>Favorites, theory notes, locked predictions, settings and “seen” badges are stored locally in your browser. Friends get their own separate local state.</p>
+      </div>
+
+      <div class="settings-panel">
+        <h3>Build</h3>
+        <p><b>DOOMBOT V13 // APP SHELL</b><br>S.A.L.E.M. Intelligence Matrix<br>Created & curated by 999SALEM.</p>
+        <div class="settings-actions">
+          <button type="button" data-open-help>? EXPLAIN SOURCE TIERS</button>
+          <button type="button" data-open-watchlist>☆ OPEN WATCHLIST</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
       <span>CREATED & CURATED BY 999SALEM // BUILD 13</span>
     </footer>
   </div>
 </div>
-<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./intel.html"><b>◉</b><span>INTEL</span></a><a class="active" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./analyst.html"><b>⌁</b><span>ANALYST</span></a></nav>
+<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./intel.html"><b>◉</b><span>INTEL</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./analyst.html"><b>⌁</b><span>ANALYST</span></a></nav>
 <script id="doombot-v13-app">
 (function(){
   const $=(s,r=document)=>r.querySelector(s);
