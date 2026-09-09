@@ -18,20 +18,7 @@ A Doom-themed Avengers: Doomsday intelligence site for tracking official reporti
 - Live Intel Monitor backed by `data/live-intel.json`
 - GitHub Action that refreshes public RSS/news results every 6 hours
 - Installable PWA / Add to Home Screen support
-- Offline app shell via service worker
-
-## Upload to GitHub
-
-1. Create a new GitHub repository.
-2. Upload **the contents of this folder** to the repository root — do not upload the outer `salem-doomsday-intel-v11` folder itself.
-3. Use `main` as the default branch.
-4. In **Settings → Pages**, set the source to **GitHub Actions** if GitHub does not select it automatically.
-5. Push/commit the files. The `Deploy S.A.L.E.M. to GitHub Pages` workflow publishes the site.
-
-Your Pages URL normally uses the format:
-
-`https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/`
-
+- Offline app shell via service 
 ## Live Intel
 
 GitHub Pages is static, so the browser itself should not be used to scrape X, Reddit, or news sites. Instead:
