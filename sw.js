@@ -1,10 +1,10 @@
-const CACHE='doombot-v18-4-cumulative-community';
+const CACHE='doombot-v18-5-flat-mobile-safe';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
   './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
   './manifest.webmanifest',
-  './assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/salem-mark.svg',
-  './data/live-intel.json','./data/leak-images.json'
+  './icon-192.png','./icon-512.png','./salem-mark.svg',
+  './live-intel.json','./leak-images.json'
 ];
 
 self.addEventListener('install',event=>{
@@ -73,11 +73,11 @@ self.addEventListener('fetch',event=>{
 
 const DOOMBOT_V18_SHELL=[
   './warroom.html','./account.html','./profile.html',
-  './assets/v18-community.css','./assets/v18-common.js','./assets/v18-account.js',
-  './assets/v18-warroom.js','./assets/v18-profile.js','./assets/v18-theory-share.js'
+  './v18-community.css','./v18-common.js','./v18-account.js',
+  './v18-warroom.js','./v18-profile.js','./v18-theory-share.js'
 ];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(DOOMBOT_V18_SHELL).catch(()=>{})));
 });
 
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.add('./data/warroom-seed.json').catch(()=>{}))));
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.add('./warroom-seed.json').catch(()=>{}))));

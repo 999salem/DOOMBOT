@@ -9,8 +9,8 @@
 <meta name="apple-mobile-web-app-title" content="DOOMBOT">
 <meta name="description" content="Unverified Avengers: Doomsday plot leaks and S.A.L.E.M. source grading.">
 <title>DOOMBOT // Leaked Plot</title>
-<link rel="icon" href="./assets/icons/salem-mark.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+<link rel="icon" href="./salem-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest">
 <style id="doombot-v13-styles">
 :root{
@@ -968,7 +968,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
-<link rel="stylesheet" href="./assets/v18-community.css">
+<link rel="stylesheet" href="./v18-community.css">
 </head><body class="v12-page v13-page plot-page">
 <div class="wrap">
   <div class="shell">
@@ -1212,7 +1212,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   async function load(){
     grid.classList.add('live-fetching');
     try{
-      const res=await fetch('./data/live-intel.json?ts='+Date.now(),{cache:'no-store'});
+      const res=await fetch('./live-intel.json?ts='+Date.now(),{cache:'no-store'});
       if(!res.ok)throw new Error();
       const data=await res.json();liveItems=Array.isArray(data.items)?data.items:[];
       if(updated)updated.textContent='UPDATED // '+(data.updatedAt||'UNKNOWN');render();
@@ -1546,8 +1546,8 @@ window.addEventListener('beforeinstallprompt',function(e){
     const next={leaks:fallback.leaks,intel:fallback.intel,theories:THEORY_REGISTRY};
     try{
       const [lr,ir]=await Promise.all([
-        fetch('./data/leak-images.json?ts='+Date.now(),{cache:'no-store'}),
-        fetch('./data/live-intel.json?ts='+Date.now(),{cache:'no-store'})
+        fetch('./leak-images.json?ts='+Date.now(),{cache:'no-store'}),
+        fetch('./live-intel.json?ts='+Date.now(),{cache:'no-store'})
       ]);
       if(lr.ok){const d=await lr.json();next.leaks={ids:(d.items||[]).map(x=>String(x.id)),updated:d.updated||''}}
       if(ir.ok){const d=await ir.json();next.intel={ids:(d.items||[]).map(x=>String(x.id||x.title)),updated:d.updatedAt||''}}
@@ -1789,6 +1789,6 @@ window.addEventListener('beforeinstallprompt',function(e){
 </script>
 
 <script id="doombot-v17-plot-gate">(function(){const g=document.getElementById('plotSpoilerGate'),b=document.getElementById('plotSpoilers'),x=document.getElementById('revealPlotSpoilers');if(!g||!b||!x)return;function r(){g.style.display='none';b.classList.add('revealed');try{localStorage.setItem('doombot-plot-spoilers-v1','1')}catch(e){}}x.addEventListener('click',r);try{if(localStorage.getItem('doombot-plot-spoilers-v1')==='1')r()}catch(e){}})();</script>
-<script src="./assets/v18-common.js"></script>
+<script src="./v18-common.js"></script>
 </body>
 </html>

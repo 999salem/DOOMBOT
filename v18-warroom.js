@@ -53,7 +53,7 @@
 
   async function loadSeed(){
     try{
-      const r=await fetch('./data/warroom-seed.json',{cache:'no-store'});
+      const r=await fetch('./warroom-seed.json',{cache:'no-store'});
       if(!r.ok)throw new Error('seed');
       const data=await r.json();
       (data.profiles||[]).forEach(p=>profiles.set(p.id,{

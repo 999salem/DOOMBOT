@@ -1,0 +1,16 @@
+DOOMBOT V18.5 // IPHONE FLAT-UPLOAD REPAIR
+
+Upload EVERY FILE in this folder directly into the ROOT of your GitHub DOOMBOT repo.
+There are NO folders in this patch.
+
+This fixes the exact live-site problem:
+- GitHub mobile flattened v18-community.css, v18-warroom.js, v18-account.js and warroom-seed.json into the repo root
+- the HTML still requested assets/... and data/...
+- those URLs returned 404
+- so the new War Room styling, seeded posts and account upgrade code never loaded
+
+V18.5 changes the site to use root-level files everywhere.
+
+After GitHub finishes deploying:
+open https://999salem.github.io/DOOMBOT/warroom.html?v=18.5
+then fully close/reopen the Home Screen app.
