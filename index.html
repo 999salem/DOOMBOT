@@ -812,6 +812,29 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
 }
 
 
+
+/* DOOMBOT V13.1 — launch stability */
+.install-nudge{
+  position:fixed;z-index:590;left:50%;bottom:calc(82px + env(safe-area-inset-bottom));
+  width:min(430px,calc(100% - 24px));transform:translate(-50%,18px);
+  opacity:0;pointer-events:none;display:grid;grid-template-columns:1fr auto auto;
+  align-items:center;gap:8px;border:1px solid #35513b;border-radius:13px;
+  background:rgba(7,16,10,.96);backdrop-filter:blur(16px);
+  padding:10px 10px 10px 12px;box-shadow:0 14px 45px rgba(0,0,0,.5);
+  transition:.2s ease
+}
+.install-nudge.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.install-nudge b{display:block;color:#d7e1d9;font-size:8px;letter-spacing:.06em}
+.install-nudge span{display:block;color:#708175;font-size:7px;margin-top:2px}
+.install-nudge button{
+  border:1px solid #375943;border-radius:8px;background:#102016;color:#9dffa4;
+  padding:8px;font-size:7px;font-weight:900;letter-spacing:.06em
+}
+.install-nudge .nudge-x{width:31px;height:31px;padding:0;background:#0a120d;color:#829286;font-size:16px}
+.welcome-screen{pointer-events:none}
+.welcome-screen .welcome-inner{pointer-events:auto}
+@media(min-width:761px){.install-nudge{bottom:18px}}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -823,6 +846,18 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
+<script id="doombot-launch-guard">
+(function(){
+  window.addEventListener('pageshow',function(){
+    if(document.body)document.body.classList.remove('modal-open','page-exit');
+  });
+  setTimeout(function(){
+    var w=document.querySelector('.welcome-screen');
+    if(w)w.remove();
+    if(document.body)document.body.classList.remove('modal-open','page-exit');
+  },4000);
+})();
+</script>
 </head><body class="v12-page v13-page home-page">
 <div class="wrap">
   <div class="shell">
@@ -1122,7 +1157,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 13</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 13.1</span>
     </footer>
   </div>
 </div>
@@ -1407,6 +1442,21 @@ window.addEventListener('beforeinstallprompt',function(e){
 
 
 // =========================================================
+// DOOMBOT V13.1 — STABILITY RECOVERY
+// =========================================================
+(function(){
+  const recover=()=>{
+    try{
+      document.body?.classList.remove('modal-open','page-exit');
+      document.querySelectorAll('.welcome-screen.closing').forEach(x=>x.remove());
+    }catch(e){}
+  };
+  window.addEventListener('pageshow',recover);
+  window.addEventListener('unhandledrejection',recover);
+  window.addEventListener('error',e=>{if(e.error)recover()});
+})();
+
+// =========================================================
 // DOOMBOT V13 — APP SHELL
 // =========================================================
 (function(){
@@ -1417,6 +1467,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   const set=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
   const jget=(k,f)=>{try{return JSON.parse(get(k,""))||f}catch(e){return f}};
   const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  document.body.classList.remove('modal-open','page-exit');
   const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
   const slug=s=>String(s||'file').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,64)||'file';
 
@@ -1643,6 +1694,17 @@ window.addEventListener('beforeinstallprompt',function(e){
   window.DOOMBOT_OPEN_INSTALL=()=>openInstall(true);
   window.addEventListener('appinstalled',()=>{set('doombot-installed','1');closeInstall(false)});
 
+  // ---------- Non-blocking install nudge ----------
+  function showInstallNudge(){
+    if(isStandalone()||get('doombot-install-nudge-dismissed','0')==='1'||!document.body.classList.contains('home-page'))return;
+    const n=document.createElement('div');n.className='install-nudge';
+    n.innerHTML='<div><b>ADD DOOMBOT TO YOUR HOME SCREEN</b><span>Optional — opens full-screen like an app.</span></div><button type="button" data-nudge-install>VIEW</button><button class="nudge-x" type="button" data-nudge-close aria-label="Dismiss">×</button>';
+    document.body.appendChild(n);
+    requestAnimationFrame(()=>n.classList.add('show'));
+    n.querySelector('[data-nudge-install]').addEventListener('click',()=>{n.remove();openInstall(true)});
+    n.querySelector('[data-nudge-close]').addEventListener('click',()=>{set('doombot-install-nudge-dismissed','1');n.remove()});
+  }
+
   // ---------- First-open boot ----------
   function showWelcome(){
     if(!document.body.classList.contains('home-page')||get('doombot-v13-onboarded','0')==='1')return false;
@@ -1654,14 +1716,15 @@ window.addEventListener('beforeinstallprompt',function(e){
       <button type="button" class="btn primary enter-app">ENTER COMMAND CENTER</button>
       <button type="button" class="skip-intro">SKIP INTRO</button>
     </div>`;
-    document.body.appendChild(welcome);document.body.classList.add('modal-open');
-    const exit=()=>{set('doombot-v13-onboarded','1');welcome.classList.add('closing');document.body.classList.remove('modal-open');setTimeout(()=>welcome.remove(),300);setTimeout(()=>openInstall(false),1100)};
+    document.body.appendChild(welcome);
+    const exit=()=>{set('doombot-v13-onboarded','1');welcome.classList.add('closing');setTimeout(()=>welcome.remove(),300)};
     welcome.querySelector('.enter-app').addEventListener('click',exit);
     welcome.querySelector('.skip-intro').addEventListener('click',exit);
+    setTimeout(()=>{if(document.body.contains(welcome))exit()},2400);
     return true;
   }
   const welcomed=showWelcome();
-  if(!welcomed&&document.body.classList.contains('home-page'))setTimeout(()=>openInstall(false),2400);
+  if(document.body.classList.contains('home-page'))setTimeout(showInstallNudge,welcomed?3300:1400);
 
   // ---------- New badges + "since last visit" ----------
   const SEEN_KEY='doombot-seen-v13';
