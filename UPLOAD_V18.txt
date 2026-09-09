@@ -1,0 +1,6 @@
+DOOMBOT V18 // GITHUB PATCH
+
+Upload EVERYTHING inside this folder to the ROOT of your DOOMBOT GitHub repo.
+Merge folders and replace matching files.
+
+IMPORTANT: Run the separate DOOMBOT-V18-SUPABASE.sql in Supabase first.

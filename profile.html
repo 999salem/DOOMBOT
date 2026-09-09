@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="DOOMBOT">
-<meta name="description" content="DOOMBOT live Avengers: Doomsday intelligence.">
-<title>DOOMBOT // Intel</title>
+<meta name="description" content="Public DOOMBOT War Room member profile.">
+<title>DOOMBOT // Member Profile</title>
 <link rel="icon" href="./assets/icons/salem-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -966,7 +966,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 </script>
 
 <link rel="stylesheet" href="./assets/v18-community.css">
-</head><body class="v12-page v13-page intel-page">
+</head><body class="v12-page v13-page about-page">
 <div class="wrap">
   <div class="shell">
     <div class="topline"></div>
@@ -984,87 +984,71 @@ window.addEventListener('beforeinstallprompt',function(e){
         <span class="chip">S.A.L.E.M. ONLINE</span>
       </div>
     </header>
-    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="active" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
+    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="active" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main">
-      <section class="v12-page-hero">
-      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">S.A.L.E.M. // PUBLIC INTELLIGENCE</div>
-      <h1>Latest Intel</h1>
-      <p>The changing part of DOOMBOT. Official material sits above trades, scoopers and rumor chains.</p>
-    </section><section class="section" id="live-intel">
-        <div class="section-title"><span>LIVE INTEL MONITOR</span></div>
-        <div class="map-title-row">
-          <div>
-            <b>PUBLIC-SOURCE WATCH</b><br>
-            <span>Updated by the repo's refresh pipeline. Official and trade reporting stay above rumor-grade sources.</span>
+<section class="v12-page-hero">
+  <a class="back-command" href="./warroom.html">← WAR ROOM</a>
+  <div class="eyebrow">DOOMBOT V18 // MEMBER FILE</div>
+  <h1>Profile</h1>
+  <p>Public War Room identity, theory activity and community history.</p>
+</section>
+
+<section class="section" id="profileShell">
+  <div class="v18-grid">
+    <div>
+      <div class="v18-card gold">
+        <div class="v18-between">
+          <div class="v18-profile-head">
+            <div id="publicAvatar" class="v18-avatar">?</div>
+            <div><div id="publicHandle" class="v18-handle">@member</div><div id="publicName" class="v18-muted">DOOMBOT MEMBER</div><span id="publicRole" class="v18-role">MEMBER</span></div>
           </div>
-          <div class="filter-row js-only">
-            <button class="filter2 active live-filter" data-live-filter="all" type="button">ALL</button>
-            <button class="filter2 live-filter" data-live-filter="S" type="button">TIER S</button>
-            <button class="filter2 live-filter" data-live-filter="A" type="button">TIER A</button>
-            <button class="filter2 live-filter" data-live-filter="B" type="button">TIER B</button>
-            <button class="filter2" id="reloadLive" type="button">RELOAD DATA</button>
-          </div>
+          <span id="publicOnline" class="v18-status">OFFLINE</span>
         </div>
-        <div class="warning">
-          <b>LIVE DOESN'T MEAN TRUE.</b> This monitor collects public reporting. Source tier and corroboration still matter. Social leaks remain in the Visual Leak Gallery / Analyst Desk until manually promoted.
+        <p id="publicBio" class="v18-muted" style="margin-top:13px">—</p>
+        <div class="v18-form-grid">
+          <div><div class="v18-small">FAVORITE MARVEL CHARACTER / FACTION</div><b id="publicFavorite">—</b></div>
+          <div><div class="v18-small">JOINED THE WAR ROOM</div><b id="publicJoined">—</b></div>
         </div>
-        <div class="intel-grid" id="liveIntelGrid">
-          <article class="intel official" data-live-tier="S">
-            <div class="tags"><span class="tag green">TIER S // OFFICIAL</span><span class="tag">DISNEY</span></div>
-            <h3>Avengers: Doomsday — official film file</h3>
-            <p>Disney lists the film for December 18, 2026 and describes heroes from three universes being set on a deadly collision course.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> Anchor intel. This outranks every theory or leak in the archive.</div>
-            <a class="source-link" href="https://movies.disney.com/avengers-doomsday" target="_blank" rel="noopener">OPEN SOURCE ↗</a>
-          </article>
-          <article class="intel trade" data-live-tier="A">
-            <div class="tags"><span class="tag cyan">TIER A // REPORTING</span><span class="tag">AP</span></div>
-            <h3>Russos return for the ensemble collision</h3>
-            <p>Recent AP coverage frames Doomsday as a massive crossover spanning Avengers, Wakandans, New Avengers, Fantastic Four and X-Men.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> High-value structural reporting, useful for judging crossover and Incursion theories.</div>
-          </article>
+        <div class="v18-stats">
+          <div class="v18-stat"><b id="statThreads">0</b><span>THREADS</span></div>
+          <div class="v18-stat"><b id="statReplies">0</b><span>REPLIES</span></div>
+          <div class="v18-stat"><b id="statUpvotes">0</b><span>UPVOTES</span></div>
         </div>
-        <div class="leak-meta" style="margin-top:10px"><span id="liveUpdated">BOOTSTRAP DATA // REPO CAN AUTO-REFRESH</span><span id="liveCount">2 ITEMS</span></div>
-      </section><section class="section" id="intel">
-        <div class="section-title"><span>INTELLIGENCE DOSSIERS</span></div>
-        <div class="intel-grid">
-          <article class="intel official">
-            <div class="tags"><span class="tag green">TIER S // OFFICIAL</span><span class="tag">ANCHOR</span></div>
-            <h3>Official footage and Marvel announcements</h3>
-            <p>These sit at the top of my archive and can confirm or destroy older theories immediately.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> Official material is an anchor. Never lower it to the same level as a scooper or viral repost.</div>
-          </article>
+        <div class="v18-actions">
+          <a id="editOwnProfile" class="v18-btn primary" href="./account.html" hidden>EDIT MY PROFILE</a>
+          <div id="memberTools" class="v18-actions" hidden><button id="muteProfile" class="v18-btn ghost">MUTE USER</button></div>
+        </div>
+      </div>
 
-          <article class="intel trade">
-            <div class="tags"><span class="tag cyan">TIER A // TRADE</span><span class="tag">INDUSTRY</span></div>
-            <h3>Deadline / Variety / THR-style reporting</h3>
-            <p>High-value structural evidence for casting, production changes and major story direction.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> A trade report can raise related rumor confidence, but only when the overlap is real and independent.</div>
-          </article>
+      <div class="section-title"><span>RECENT WAR ROOM THREADS</span></div>
+      <div id="recentThreads" class="war-feed"><div class="v18-loading">LOADING ACTIVITY…</div></div>
+    </div>
 
-          <article class="intel leak">
-            <div class="tags"><span class="tag red">TIER C // LEAK</span><span class="tag">VISUAL</span></div>
-            <h3>Leaked images, footage and anonymous claims</h3>
-            <p>Potentially huge, but always stored with the original source trail and a manipulation warning.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> AI upscales can preserve a real underlying leak while inventing detail. Treat enhancement and authenticity as separate questions.</div>
-          </article>
-
-          <article class="intel theory">
-            <div class="tags"><span class="tag purple">999SALEM THEORY</span><span class="tag">PERSONAL</span></div>
-            <h3>My own conclusions from the evidence</h3>
-            <p>I want my predictions tracked separately so after the movie we can actually see what I cooked on and what I completely missed.</p>
-            <div class="analysis"><b>S.A.L.E.M.:</b> Theory scoring should measure evidence support, not how cool the theory sounds.</div>
-          </article>
+    <aside>
+      <div id="adminTools" class="v18-card gold" hidden>
+        <div class="eyebrow">ARCHIVE CREATOR CONTROLS</div><h3>Member role</h3>
+        <p class="v18-small">Supporter is prepared for the future paid tier. It has no paywall attached yet.</p>
+        <div class="v18-actions">
+          <button id="setRoleMember" class="v18-btn">MEMBER</button>
+          <button id="setRoleSupporter" class="v18-btn gold">SUPPORTER</button>
+          <button id="setRoleMod" class="v18-btn primary">MODERATOR</button>
         </div>
-      </section>
-    </main>
+      </div>
+      <div id="modTools" class="v18-card red" style="margin-top:10px" hidden>
+        <div class="eyebrow">MODERATION</div><h3>Member access</h3>
+        <div class="v18-actions"><button id="banProfile" class="v18-btn red">BAN MEMBER</button><button id="unbanProfile" class="v18-btn">REMOVE BAN</button></div>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
       <span>CREATED & CURATED BY 999SALEM // BUILD 18</span>
     </footer>
   </div>
 </div>
-<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./warroom.html"><b>◈</b><span>WAR ROOM</span></a><a class="" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./account.html"><b>◎</b><span>ACCOUNT</span></a></nav>
+<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./warroom.html"><b>◈</b><span>WAR ROOM</span></a><a class="" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="active" href="./account.html"><b>◎</b><span>ACCOUNT</span></a></nav>
 <script id="doombot-v13-app">
 (function(){
   const $=(s,r=document)=>r.querySelector(s);
@@ -1852,5 +1836,6 @@ window.addEventListener('beforeinstallprompt',function(e){
 </script>
 
 <script src="./assets/v18-common.js"></script>
+<script src="./assets/v18-profile.js"></script>
 </body>
 </html>

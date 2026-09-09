@@ -115,3 +115,6 @@ On phones, a persistent bottom navigation bar makes the main modules one tap awa
 - Leaked Plot spoiler archive (`plot.html`)
 - expanded visual database to 30 archive files
 - cloud save and repair workflows preserved
+
+## V18 — The War Room
+Accounts, profiles, roles, guest-readable discussions, replies, voting, saved threads, spoiler controls, reports, muting, moderation and personal-theory sharing.

@@ -2,7 +2,7 @@
   "id": "./",
   "name": "DOOMBOT",
   "short_name": "DOOMBOT",
-  "description": "999SALEM's Avengers: Doomsday intelligence, leak, plot and theory archive powered by S.A.L.E.M.",
+  "description": "999SALEM's Avengers: Doomsday intelligence archive, theories and War Room community powered by S.A.L.E.M.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -28,6 +28,18 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "War Room",
+      "short_name": "War Room",
+      "url": "./warroom.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
     {
       "name": "Leak Database",
       "short_name": "Leaks",

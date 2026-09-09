@@ -1049,6 +1049,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
+<link rel="stylesheet" href="./assets/v18-community.css">
 </head><body class="v12-page v13-page theories-page">
 <div class="wrap">
   <div class="shell">
@@ -1067,7 +1068,7 @@ window.addEventListener('beforeinstallprompt',function(e){
         <span class="chip">S.A.L.E.M. ONLINE</span>
       </div>
     </header>
-    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="active" href="./theories.html">THEORIES</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./settings.html">SETTINGS</a></nav>
+    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="active" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main">
       <section class="v12-page-hero">
       <a class="back-command" href="./index.html">← COMMAND CENTER</a>
@@ -1285,11 +1286,11 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 17.1</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 18</span>
     </footer>
   </div>
 </div>
-<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./intel.html"><b>◉</b><span>INTEL</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="active" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./analyst.html"><b>⌁</b><span>ANALYST</span></a></nav>
+<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./warroom.html"><b>◈</b><span>WAR ROOM</span></a><a class="active" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./account.html"><b>◎</b><span>ACCOUNT</span></a></nav>
 
 <script id="doombot-v14-custom-theories">
 (function(){
@@ -2168,8 +2169,8 @@ window.addEventListener('beforeinstallprompt',function(e){
       if(t)t.textContent=state==='online'?'CLOUD SAVE ONLINE':state==='syncing'?'SYNCING CLOUD SAVE…':state==='offline'?'OFFLINE — LOCAL SAVE ACTIVE':state==='error'?'CLOUD SAVE ERROR':'CONNECTING CLOUD SAVE…';
       if(d)d.textContent=msg||'';
     });
-    document.querySelectorAll('[data-cloud-user]').forEach(el=>{if(user)el.textContent='GUEST SAVE ID // '+user.id});
-    window.dispatchEvent(new CustomEvent('doombot-cloud-status',{detail:{state,message:msg,userId:user?.id||null}}));
+    document.querySelectorAll('[data-cloud-user]').forEach(el=>{if(user)el.textContent=(user.is_anonymous?'GUEST SAVE ID // ':'ACCOUNT SAVE ID // ')+user.id});
+    window.dispatchEvent(new CustomEvent('doombot-cloud-status',{detail:{state,message:msg,userId:user?.id||null,isAnonymous:user?.is_anonymous??true}}));
   }
   function applyRemote(values){
     let changed=false;const remote=values||{};
@@ -2211,8 +2212,17 @@ window.addEventListener('beforeinstallprompt',function(e){
     const {data,error}=await client.from(TABLE).select('data,updated_at').eq('user_id',user.id).maybeSingle();
     if(error)throw error;
     const ls=stamp();
-    if(!data){await saveCloud();return}
+    const authMode=(()=>{try{return localStorage.getItem('doombot-auth-mode-v18')||''}catch(e){return ''}})();
+    if(!data){try{localStorage.removeItem('doombot-auth-mode-v18')}catch(e){};await saveCloud();return}
     const payload=data.data||{},rs=Number(payload.client_updated_at||0);
+    if(authMode==='existing'&&!user?.is_anonymous){
+      const changed=applyRemote(payload.values||{});setStamp(rs);
+      try{localStorage.removeItem('doombot-auth-mode-v18')}catch(e){}
+      status('online','Signed-in account restored from cloud.');
+      if(changed)setTimeout(()=>location.reload(),180);
+      return;
+    }
+    if(!user?.is_anonymous){try{localStorage.removeItem('doombot-auth-mode-v18')}catch(e){}}
     if(ls>rs){await saveCloud();return}
     if(rs>ls){
       const changed=applyRemote(payload.values||{});setStamp(rs);status('online','Cloud save restored.');
@@ -2230,14 +2240,14 @@ window.addEventListener('beforeinstallprompt',function(e){
     status('connecting','Connecting to your private DOOMBOT save…');
     try{
       if(!window.supabase?.createClient)throw new Error('Supabase library unavailable');
-      client=window.supabase.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      client=window.supabase.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});window.DOOMBOT_SUPABASE=client;
       const {data:sd,error:se}=await client.auth.getSession();if(se)throw se;
       let session=sd?.session||null;
       if(!session){
         const {data,error}=await client.auth.signInAnonymously();if(error)throw error;session=data?.session||null;
       }
-      user=session?.user||null;if(!user)throw new Error('No anonymous user session');
-      ready=true;await restoreOrSeed();
+      user=session?.user||null;if(!user)throw new Error('No DOOMBOT user session');window.DOOMBOT_AUTH_USER=user;
+      ready=true;await restoreOrSeed();window.dispatchEvent(new CustomEvent('doombot-auth-ready',{detail:{user,isAnonymous:user.is_anonymous}}));
     }catch(err){
       console.warn('DOOMBOT cloud init failed',err);
       status('error','Local save still works. If this stays red, verify the Supabase SQL/RLS setup.');
@@ -2250,5 +2260,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 })();
 </script>
 
+<script src="./assets/v18-common.js"></script>
+<script src="./assets/v18-theory-share.js"></script>
 </body>
 </html>

@@ -1,0 +1,145 @@
+/* =========================================================
+   DOOMBOT V18 // THE WAR ROOM
+   ========================================================= */
+.v18-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:12px}
+.v18-card{
+  border:1px solid #22392a;border-radius:14px;background:linear-gradient(180deg,#0b140e,#070b08);
+  padding:14px;position:relative
+}
+.v18-card.gold{border-color:#51462e;background:linear-gradient(180deg,#151209,#090806)}
+.v18-card.red{border-color:#512d2c;background:linear-gradient(180deg,#140a0a,#090606)}
+.v18-card h2,.v18-card h3{margin:0 0 7px}
+.v18-muted{color:#7f9183;font-size:9px;line-height:1.55}
+.v18-small{color:#647568;font-size:7px;line-height:1.5}
+.v18-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.v18-between{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.v18-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.v18-btn{
+  border:1px solid #315139;border-radius:8px;background:#0a150e;color:#a7c5ad;
+  padding:8px 10px;font-size:7px;font-weight:900;letter-spacing:.065em;cursor:pointer
+}
+.v18-btn:hover{border-color:#53805d;color:#d8ffdd}
+.v18-btn.primary{border-color:#4b724f;color:#8cff95;background:#0c1a10}
+.v18-btn.gold{border-color:#665836;color:#dfc983;background:#151208}
+.v18-btn.red{border-color:#603433;color:#e89b96;background:#160a0a}
+.v18-btn.ghost{border-color:#303c33;color:#75857a;background:#080d0a}
+.v18-btn:disabled{opacity:.38;cursor:not-allowed}
+.v18-input,.v18-select,.v18-textarea{
+  width:100%;border:1px solid #2b4131;border-radius:9px;background:#061009;color:#e5eee7;
+  padding:10px;outline:none;font-size:10px
+}
+.v18-input:focus,.v18-select:focus,.v18-textarea:focus{border-color:#54775d}
+.v18-textarea{min-height:110px;resize:vertical;line-height:1.5}
+.v18-label{display:grid;gap:5px;margin-top:9px;color:#738479;font-size:7px;font-weight:900;letter-spacing:.09em}
+.v18-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.v18-check{display:flex;gap:8px;align-items:center;color:#87988b;font-size:8px;margin-top:9px}
+.v18-check input{accent-color:#6fe678}
+.v18-status{
+  display:inline-flex;align-items:center;gap:6px;border:1px solid #314436;border-radius:99px;
+  padding:5px 7px;color:#8ca492;font-size:6px;font-weight:900;letter-spacing:.08em
+}
+.v18-status:before{content:"";width:6px;height:6px;border-radius:50%;background:#6c796f}
+.v18-status.online:before{background:#70ff7a;box-shadow:0 0 10px rgba(112,255,122,.35)}
+.v18-status.guest:before{background:#d6bc70}
+.v18-auth-panel{max-width:760px}
+.v18-auth-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.v18-auth-option{border:1px solid #24372a;border-radius:12px;padding:12px;background:#08100b}
+.v18-auth-option h3{font-size:12px}
+.v18-auth-message{margin-top:9px;border-radius:8px;padding:9px 10px;background:#0a120d;color:#90a395;font-size:8px;display:none}
+.v18-auth-message.show{display:block}
+.v18-auth-message.good{border:1px solid #315c38;color:#9ad7a0}
+.v18-auth-message.bad{border:1px solid #613432;color:#df9691}
+.v18-profile-head{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:center}
+.v18-avatar{
+  width:74px;height:74px;border:1px solid #52614c;border-radius:16px;background:
+  radial-gradient(circle at 50% 25%,rgba(129,255,138,.12),transparent 45%),#0a120d;
+  display:grid;place-items:center;overflow:hidden;color:#d1bd7d;font:700 24px/1 Georgia,serif
+}
+.v18-avatar img{width:100%;height:100%;object-fit:cover}
+.v18-handle{font-size:18px;font-weight:900}
+.v18-role{
+  display:inline-flex;margin-top:5px;border:1px solid #445044;border-radius:99px;padding:4px 7px;
+  color:#9ba99e;font-size:6px;font-weight:900;letter-spacing:.08em
+}
+.v18-role.admin{color:#e8cf81;border-color:#76633a}
+.v18-role.mod{color:#9ed6ae;border-color:#3f674a}
+.v18-role.supporter{color:#c5a9ff;border-color:#5e4881}
+.v18-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}
+.v18-stat{border:1px solid #233629;border-radius:9px;background:#07100a;padding:9px}
+.v18-stat b{display:block;font-size:14px}.v18-stat span{display:block;color:#637568;font-size:6px;margin-top:3px;font-weight:900;letter-spacing:.07em}
+.v18-channel-row{display:flex;gap:6px;overflow:auto;padding-bottom:3px}
+.v18-channel{
+  flex:0 0 auto;border:1px solid #26392d;border-radius:99px;background:#08100b;color:#778b7d;
+  padding:7px 9px;font-size:7px;font-weight:900;letter-spacing:.06em
+}
+.v18-channel.active{color:#83f38c;border-color:#497551;background:#0c1a10}
+.war-feed{display:grid;gap:9px;margin-top:11px}
+.war-thread{
+  border:1px solid #23392a;border-radius:13px;background:linear-gradient(180deg,#0b140e,#070b08);padding:13px
+}
+.war-thread.pinned{border-color:#5d5135;background:linear-gradient(180deg,#151309,#090806)}
+.war-thread.verified{box-shadow:inset 3px 0 0 #64c76e}
+.war-thread h3{font-size:14px;margin:7px 0}
+.war-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;color:#718277;font-size:7px}
+.war-meta a{color:#9cb0a0;font-weight:900}
+.war-badge{
+  border:1px solid #37453b;border-radius:99px;padding:3px 6px;color:#7f9184;font-size:6px;font-weight:900;letter-spacing:.06em
+}
+.war-badge.pin{color:#ddc57b;border-color:#5d5032}
+.war-badge.verify{color:#84ee8e;border-color:#3e7147}
+.war-badge.lock{color:#e09591;border-color:#633a38}
+.war-body{color:#9bab9e;font-size:9px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.war-theory-snapshot{
+  margin:9px 0;border-left:2px solid #665b37;background:#111008;padding:9px;color:#a49b7d;font-size:8px;line-height:1.5
+}
+.war-theory-snapshot b{color:#dbc580}
+.war-spoiler{
+  border:1px dashed #5b3634;border-radius:9px;background:#100808;padding:11px;text-align:center;color:#b98783;
+  font-size:8px;font-weight:900;cursor:pointer
+}
+.war-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;border-top:1px solid #17271c;padding-top:9px}
+.war-footer .v18-actions{margin:0}
+.war-empty{border:1px dashed #2e4134;border-radius:12px;padding:25px;text-align:center;color:#6f8174;font-size:9px}
+.war-composer{display:none;margin-top:11px}
+.war-composer.open{display:block}
+.war-detail{display:none;margin-top:13px}
+.war-detail.open{display:block}
+.war-detail-head{border-bottom:1px solid #1e3024;padding-bottom:10px;margin-bottom:10px}
+.war-replies{display:grid;gap:8px;margin-top:10px}
+.war-reply{border:1px solid #203226;border-radius:10px;background:#07100a;padding:10px}
+.war-reply .war-body{font-size:8px}
+.war-mod-panel{display:none;margin-top:12px}
+.war-mod-panel.open{display:block}
+.war-report{
+  border:1px solid #493333;border-radius:10px;background:#100909;padding:10px;margin-top:7px
+}
+.war-rules{display:grid;gap:7px}
+.war-rule{border-left:2px solid #465a49;padding-left:9px}
+.war-rule b{display:block;font-size:8px}.war-rule span{display:block;color:#718277;font-size:7px;line-height:1.45;margin-top:2px}
+.war-account-gate{border:1px solid #594a2e;border-radius:11px;background:#131008;padding:11px;margin-top:10px}
+.war-account-gate b{display:block;color:#dcc57c;font-size:9px}.war-account-gate span{display:block;color:#8c846f;font-size:7px;margin-top:3px}
+.war-profile-link{cursor:pointer}
+.war-hidden-user{opacity:.55}
+.v18-toast{
+  position:fixed;left:50%;bottom:calc(72px + env(safe-area-inset-bottom));transform:translate(-50%,12px);
+  z-index:1200;border:1px solid #36543d;border-radius:9px;background:#07100a;color:#b2c8b7;
+  padding:9px 11px;font-size:8px;font-weight:900;opacity:0;pointer-events:none;transition:.18s
+}
+.v18-toast.show{opacity:1;transform:translate(-50%,0)}
+.v18-loading{padding:20px;text-align:center;color:#718277;font-size:8px}
+.v18-danger-zone{border-color:#4d2e2d!important}
+.v18-inline-link{color:#d8c17d;font-weight:900}
+.warroom-module{border-color:#4d5135!important;background:linear-gradient(180deg,#131309,#090806)!important}
+.warroom-module>i{color:#ddca83!important}
+
+@media(max-width:800px){
+  .v18-grid{grid-template-columns:1fr}
+  .v18-auth-options{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .v18-form-grid{grid-template-columns:1fr}
+  .v18-profile-head{grid-template-columns:60px 1fr}
+  .v18-avatar{width:60px;height:60px;border-radius:13px}
+  .v18-stats{grid-template-columns:repeat(3,1fr)}
+  .war-thread{padding:11px}
+}

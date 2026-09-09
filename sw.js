@@ -1,4 +1,4 @@
-const CACHE='doombot-v17-1-media-theory-fix';
+const CACHE='doombot-v18-war-room-1';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
   './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
@@ -68,4 +68,14 @@ self.addEventListener('fetch',event=>{
       return cached||fresh;
     })
   );
+});
+
+
+const DOOMBOT_V18_SHELL=[
+  './warroom.html','./account.html','./profile.html',
+  './assets/v18-community.css','./assets/v18-common.js','./assets/v18-account.js',
+  './assets/v18-warroom.js','./assets/v18-profile.js','./assets/v18-theory-share.js'
+];
+self.addEventListener('install',event=>{
+  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(DOOMBOT_V18_SHELL).catch(()=>{})));
 });
