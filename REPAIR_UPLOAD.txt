@@ -1,0 +1,21 @@
+DOOMBOT REPAIR PATCH — NO NEW FEATURES
+
+Upload/merge every file and folder in this patch into the ROOT of the DOOMBOT repo.
+Replace files when GitHub asks. Do not delete your existing HTML/data manually.
+
+Repairs:
+- data/ paths used by Live Intel and NEW/last-visit checks
+- scheduled intel refresh workflow
+- scheduled leak-image cache workflow
+- actual local-first leak thumbnails with fallback chain
+- PWA icon paths
+- service-worker data/cache behavior
+- updater commits automatically deploy to Pages
+- stale local-only wording after cloud save
+
+After upload, Actions should show:
+1. Deploy static content to Pages
+2. Cache leak images
+3. Refresh Doomsday Intel
+
+The image-cache workflow should run automatically because this patch changes its watched files.

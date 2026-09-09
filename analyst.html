@@ -993,14 +993,14 @@ window.addEventListener('beforeinstallprompt',function(e){
     <main class="main">
       <section class="v12-page-hero">
       <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">S.A.L.E.M. // LOCAL ANALYST TOOL</div>
+      <div class="eyebrow">S.A.L.E.M. // ANALYST TOOL</div>
       <h1>Analyst Desk</h1>
-      <p>Paste a rumor or report, score its source quality, and save it to your own local review queue.</p>
+      <p>Paste a rumor or report, score its source quality, and save it to your private review queue.</p>
     </section><section class="section" id="analyst-desk">
         <div class="section-title"><span>S.A.L.E.M. // ANALYST DESK</span></div>
         <p class="section-intro">
           Paste a new rumor, post or article here and grade it before it ever touches the main archive.
-          When this site is hosted, your saved queue stays in your browser on that device.
+          Your queue saves locally first and syncs to your private DOOMBOT cloud save when you are online.
         </p>
 
         <div class="desk-grid">
@@ -1010,7 +1010,7 @@ window.addEventListener('beforeinstallprompt',function(e){
                 <div class="eyebrow">New Intel Intake</div>
                 <h3>Grade a source before believing it.</h3>
               </div>
-              <small>LOCAL ANALYST TOOL</small>
+              <small>PRIVATE ANALYST TOOL</small>
             </div>
 
             <form id="intelForm">
@@ -1088,7 +1088,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 
             <div class="analyst-desk" style="margin-top:10px">
               <div class="desk-title">
-                <div><div class="eyebrow">Local Queue</div><h3>Intel waiting for review</h3></div>
+                <div><div class="eyebrow">Saved Queue</div><h3>Intel waiting for review</h3></div>
                 <small id="queueCount">0 SAVED</small>
               </div>
               <div class="queue" id="intelQueue">
@@ -1101,7 +1101,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 14</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 14.2</span>
     </footer>
   </div>
 </div>
@@ -1209,7 +1209,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     queue.push(item); if(queue.length>40)queue=queue.slice(-40);
     safeSet(queueKey,JSON.stringify(queue));renderQueue();e.currentTarget.reset();
     $("#intelTier").value="70";$("#intelCorroboration").value="0";$("#intelVisual").value="0";$("#intelFit").value="2";calcScore();
-    showToast("Saved to local intel queue");
+    showToast("Saved to intel queue");
   });
   $("#clearQueue")?.addEventListener("click",()=>{queue=[];safeSet(queueKey,"[]");renderQueue();showToast("Intel queue cleared")});
   renderQueue();

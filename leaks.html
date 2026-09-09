@@ -1382,7 +1382,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 14</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 14.2</span>
     </footer>
   </div>
 </div>
@@ -1613,28 +1613,30 @@ window.addEventListener('beforeinstallprompt',function(e){
 })();
 
 
-// ---------- V11.3/V12 resilient leak image loader ----------
+// ---------- Resilient leak image loader: LOCAL CACHE → PROXY → REMOTE → SOURCE PREVIEW ----------
 (function(){
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const images=$$(".db-image img[data-remote]");
   if(!images.length)return;
-  let loadedRemote=0;
   function proxyUrl(remote){return "https://images.weserv.nl/?url="+encodeURIComponent(remote)+"&w=1200&h=750&fit=cover&output=jpg&q=82"}
   function pagePreviewUrl(source){return "https://api.microlink.io/?url="+encodeURIComponent(source)+"&embed=image.url"}
   function pageSnapshotUrl(source){return "https://api.microlink.io/?url="+encodeURIComponent(source)+"&screenshot=true&embed=screenshot.url"}
   images.forEach(img=>{
     const wrap=img.parentElement,card=img.closest(".leak-card"),badge=wrap.querySelector("[data-image-status]");
     const source=(card?.querySelector(".source-link")?.href||wrap.href||"").trim();
+    const remote=img.dataset.remote||"";
+    const id=card?.dataset.id||"";
     img.dataset.sourcePage=source;
     img.addEventListener("load",()=>{
       wrap.classList.add("image-ready");
-      const stage=Number(img.dataset.fallbackStage||1);loadedRemote++;
-      if(badge)badge.textContent=stage===1?"IMAGE PROXY":stage===2?"REMOTE SOURCE":stage===3?"SOURCE PREVIEW":"SOURCE SNAPSHOT";
-      const mode=$("#imageMode");if(mode)mode.textContent="MULTI-SOURCE IMAGE MODE";
+      const stage=Number(img.dataset.fallbackStage||0);
+      if(badge)badge.textContent=stage===0?"LOCAL CACHE":stage===1?"IMAGE PROXY":stage===2?"REMOTE SOURCE":stage===3?"SOURCE PREVIEW":"SOURCE SNAPSHOT";
+      const mode=$("#imageMode");if(mode)mode.textContent=stage===0?"LOCAL CACHE + FALLBACK":"MULTI-SOURCE IMAGE MODE";
     });
     img.addEventListener("error",()=>{
-      const stage=Number(img.dataset.fallbackStage||1),remote=img.dataset.remote||"",sourcePage=img.dataset.sourcePage||"";
+      const stage=Number(img.dataset.fallbackStage||0),sourcePage=img.dataset.sourcePage||"";
+      if(stage===0&&remote){img.dataset.fallbackStage="1";img.src=proxyUrl(remote);return}
       if(stage===1&&remote){img.dataset.fallbackStage="2";img.src=remote;return}
       if(stage===2&&sourcePage){img.dataset.fallbackStage="3";img.src=pagePreviewUrl(sourcePage);return}
       if(stage===3&&sourcePage){img.dataset.fallbackStage="4";img.src=pageSnapshotUrl(sourcePage);return}
@@ -1645,6 +1647,8 @@ window.addEventListener('beforeinstallprompt',function(e){
         wrap.insertBefore(f,wrap.firstChild);
       }
     });
+    // The GitHub Action writes cached files using the database card id.
+    if(id){img.dataset.fallbackStage="0";img.src="./assets/images/leaks/"+encodeURIComponent(id)+".jpg"}
   });
 
   const gallery=$("#leakGallery");
