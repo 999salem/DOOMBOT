@@ -1,0 +1,18 @@
+DOOMBOT V18.6 // CUMULATIVE FLAT IPHONE PATCH
+
+This includes ALL V18.5 root-path fixes plus the persistent bottom navigation.
+
+Upload every file directly into the ROOT of the DOOMBOT GitHub repo.
+There are no folders.
+
+Bottom navigation:
+HOME · LEAKS · WAR ROOM · THEORIES · ACCOUNT
+
+It now stays fixed and visible:
+- while scrolling
+- on every main DOOMBOT page
+- in the installed Home Screen app
+- in iPhone landscape
+- above the iPhone safe-area/home indicator
+
+No new Supabase SQL.
