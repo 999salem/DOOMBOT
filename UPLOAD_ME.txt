@@ -1,0 +1,26 @@
+DOOMBOT V14 — CLOUD SAVE + ADD THEORY
+
+Replace these files in the root of your GitHub DOOMBOT repo:
+- index.html
+- intel.html
+- leaks.html
+- theories.html
+- analyst.html
+- about.html
+- settings.html
+
+Do not delete your data/assets/.github folders.
+
+Supabase:
+- Anonymous sign-ins must be enabled.
+- The doombot_user_state table/RLS SQL must already be installed.
+
+New personal data synced:
+- locked predictions
+- theory notes
+- favorites/watchlist
+- Analyst Desk queue
+- settings/read state
+- user-added theories
+
+Added theories are private to the guest user who created them.

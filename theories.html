@@ -927,6 +927,82 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
   }
 }
 
+
+
+/* =========================================================
+   DOOMBOT V14 — CLOUD SAVE
+   ========================================================= */
+.cloud-save-card{
+  border-color:#31553a!important;
+  background:radial-gradient(circle at 90% 0,rgba(127,255,135,.065),transparent 35%),#08100b!important
+}
+.cloud-status-line{
+  display:flex;align-items:center;gap:8px;margin:11px 0 8px;
+  border:1px solid #233d2a;border-radius:9px;background:#07100a;padding:9px 10px
+}
+.cloud-dot{width:8px;height:8px;border-radius:50%;background:#6c7a70;box-shadow:0 0 0 3px rgba(110,125,114,.08)}
+.cloud-status-line[data-state="online"] .cloud-dot{background:#70ff7b;box-shadow:0 0 14px rgba(112,255,123,.35)}
+.cloud-status-line[data-state="syncing"] .cloud-dot{background:#d8c370;animation:cloudPulse 1s ease infinite}
+.cloud-status-line[data-state="offline"] .cloud-dot,.cloud-status-line[data-state="error"] .cloud-dot{background:#ff7870}
+.cloud-status-copy b{display:block;font-size:9px;letter-spacing:.05em}
+.cloud-status-copy span{display:block;margin-top:2px;color:#718376;font-size:7px;line-height:1.4}
+.cloud-user-id{color:#68796d;font:700 7px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;margin-top:7px}
+.cloud-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.cloud-actions button{
+  border:1px solid #31513a;border-radius:8px;background:#0b1710;color:#9dc1a4;
+  padding:8px 10px;font-size:7px;font-weight:900;letter-spacing:.07em
+}
+@keyframes cloudPulse{50%{opacity:.35;transform:scale(.7)}}
+
+/* =========================================================
+   DOOMBOT V14 — USER THEORY CREATOR
+   ========================================================= */
+.theory-create-row{
+  display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;
+  margin:0 0 12px;padding:11px 12px;border:1px solid #31472e;border-radius:11px;
+  background:linear-gradient(90deg,rgba(194,169,109,.045),transparent 38%),#08100b
+}
+.theory-create-row>div span{display:block;color:#7c8c80;font-size:7px;letter-spacing:.12em;font-weight:900}
+.theory-create-row>div b{display:block;margin-top:4px;font-size:11px}
+.add-theory-btn{
+  border:1px solid #77653d;border-radius:9px;background:#17140c;color:#e2cc8b;
+  padding:10px 13px;font-size:8px;font-weight:900;letter-spacing:.08em
+}
+.custom-theory{border-color:#6b5936!important;position:relative}
+.custom-theory::before{
+  content:"MY ADDED THEORY";position:absolute;top:10px;right:10px;
+  color:#bfa86c;font-size:6px;font-weight:900;letter-spacing:.09em
+}
+.custom-theory .custom-evidence{
+  margin-top:10px;border-left:2px solid #5f5336;padding:8px 9px;background:#100f0a;
+  color:#96917d;font-size:9px;line-height:1.5
+}
+.custom-theory-actions{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.custom-theory-actions button{
+  border:1px solid #3a433a;border-radius:7px;background:#0a110c;color:#849287;
+  padding:7px 9px;font-size:7px;font-weight:900;letter-spacing:.06em
+}
+.custom-theory-actions .delete-custom-theory{border-color:#4d302f;color:#c28b87}
+.theory-builder-modal .app-modal-card{width:min(620px,100%)}
+.theory-form-grid{display:grid;grid-template-columns:1fr 150px;gap:9px}
+.theory-form-field{display:grid;gap:5px;margin-top:9px}
+.theory-form-field label{color:#788a7c;font-size:7px;font-weight:900;letter-spacing:.1em}
+.theory-form-field input,.theory-form-field select,.theory-form-field textarea{
+  width:100%;border:1px solid #2b4131;border-radius:9px;background:#061009;color:#dce6de;
+  padding:10px;font:500 10px/1.45 Inter,system-ui,-apple-system,sans-serif;outline:none
+}
+.theory-form-field textarea{min-height:100px;resize:vertical}
+.theory-form-field input:focus,.theory-form-field select:focus,.theory-form-field textarea:focus{border-color:#50745a}
+.theory-form-actions{display:flex;gap:7px;margin-top:12px}
+.theory-form-actions button{flex:1}
+.theory-source-line{margin-top:9px}
+.theory-source-line a{color:#bca66c;font-size:8px;font-weight:900;letter-spacing:.06em}
+@media(max-width:600px){
+  .theory-form-grid{grid-template-columns:1fr}
+  .theory-create-row{align-items:stretch}
+  .add-theory-btn{width:100%}
+}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -1179,11 +1255,185 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 13.2</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 14</span>
     </footer>
   </div>
 </div>
 <nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./intel.html"><b>◉</b><span>INTEL</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="active" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./analyst.html"><b>⌁</b><span>ANALYST</span></a></nav>
+
+<script id="doombot-v14-custom-theories">
+(function(){
+  const KEY='doombot-custom-theories-v1';
+  const STAMP='doombot-cloud-local-updated-v14';
+  const $=(s,r=document)=>r.querySelector(s);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  const cleanUrl=u=>{try{const x=new URL(String(u||''));return /^https?:$/.test(x.protocol)?x.href:''}catch(e){return ''}};
+  const read=()=>{try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}};
+  const write=list=>{
+    try{
+      localStorage.setItem(KEY,JSON.stringify(list));
+      localStorage.setItem(STAMP,String(Date.now()));
+      window.DOOMBOT_CLOUD_TOUCH?.(KEY);
+      return true;
+    }catch(e){return false}
+  };
+  const slug=s=>String(s||'theory').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,45)||'theory';
+
+  const grid=$('#theoryGrid');
+  if(!grid)return;
+
+  function renderCard(t){
+    const id=String(t.id||Date.now());
+    const key='custom-'+id;
+    const type=t.type==='remix'?'remix':'core';
+    const score=Math.max(1,Math.min(100,Number(t.confidence)||50));
+    const source=cleanUrl(t.source);
+    const evidence=String(t.evidence||'').trim();
+    const klass=type==='remix'?'remix-file':'core-file';
+    const label=type==='remix'?'MY THEORY REMIX':'MY ORIGINAL THEORY';
+    return `<article class="theory-card ${klass} custom-theory" id="theory-${esc(key)}" data-theory-type="${type}" data-key="${esc(key)}" data-custom="1" data-custom-id="${esc(id)}">
+      <div class="theory-label"><span class="mini-tag gold">${label}</span><span class="mini-tag">PERSONAL FILE</span></div>
+      <h3>${esc(t.title)}</h3>
+      <p>${esc(t.summary)}</p>
+      ${evidence?`<div class="custom-evidence"><b>EVIDENCE / REASONING:</b><br>${esc(evidence)}</div>`:''}
+      ${source?`<div class="theory-source-line"><a href="${esc(source)}" target="_blank" rel="noopener">OPEN ATTACHED SOURCE ↗</a></div>`:''}
+      <div class="theory-score"><span>MY CONFIDENCE</span><b>${score}%</b></div>
+      <div class="theory-tools js-only">
+        <button class="lock-btn" type="button" data-lock="${esc(key)}">LOCK PREDICTION</button>
+        <button class="note-toggle" type="button" data-note-toggle="${esc(key)}">MY NOTES</button>
+      </div>
+      <div class="note-panel js-only" data-note-panel="${esc(key)}">
+        <textarea class="theory-note" data-note="${esc(key)}" placeholder="Add private notes / evidence / what would prove this wrong..."></textarea>
+        <button class="action-btn save-note" type="button" data-note-save="${esc(key)}">SAVE NOTE</button>
+      </div>
+      <div class="custom-theory-actions js-only">
+        <button type="button" class="edit-custom-theory" data-edit-custom="${esc(id)}">EDIT THEORY</button>
+        <button type="button" class="delete-custom-theory" data-delete-custom="${esc(id)}">DELETE</button>
+      </div>
+    </article>`;
+  }
+
+  read().forEach(t=>grid.insertAdjacentHTML('beforeend',renderCard(t)));
+
+  // Add MY ADDED filter before the app binds filter listeners.
+  const filters=$('.theory-toolbar .filter-row')||$('.theory-toolbar');
+  if(filters&&!$('[data-theory-filter="custom"]')){
+    const b=document.createElement('button');
+    b.className='filter2 theory-filter';b.type='button';b.dataset.theoryFilter='custom';b.textContent='MY ADDED';
+    filters.appendChild(b);
+  }
+
+  // Creator strip
+  const toolbar=$('.theory-toolbar');
+  if(toolbar&&!$('#addTheoryButton')){
+    const row=document.createElement('div');row.className='theory-create-row js-only';
+    row.innerHTML='<div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButton" type="button">＋ ADD THEORY</button>';
+    toolbar.parentNode.insertBefore(row,toolbar);
+  }
+
+  // Builder modal
+  const modal=document.createElement('div');
+  modal.className='app-modal theory-builder-modal';modal.id='theoryBuilderModal';
+  modal.innerHTML=`<div class="modal-backdrop" data-close-theory-builder></div>
+    <div class="app-modal-card" role="dialog" aria-modal="true" aria-labelledby="theoryBuilderTitle">
+      <button class="modal-x" type="button" data-close-theory-builder aria-label="Close">×</button>
+      <div class="eyebrow">S.A.L.E.M. // PERSONAL THEORY FILE</div>
+      <h2 id="theoryBuilderTitle">ADD THEORY</h2>
+      <p class="modal-copy">This theory belongs to your personal DOOMBOT profile. It does not rewrite 999SALEM's public master archive.</p>
+      <form id="customTheoryForm">
+        <input type="hidden" id="customTheoryId">
+        <div class="theory-form-field">
+          <label for="customTheoryTitle">THEORY TITLE</label>
+          <input id="customTheoryTitle" maxlength="140" required placeholder="Example: Doom steals Loki's throne before the final Incursion">
+        </div>
+        <div class="theory-form-grid">
+          <div class="theory-form-field">
+            <label for="customTheoryType">FILE TYPE</label>
+            <select id="customTheoryType"><option value="core">ORIGINAL THEORY</option><option value="remix">THEORY REMIX</option></select>
+          </div>
+          <div class="theory-form-field">
+            <label for="customTheoryConfidence">CONFIDENCE %</label>
+            <input id="customTheoryConfidence" type="number" min="1" max="100" value="60" required>
+          </div>
+        </div>
+        <div class="theory-form-field">
+          <label for="customTheorySummary">PREDICTION / SUMMARY</label>
+          <textarea id="customTheorySummary" maxlength="1600" required placeholder="Write the actual theory here..."></textarea>
+        </div>
+        <div class="theory-form-field">
+          <label for="customTheoryEvidence">EVIDENCE / REASONING</label>
+          <textarea id="customTheoryEvidence" maxlength="2200" placeholder="Leaks, comic parallels, trailer clues, why it fits..."></textarea>
+        </div>
+        <div class="theory-form-field">
+          <label for="customTheorySource">OPTIONAL SOURCE LINK</label>
+          <input id="customTheorySource" type="url" placeholder="https://...">
+        </div>
+        <div class="theory-form-actions">
+          <button class="btn" type="button" data-close-theory-builder>CANCEL</button>
+          <button class="btn primary" type="submit">SAVE THEORY</button>
+        </div>
+      </form>
+    </div>`;
+  document.body.appendChild(modal);
+
+  function openBuilder(item=null){
+    $('#theoryBuilderTitle').textContent=item?'EDIT THEORY':'ADD THEORY';
+    $('#customTheoryId').value=item?.id||'';
+    $('#customTheoryTitle').value=item?.title||'';
+    $('#customTheoryType').value=item?.type==='remix'?'remix':'core';
+    $('#customTheoryConfidence').value=item?.confidence||60;
+    $('#customTheorySummary').value=item?.summary||'';
+    $('#customTheoryEvidence').value=item?.evidence||'';
+    $('#customTheorySource').value=item?.source||'';
+    modal.classList.add('open');document.body.classList.add('modal-open');
+    setTimeout(()=>$('#customTheoryTitle')?.focus(),100);
+  }
+  function closeBuilder(){modal.classList.remove('open');document.body.classList.remove('modal-open')}
+
+  $('#addTheoryButton')?.addEventListener('click',()=>openBuilder());
+  modal.addEventListener('click',e=>{if(e.target.closest('[data-close-theory-builder]'))closeBuilder()});
+
+  $('#customTheoryForm')?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const id=$('#customTheoryId').value||String(Date.now());
+    const item={
+      id,
+      title:$('#customTheoryTitle').value.trim(),
+      type:$('#customTheoryType').value==='remix'?'remix':'core',
+      confidence:Math.max(1,Math.min(100,Number($('#customTheoryConfidence').value)||50)),
+      summary:$('#customTheorySummary').value.trim(),
+      evidence:$('#customTheoryEvidence').value.trim(),
+      source:cleanUrl($('#customTheorySource').value.trim()),
+      updated:new Date().toISOString()
+    };
+    if(!item.title||!item.summary)return;
+    const list=read(),idx=list.findIndex(x=>String(x.id)===String(id));
+    if(idx>=0)list[idx]=item;else list.unshift(item);
+    if(write(list))location.reload();
+  });
+
+  document.querySelectorAll('[data-edit-custom]').forEach(btn=>btn.addEventListener('click',()=>{
+    const item=read().find(x=>String(x.id)===String(btn.dataset.editCustom));
+    if(item)openBuilder(item);
+  }));
+  document.querySelectorAll('[data-delete-custom]').forEach(btn=>btn.addEventListener('click',()=>{
+    const id=String(btn.dataset.deleteCustom),list=read(),item=list.find(x=>String(x.id)===id);
+    if(!item||!confirm('Delete this personal theory?'))return;
+    const key='custom-'+id;
+    try{
+      localStorage.removeItem('salem-lock-'+key);
+      localStorage.removeItem('salem-note-'+key);
+      localStorage.removeItem('doombot-fav-theory-'+key);
+      const watch=JSON.parse(localStorage.getItem('doombot-watchlist-v1')||'{}');
+      delete watch['theory:'+key];
+      localStorage.setItem('doombot-watchlist-v1',JSON.stringify(watch));
+    }catch(e){}
+    write(list.filter(x=>String(x.id)!==id));
+    location.reload();
+  }));
+})();
+</script>
+
 <script id="doombot-v13-app">
 (function(){
   const $=(s,r=document)=>r.querySelector(s);
@@ -1193,7 +1443,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   document.body.appendChild(toast);
   function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1800)}
   function safeGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:v}catch(e){return fallback}}
-  function safeSet(key,val){try{localStorage.setItem(key,val);return true}catch(e){return false}}
+  function safeSet(key,val){try{localStorage.setItem(key,val);window.DOOMBOT_CLOUD_TOUCH?.(key);return true}catch(e){return false}}
   function safeJSON(key,fallback){try{return JSON.parse(safeGet(key,""))||fallback}catch(e){return fallback}}
 
   // Live theatrical countdowns.
@@ -1302,7 +1552,8 @@ window.addEventListener('beforeinstallprompt',function(e){
       const key=card.dataset.key||"";
       const locked=safeGet("salem-lock-"+key,"0")==="1";
       const favorite=safeGet("doombot-fav-theory-"+key,"0")==="1";
-      const typeOK=theoryFilter==="all"||type===theoryFilter||(theoryFilter==="locked"&&locked)||(theoryFilter==="favorites"&&favorite);
+      const custom=card.dataset.custom==="1";
+      const typeOK=theoryFilter==="all"||type===theoryFilter||(theoryFilter==="locked"&&locked)||(theoryFilter==="favorites"&&favorite)||(theoryFilter==="custom"&&custom);
       const searchOK=!q||card.innerText.toLowerCase().includes(q);
       card.classList.toggle("hidden",!(typeOK&&searchOK));
     });
@@ -1471,7 +1722,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const get=(k,f=null)=>{try{const v=localStorage.getItem(k);return v===null?f:v}catch(e){return f}};
-  const set=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+  const set=(k,v)=>{try{localStorage.setItem(k,v);window.DOOMBOT_CLOUD_TOUCH?.(k);return true}catch(e){return false}};
   const jget=(k,f)=>{try{return JSON.parse(get(k,""))||f}catch(e){return f}};
   const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
   const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
@@ -1844,5 +2095,121 @@ window.addEventListener('beforeinstallprompt',function(e){
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script id="doombot-v14-cloud">
+(function(){
+  const URL="https://fgpoiqsxxpwfpeezwdjn.supabase.co";
+  const KEY="sb_publishable_KhYmge-8aJ6tp0J0LAwNUA_lH2Gr-Zk";
+  const TABLE='doombot_user_state';
+  const LOCAL_STAMP='doombot-cloud-local-updated-v14';
+  const managedExact=new Set([
+    'doombot-watchlist-v1','doombot-settings-v1','salem-doomsday-intel-queue-v1',
+    'doombot-seen-v13','doombot-last-visit','doombot-custom-theories-v1'
+  ]);
+  const managedPrefixes=['salem-lock-','salem-note-','doombot-fav-'];
+  let client=null,user=null,ready=false,syncTimer=null,syncing=false;
+
+  function isManaged(k){return managedExact.has(k)||managedPrefixes.some(p=>String(k).startsWith(p))}
+  function stamp(){try{return Number(localStorage.getItem(LOCAL_STAMP)||0)}catch(e){return 0}}
+  function setStamp(v){try{localStorage.setItem(LOCAL_STAMP,String(v))}catch(e){}}
+  function gather(){
+    const values={};
+    try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&isManaged(k))values[k]=localStorage.getItem(k)}}catch(e){}
+    return values;
+  }
+  function localKeys(){
+    const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&isManaged(k))out.push(k)}}catch(e){}
+    return out;
+  }
+  function status(state,msg){
+    document.querySelectorAll('[data-cloud-status]').forEach(el=>{
+      el.dataset.state=state;
+      const t=el.querySelector('[data-cloud-status-title]'),d=el.querySelector('[data-cloud-status-detail]');
+      if(t)t.textContent=state==='online'?'CLOUD SAVE ONLINE':state==='syncing'?'SYNCING CLOUD SAVE…':state==='offline'?'OFFLINE — LOCAL SAVE ACTIVE':state==='error'?'CLOUD SAVE ERROR':'CONNECTING CLOUD SAVE…';
+      if(d)d.textContent=msg||'';
+    });
+    document.querySelectorAll('[data-cloud-user]').forEach(el=>{if(user)el.textContent='GUEST SAVE ID // '+user.id});
+    window.dispatchEvent(new CustomEvent('doombot-cloud-status',{detail:{state,message:msg,userId:user?.id||null}}));
+  }
+  function applyRemote(values){
+    let changed=false;const remote=values||{};
+    try{
+      localKeys().forEach(k=>{if(!(k in remote)){localStorage.removeItem(k);changed=true}});
+      Object.entries(remote).forEach(([k,v])=>{
+        if(!isManaged(k))return;
+        const next=String(v??'');
+        if(localStorage.getItem(k)!==next){localStorage.setItem(k,next);changed=true}
+      });
+    }catch(e){}
+    return changed;
+  }
+  async function saveCloud(){
+    if(!ready||!client||!user||syncing||!navigator.onLine)return false;
+    syncing=true;status('syncing','Uploading notes, locks, favorites and personal theories…');
+    try{
+      const now=Date.now(),payload={version:14,client_updated_at:now,values:gather()};
+      const {error}=await client.from(TABLE).upsert({
+        user_id:user.id,data:payload,updated_at:new Date(now).toISOString()
+      },{onConflict:'user_id'});
+      if(error)throw error;
+      setStamp(now);status('online','Your personal DOOMBOT state is backed up.');
+      return true;
+    }catch(err){
+      console.warn('DOOMBOT cloud save failed',err);
+      status(navigator.onLine?'error':'offline',navigator.onLine?'Local save is safe; cloud sync will retry.':'No connection. Changes are still saved locally.');
+      return false;
+    }finally{syncing=false}
+  }
+  function touch(key){
+    if(!isManaged(String(key||'')))return;
+    setStamp(Date.now());clearTimeout(syncTimer);syncTimer=setTimeout(saveCloud,700);
+  }
+  window.DOOMBOT_CLOUD_TOUCH=touch;
+  window.DOOMBOT_CLOUD_SYNC=saveCloud;
+
+  async function restoreOrSeed(){
+    const {data,error}=await client.from(TABLE).select('data,updated_at').eq('user_id',user.id).maybeSingle();
+    if(error)throw error;
+    const ls=stamp();
+    if(!data){await saveCloud();return}
+    const payload=data.data||{},rs=Number(payload.client_updated_at||0);
+    if(ls>rs){await saveCloud();return}
+    if(rs>ls){
+      const changed=applyRemote(payload.values||{});setStamp(rs);status('online','Cloud save restored.');
+      if(changed){
+        const flag='doombot-cloud-reload-'+rs;
+        let seen=false;try{seen=sessionStorage.getItem(flag)==='1';sessionStorage.setItem(flag,'1')}catch(e){}
+        if(!seen)setTimeout(()=>location.reload(),180);
+      }
+      return;
+    }
+    status('online','DOOMBOT is synced.');
+  }
+  async function init(){
+    if(!navigator.onLine){status('offline','No connection. Local save is active.');return}
+    status('connecting','Connecting to your private DOOMBOT save…');
+    try{
+      if(!window.supabase?.createClient)throw new Error('Supabase library unavailable');
+      client=window.supabase.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      const {data:sd,error:se}=await client.auth.getSession();if(se)throw se;
+      let session=sd?.session||null;
+      if(!session){
+        const {data,error}=await client.auth.signInAnonymously();if(error)throw error;session=data?.session||null;
+      }
+      user=session?.user||null;if(!user)throw new Error('No anonymous user session');
+      ready=true;await restoreOrSeed();
+    }catch(err){
+      console.warn('DOOMBOT cloud init failed',err);
+      status('error','Local save still works. If this stays red, verify the Supabase SQL/RLS setup.');
+    }
+  }
+  addEventListener('online',()=>{if(ready)saveCloud();else init()});
+  addEventListener('offline',()=>status('offline','No connection. Local save is active.'));
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveCloud()});
+  init();
+})();
+</script>
+
 </body>
 </html>

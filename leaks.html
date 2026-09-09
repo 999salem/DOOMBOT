@@ -927,6 +927,33 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
   }
 }
 
+
+
+/* =========================================================
+   DOOMBOT V14 — CLOUD SAVE
+   ========================================================= */
+.cloud-save-card{
+  border-color:#31553a!important;
+  background:radial-gradient(circle at 90% 0,rgba(127,255,135,.065),transparent 35%),#08100b!important
+}
+.cloud-status-line{
+  display:flex;align-items:center;gap:8px;margin:11px 0 8px;
+  border:1px solid #233d2a;border-radius:9px;background:#07100a;padding:9px 10px
+}
+.cloud-dot{width:8px;height:8px;border-radius:50%;background:#6c7a70;box-shadow:0 0 0 3px rgba(110,125,114,.08)}
+.cloud-status-line[data-state="online"] .cloud-dot{background:#70ff7b;box-shadow:0 0 14px rgba(112,255,123,.35)}
+.cloud-status-line[data-state="syncing"] .cloud-dot{background:#d8c370;animation:cloudPulse 1s ease infinite}
+.cloud-status-line[data-state="offline"] .cloud-dot,.cloud-status-line[data-state="error"] .cloud-dot{background:#ff7870}
+.cloud-status-copy b{display:block;font-size:9px;letter-spacing:.05em}
+.cloud-status-copy span{display:block;margin-top:2px;color:#718376;font-size:7px;line-height:1.4}
+.cloud-user-id{color:#68796d;font:700 7px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;margin-top:7px}
+.cloud-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.cloud-actions button{
+  border:1px solid #31513a;border-radius:8px;background:#0b1710;color:#9dc1a4;
+  padding:8px 10px;font-size:7px;font-weight:900;letter-spacing:.07em
+}
+@keyframes cloudPulse{50%{opacity:.35;transform:scale(.7)}}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -1355,7 +1382,7 @@ window.addEventListener('beforeinstallprompt',function(e){
     </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 13.2</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 14</span>
     </footer>
   </div>
 </div>
@@ -1369,7 +1396,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   document.body.appendChild(toast);
   function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1800)}
   function safeGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:v}catch(e){return fallback}}
-  function safeSet(key,val){try{localStorage.setItem(key,val);return true}catch(e){return false}}
+  function safeSet(key,val){try{localStorage.setItem(key,val);window.DOOMBOT_CLOUD_TOUCH?.(key);return true}catch(e){return false}}
   function safeJSON(key,fallback){try{return JSON.parse(safeGet(key,""))||fallback}catch(e){return fallback}}
 
   // Live theatrical countdowns.
@@ -1478,7 +1505,8 @@ window.addEventListener('beforeinstallprompt',function(e){
       const key=card.dataset.key||"";
       const locked=safeGet("salem-lock-"+key,"0")==="1";
       const favorite=safeGet("doombot-fav-theory-"+key,"0")==="1";
-      const typeOK=theoryFilter==="all"||type===theoryFilter||(theoryFilter==="locked"&&locked)||(theoryFilter==="favorites"&&favorite);
+      const custom=card.dataset.custom==="1";
+      const typeOK=theoryFilter==="all"||type===theoryFilter||(theoryFilter==="locked"&&locked)||(theoryFilter==="favorites"&&favorite)||(theoryFilter==="custom"&&custom);
       const searchOK=!q||card.innerText.toLowerCase().includes(q);
       card.classList.toggle("hidden",!(typeOK&&searchOK));
     });
@@ -1647,7 +1675,7 @@ window.addEventListener('beforeinstallprompt',function(e){
   const $=(s,r=document)=>r.querySelector(s);
   const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
   const get=(k,f=null)=>{try{const v=localStorage.getItem(k);return v===null?f:v}catch(e){return f}};
-  const set=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+  const set=(k,v)=>{try{localStorage.setItem(k,v);window.DOOMBOT_CLOUD_TOUCH?.(k);return true}catch(e){return false}};
   const jget=(k,f)=>{try{return JSON.parse(get(k,""))||f}catch(e){return f}};
   const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
   const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
@@ -2020,5 +2048,121 @@ window.addEventListener('beforeinstallprompt',function(e){
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script id="doombot-v14-cloud">
+(function(){
+  const URL="https://fgpoiqsxxpwfpeezwdjn.supabase.co";
+  const KEY="sb_publishable_KhYmge-8aJ6tp0J0LAwNUA_lH2Gr-Zk";
+  const TABLE='doombot_user_state';
+  const LOCAL_STAMP='doombot-cloud-local-updated-v14';
+  const managedExact=new Set([
+    'doombot-watchlist-v1','doombot-settings-v1','salem-doomsday-intel-queue-v1',
+    'doombot-seen-v13','doombot-last-visit','doombot-custom-theories-v1'
+  ]);
+  const managedPrefixes=['salem-lock-','salem-note-','doombot-fav-'];
+  let client=null,user=null,ready=false,syncTimer=null,syncing=false;
+
+  function isManaged(k){return managedExact.has(k)||managedPrefixes.some(p=>String(k).startsWith(p))}
+  function stamp(){try{return Number(localStorage.getItem(LOCAL_STAMP)||0)}catch(e){return 0}}
+  function setStamp(v){try{localStorage.setItem(LOCAL_STAMP,String(v))}catch(e){}}
+  function gather(){
+    const values={};
+    try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&isManaged(k))values[k]=localStorage.getItem(k)}}catch(e){}
+    return values;
+  }
+  function localKeys(){
+    const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&isManaged(k))out.push(k)}}catch(e){}
+    return out;
+  }
+  function status(state,msg){
+    document.querySelectorAll('[data-cloud-status]').forEach(el=>{
+      el.dataset.state=state;
+      const t=el.querySelector('[data-cloud-status-title]'),d=el.querySelector('[data-cloud-status-detail]');
+      if(t)t.textContent=state==='online'?'CLOUD SAVE ONLINE':state==='syncing'?'SYNCING CLOUD SAVE…':state==='offline'?'OFFLINE — LOCAL SAVE ACTIVE':state==='error'?'CLOUD SAVE ERROR':'CONNECTING CLOUD SAVE…';
+      if(d)d.textContent=msg||'';
+    });
+    document.querySelectorAll('[data-cloud-user]').forEach(el=>{if(user)el.textContent='GUEST SAVE ID // '+user.id});
+    window.dispatchEvent(new CustomEvent('doombot-cloud-status',{detail:{state,message:msg,userId:user?.id||null}}));
+  }
+  function applyRemote(values){
+    let changed=false;const remote=values||{};
+    try{
+      localKeys().forEach(k=>{if(!(k in remote)){localStorage.removeItem(k);changed=true}});
+      Object.entries(remote).forEach(([k,v])=>{
+        if(!isManaged(k))return;
+        const next=String(v??'');
+        if(localStorage.getItem(k)!==next){localStorage.setItem(k,next);changed=true}
+      });
+    }catch(e){}
+    return changed;
+  }
+  async function saveCloud(){
+    if(!ready||!client||!user||syncing||!navigator.onLine)return false;
+    syncing=true;status('syncing','Uploading notes, locks, favorites and personal theories…');
+    try{
+      const now=Date.now(),payload={version:14,client_updated_at:now,values:gather()};
+      const {error}=await client.from(TABLE).upsert({
+        user_id:user.id,data:payload,updated_at:new Date(now).toISOString()
+      },{onConflict:'user_id'});
+      if(error)throw error;
+      setStamp(now);status('online','Your personal DOOMBOT state is backed up.');
+      return true;
+    }catch(err){
+      console.warn('DOOMBOT cloud save failed',err);
+      status(navigator.onLine?'error':'offline',navigator.onLine?'Local save is safe; cloud sync will retry.':'No connection. Changes are still saved locally.');
+      return false;
+    }finally{syncing=false}
+  }
+  function touch(key){
+    if(!isManaged(String(key||'')))return;
+    setStamp(Date.now());clearTimeout(syncTimer);syncTimer=setTimeout(saveCloud,700);
+  }
+  window.DOOMBOT_CLOUD_TOUCH=touch;
+  window.DOOMBOT_CLOUD_SYNC=saveCloud;
+
+  async function restoreOrSeed(){
+    const {data,error}=await client.from(TABLE).select('data,updated_at').eq('user_id',user.id).maybeSingle();
+    if(error)throw error;
+    const ls=stamp();
+    if(!data){await saveCloud();return}
+    const payload=data.data||{},rs=Number(payload.client_updated_at||0);
+    if(ls>rs){await saveCloud();return}
+    if(rs>ls){
+      const changed=applyRemote(payload.values||{});setStamp(rs);status('online','Cloud save restored.');
+      if(changed){
+        const flag='doombot-cloud-reload-'+rs;
+        let seen=false;try{seen=sessionStorage.getItem(flag)==='1';sessionStorage.setItem(flag,'1')}catch(e){}
+        if(!seen)setTimeout(()=>location.reload(),180);
+      }
+      return;
+    }
+    status('online','DOOMBOT is synced.');
+  }
+  async function init(){
+    if(!navigator.onLine){status('offline','No connection. Local save is active.');return}
+    status('connecting','Connecting to your private DOOMBOT save…');
+    try{
+      if(!window.supabase?.createClient)throw new Error('Supabase library unavailable');
+      client=window.supabase.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      const {data:sd,error:se}=await client.auth.getSession();if(se)throw se;
+      let session=sd?.session||null;
+      if(!session){
+        const {data,error}=await client.auth.signInAnonymously();if(error)throw error;session=data?.session||null;
+      }
+      user=session?.user||null;if(!user)throw new Error('No anonymous user session');
+      ready=true;await restoreOrSeed();
+    }catch(err){
+      console.warn('DOOMBOT cloud init failed',err);
+      status('error','Local save still works. If this stays red, verify the Supabase SQL/RLS setup.');
+    }
+  }
+  addEventListener('online',()=>{if(ready)saveCloud();else init()});
+  addEventListener('offline',()=>status('offline','No connection. Local save is active.'));
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveCloud()});
+  init();
+})();
+</script>
+
 </body>
 </html>
