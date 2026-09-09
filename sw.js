@@ -1,4 +1,4 @@
-const CACHE='doombot-v18-6-4-viewport-nav';
+const CACHE='doombot-v20-polish';
 
 self.addEventListener('install',event=>{
   event.waitUntil(self.skipWaiting());

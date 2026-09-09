@@ -704,3 +704,357 @@
   text-align:center;
   letter-spacing:.015em;
 }
+
+
+/* =========================================================
+   DOOMBOT V20 // POLISH RELEASE
+   Visual refinement only. Keeps V18.6.4 viewport nav logic.
+   ========================================================= */
+:root{
+  --v20-bg:#050906;
+  --v20-panel:rgba(10,15,11,.58);
+  --v20-panel-soft:rgba(9,14,10,.34);
+  --v20-line:rgba(126,153,133,.085);
+  --v20-line-2:rgba(126,153,133,.14);
+  --v20-text:#d9e3db;
+  --v20-muted:#75877a;
+  --v20-dim:#536259;
+  --v20-green:#8fd398;
+  --v20-gold:#bea968;
+  --v20-red:#bb7b77;
+}
+
+/* Global rhythm */
+body{
+  background:
+    radial-gradient(circle at 50% -8%,rgba(74,115,82,.055),transparent 34%),
+    linear-gradient(180deg,#050906 0%,#060a07 38%,#050806 100%)!important;
+}
+.main{
+  max-width:1180px!important;
+}
+.section{
+  margin-bottom:18px!important;
+}
+.eyebrow{
+  letter-spacing:.12em!important;
+  opacity:.86;
+}
+
+/* Header / shell refinement */
+.v13-topbar{
+  border-bottom-color:var(--v20-line)!important;
+  background:rgba(5,9,6,.78)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  backdrop-filter:blur(18px)!important;
+}
+.v13-topbar .brand{
+  letter-spacing:-.035em!important;
+}
+.v13-topbar .subtitle{
+  opacity:.72!important;
+}
+
+/* Generic cards are calmer */
+.v18-card,
+.panel,
+.card{
+  border-color:var(--v20-line)!important;
+  background:var(--v20-panel-soft)!important;
+  box-shadow:none!important;
+}
+.v18-card:hover,
+.panel:hover,
+.card:hover{
+  border-color:var(--v20-line-2)!important;
+}
+
+/* Inputs */
+.v18-input,
+.v18-select,
+.v18-textarea{
+  border-color:var(--v20-line)!important;
+  background:rgba(255,255,255,.014)!important;
+  color:var(--v20-text)!important;
+  box-shadow:none!important;
+}
+.v18-input:focus,
+.v18-select:focus,
+.v18-textarea:focus{
+  border-color:rgba(143,211,152,.30)!important;
+  background:rgba(255,255,255,.02)!important;
+  box-shadow:0 0 0 2px rgba(89,144,99,.045)!important;
+}
+
+/* Buttons: lower visual weight */
+.v18-btn{
+  border-color:var(--v20-line-2)!important;
+  background:rgba(255,255,255,.018)!important;
+  box-shadow:none!important;
+}
+.v18-btn:hover{
+  background:rgba(255,255,255,.032)!important;
+}
+.v18-btn.primary,
+.v18-btn.gold{
+  background:rgba(42,76,49,.34)!important;
+  border-color:rgba(125,177,134,.20)!important;
+  color:#a7e8ae!important;
+}
+.v18-btn.red{
+  background:rgba(106,55,51,.22)!important;
+  border-color:rgba(187,123,119,.18)!important;
+}
+
+/* =========================================================
+   HOME
+   ========================================================= */
+.home-v20 .hero,
+.home-v20 .hero-card{
+  border-color:var(--v20-line)!important;
+  background:
+    radial-gradient(circle at 82% 6%,rgba(190,169,104,.045),transparent 24%),
+    linear-gradient(115deg,rgba(42,73,49,.06),transparent 40%),
+    transparent!important;
+  box-shadow:none!important;
+}
+.home-v20 .module-grid{
+  gap:9px!important;
+}
+.home-v20 .module-card{
+  border-color:var(--v20-line)!important;
+  background:rgba(8,13,9,.40)!important;
+  box-shadow:none!important;
+  transition:background .14s ease,border-color .14s ease,transform .14s ease!important;
+}
+.home-v20 .module-card:hover{
+  background:rgba(11,18,12,.56)!important;
+  border-color:var(--v20-line-2)!important;
+  transform:translateY(-1px)!important;
+}
+.home-v20 .module-card h3{
+  letter-spacing:-.015em!important;
+}
+.home-v20 .module-card p{
+  color:var(--v20-muted)!important;
+  line-height:1.52!important;
+}
+
+/* =========================================================
+   LEAKS
+   ========================================================= */
+.leaks-v20 .leaks-hero,
+.leaks-v20 .archive-head{
+  border-color:var(--v20-line)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.leaks-v20 .leak-card,
+.leaks-v20 .leak-item{
+  border:0!important;
+  border-bottom:1px solid var(--v20-line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.leaks-v20 .leak-card:hover,
+.leaks-v20 .leak-item:hover{
+  background:linear-gradient(90deg,rgba(37,65,43,.035),transparent 72%)!important;
+}
+.leaks-v20 img{
+  border-radius:10px!important;
+}
+
+/* =========================================================
+   WAR ROOM
+   ========================================================= */
+.war-v182 .wr-shell{
+  max-width:1180px!important;
+}
+.war-v182 .wr-top{
+  padding-top:14px!important;
+  padding-bottom:14px!important;
+}
+.war-v182 .wr-top h1{
+  color:#e4ece6!important;
+  text-shadow:0 12px 34px rgba(0,0,0,.22)!important;
+}
+.war-v182 .wr-top p{
+  color:var(--v20-muted)!important;
+  font-size:9px!important;
+}
+.war-v182 .wr-stats{
+  margin-bottom:12px!important;
+}
+.war-v182 .wr-controls{
+  padding-top:5px!important;
+  padding-bottom:8px!important;
+}
+.war-v182 .wr-tabs .v18-channel{
+  transition:color .12s ease,border-color .12s ease!important;
+}
+.war-v182 .wr-tools{
+  gap:4px!important;
+}
+.war-v182 .wr-search{
+  border-bottom-color:var(--v20-line-2)!important;
+}
+.war-v182 .wr-create,
+.war-v182 .wr-send{
+  border:0!important;
+  background:rgba(39,72,46,.40)!important;
+  color:#9ddeaa!important;
+}
+.war-v182 .wr-create:hover,
+.war-v182 .wr-send:hover{
+  background:rgba(47,87,55,.50)!important;
+}
+.war-v182 .wr-feed{
+  gap:0!important;
+}
+.war-v182 .wr-card{
+  padding:3px 0!important;
+  border-bottom-color:var(--v20-line)!important;
+}
+.war-v182 .wr-card:hover{
+  background:linear-gradient(90deg,rgba(45,76,51,.028),transparent 76%)!important;
+}
+.war-v182 .wr-avatar{
+  border-radius:50%!important;
+  width:34px!important;
+  height:34px!important;
+  flex-basis:34px!important;
+  box-shadow:inset 0 0 0 1px rgba(121,153,130,.07)!important;
+}
+.war-v182 .wr-author-line a,
+.war-v182 .wr-author-line span{
+  color:#aebdb1!important;
+}
+.war-v182 .wr-card-body h3{
+  font-size:15px!important;
+  line-height:1.28!important;
+  color:#d8e1da!important;
+  letter-spacing:-.012em!important;
+}
+.war-v182 .wr-card-body .war-body{
+  color:#86988b!important;
+  font-size:8.25px!important;
+  line-height:1.62!important;
+}
+.war-v182 .wr-card-actions{
+  border-top-color:rgba(126,153,133,.05)!important;
+}
+.war-v182 .wr-link{
+  font-size:6.2px!important;
+  color:#617268!important;
+}
+.war-v182 .wr-link:hover{
+  color:#a7b8aa!important;
+  background:rgba(255,255,255,.012)!important;
+}
+.war-v182 .wr-side{
+  border-left-color:var(--v20-line)!important;
+}
+.war-v182 .wr-panel{
+  border-bottom-color:var(--v20-line)!important;
+}
+.war-v182 .wr-hot-item{
+  padding:8px 0!important;
+  border-bottom-color:rgba(126,153,133,.055)!important;
+}
+.war-v182 .wr-simulated-note{
+  opacity:.60!important;
+  font-size:5.2px!important;
+  margin-top:18px!important;
+}
+
+/* Replies */
+.war-v182 .war-reply{
+  padding-top:10px!important;
+  padding-bottom:10px!important;
+  border-bottom-color:var(--v20-line)!important;
+}
+.war-v182 .war-account-gate{
+  border-color:var(--v20-line)!important;
+  background:rgba(255,255,255,.012)!important;
+}
+
+/* =========================================================
+   THEORIES
+   ========================================================= */
+.theories-v20 .theory-card,
+.theories-v20 .custom-theory{
+  border:0!important;
+  border-bottom:1px solid var(--v20-line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.theories-v20 .theory-card:hover,
+.theories-v20 .custom-theory:hover{
+  background:linear-gradient(90deg,rgba(42,74,49,.03),transparent 76%)!important;
+}
+.theories-v20 .theory-builder-modal.open{
+  border-color:var(--v20-line-2)!important;
+  background:rgba(7,12,8,.90)!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.28)!important;
+}
+
+/* =========================================================
+   ACCOUNT
+   ========================================================= */
+.account-v181-page .account-command-hero{
+  border-color:var(--v20-line)!important;
+  background:
+    linear-gradient(115deg,rgba(43,78,50,.055),transparent 40%),
+    transparent!important;
+  box-shadow:none!important;
+}
+.account-v181-page .account-status-console{
+  border-color:var(--v20-line)!important;
+  background:transparent!important;
+}
+.account-v181-page .account-primary-card,
+.account-v181-page .account-secondary-card,
+.account-v181-page .account-member-card{
+  border-color:var(--v20-line)!important;
+  background:rgba(8,13,9,.42)!important;
+  box-shadow:none!important;
+}
+.account-v181-page .account-primary-card{
+  border-color:rgba(117,153,125,.14)!important;
+}
+.account-v181-page .account-primary-btn{
+  border:0!important;
+  background:rgba(39,74,46,.43)!important;
+  color:#a5e7ad!important;
+}
+.account-v181-page .account-primary-btn:hover{
+  background:rgba(48,89,57,.53)!important;
+}
+
+/* =========================================================
+   MOBILE REFINEMENT
+   ========================================================= */
+@media(max-width:720px){
+  .main{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+  .war-v182 .wr-top{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .war-v182 .wr-layout{
+    gap:12px!important;
+  }
+  .war-v182 .wr-card-body h3{
+    font-size:14px!important;
+  }
+  .war-v182 .wr-card-body .war-body{
+    font-size:8px!important;
+  }
+  .account-v181-page .account-command-hero{
+    padding:14px!important;
+  }
+}

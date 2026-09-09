@@ -7,6 +7,15 @@
   let activeChannel='all',searchTerm='',selectedThread=null,detailReplyVotes=[];
   const feed=$('#warFeed'),composer=$('#warComposer'),detail=$('#warDetail');
 
+
+  function v20Pulse(el){
+    if(!el)return;
+    el.animate(
+      [{transform:'scale(.985)',opacity:.72},{transform:'scale(1)',opacity:1}],
+      {duration:150,easing:'ease-out'}
+    );
+  }
+
   function permanent(){return D.isPermanent(user)}
   function requireMember(){
     if(permanent())return true;
@@ -401,8 +410,8 @@
 
   document.addEventListener('click',async e=>{
     const reveal=e.target.closest('[data-reveal-spoiler]');if(reveal){const key=reveal.dataset.revealSpoiler;reveal.hidden=true;$(`[data-spoiler-body="${CSS.escape(key)}"]`)?.removeAttribute('hidden');return}
-    const seed=e.target.closest('[data-open-seed]');if(seed){e.preventDefault();return seedDetail(seed.dataset.openSeed)}
-    const open=e.target.closest('[data-open-thread]');if(open){e.preventDefault();return openThread(open.dataset.openThread)}
+    const seed=e.target.closest('[data-open-seed]');if(seed){e.preventDefault();v20Pulse(seed.closest('.wr-card')||seed);return seedDetail(seed.dataset.openSeed)}
+    const open=e.target.closest('[data-open-thread]');if(open){e.preventDefault();v20Pulse(open.closest('.wr-card')||open);return openThread(open.dataset.openThread)}
     const vote=e.target.closest('[data-vote-thread]');if(vote)return toggleVote(vote.dataset.voteThread)
     const follow=e.target.closest('[data-follow-thread]');if(follow)return toggleFollow(follow.dataset.followThread)
     const edit=e.target.closest('[data-edit-thread]');if(edit)return editThread(edit.dataset.editThread)
