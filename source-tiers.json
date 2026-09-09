@@ -1,0 +1,44 @@
+{
+  "S": {
+    "label": "Official",
+    "confidence": 100,
+    "domains": [
+      "movies.disney.com",
+      "marvel.com",
+      "marvelstudiosmovie.ca",
+      "press.disney.co.uk",
+      "thewaltdisneycompany.com"
+    ]
+  },
+  "A": {
+    "label": "Major trade / wire",
+    "confidence": 94,
+    "domains": [
+      "apnews.com",
+      "deadline.com",
+      "variety.com",
+      "hollywoodreporter.com"
+    ]
+  },
+  "B": {
+    "label": "Established entertainment press",
+    "confidence": 78,
+    "domains": [
+      "wired.com",
+      "empireonline.com",
+      "gamesradar.com",
+      "ew.com",
+      "thewrap.com"
+    ]
+  },
+  "C": {
+    "label": "Unverified / general web",
+    "confidence": 55,
+    "domains": []
+  },
+  "D": {
+    "label": "Anonymous / repost",
+    "confidence": 35,
+    "domains": []
+  }
+}

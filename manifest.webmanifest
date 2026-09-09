@@ -1,0 +1,22 @@
+{
+  "name": "S.A.L.E.M. // Doomsday Intel",
+  "short_name": "Doomsday Intel",
+  "description": "A personal Avengers: Doomsday leak, theory and source-intelligence archive created by 999SALEM.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#020403",
+  "theme_color": "#050806",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

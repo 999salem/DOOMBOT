@@ -1,0 +1,10 @@
+{
+  "feeds": [
+    {
+      "name": "Google News \u2014 Avengers Doomsday",
+      "url": "https://news.google.com/rss/search?q=%22Avengers%3A%20Doomsday%22&hl=en-CA&gl=CA&ceid=CA%3Aen",
+      "enabled": true
+    }
+  ],
+  "maxItems": 20
+}

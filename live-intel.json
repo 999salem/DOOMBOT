@@ -1,0 +1,54 @@
+{
+  "updatedAt": "2026-09-08T20:17:00-07:00",
+  "generatedBy": "bootstrap",
+  "items": [
+    {
+      "id": "official-disney-doomsday",
+      "title": "Disney's official Avengers: Doomsday film file",
+      "summary": "Disney lists Avengers: Doomsday for December 18, 2026 and says heroes from three distinct universes are set on a deadly collision course.",
+      "analysis": "Tier S anchor intel. Use this to evaluate universe-collision, Incursion and crossover theories.",
+      "url": "https://movies.disney.com/avengers-doomsday",
+      "source": "Disney",
+      "tier": "S",
+      "confidence": 100,
+      "kind": "OFFICIAL",
+      "published": "2026"
+    },
+    {
+      "id": "disney-press-trailer-jul-2026",
+      "title": "New trailer and poster released by Marvel Studios",
+      "summary": "Disney's July 2026 press release confirms the Russo brothers as directors and a large ensemble spanning multiple Marvel teams and legacy characters.",
+      "analysis": "Official production/cast anchor. Strongly useful when judging crossover and character-presence theories.",
+      "url": "https://press.disney.co.uk/news/marvel-studios-avengers-doomsday-debuts-new-trailer-and-poster",
+      "source": "Disney Press",
+      "tier": "S",
+      "confidence": 100,
+      "kind": "OFFICIAL",
+      "published": "2026-07-20"
+    },
+    {
+      "id": "ap-fall-preview-2026",
+      "title": "AP fall preview spotlights Doomsday's massive crossover",
+      "summary": "Recent AP coverage describes Doomsday as a huge ensemble bringing together Avengers, Wakandans, New Avengers, Fantastic Four and X-Men under the Russo brothers.",
+      "analysis": "High-quality independent reporting. Useful structural support, but still below first-party material.",
+      "url": "https://apnews.com/article/14faf22afc4c7f7759a7be19a9b9afb7",
+      "source": "AP",
+      "tier": "A",
+      "confidence": 94,
+      "kind": "REPORTING",
+      "published": "2026-09-02"
+    },
+    {
+      "id": "wired-countdown-guide-2026",
+      "title": "Marvel's pre-Doomsday viewing push gets unusually specific",
+      "summary": "Recent reporting says Marvel and Disney+ assembled a Countdown to Doomsday viewing guide that includes MCU multiverse material and legacy X-Men movies.",
+      "analysis": "Interesting contextual signal for legacy-universe importance, but the exact movie plot still cannot be inferred from a watchlist alone.",
+      "url": "https://www.wired.com/story/marvel-has-assigned-42-hours-of-homework-before-avengers-doomsday",
+      "source": "Wired",
+      "tier": "B",
+      "confidence": 78,
+      "kind": "CONTEXT",
+      "published": "2026-09-05"
+    }
+  ]
+}
