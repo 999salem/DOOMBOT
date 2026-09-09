@@ -965,7 +965,57 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
-<link rel="stylesheet" href="./v18-community.css">
+<link rel="stylesheet" href="./v18-community.css?v=20.1">
+
+<style id="doombot-v201-viewport-tabs-style">
+html{min-height:100%!important}
+body.v13-page{transform:none!important;animation:none!important}
+body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
+#doombot-viewport-tabs{
+  position:fixed!important;
+  left:8px!important;right:8px!important;
+  bottom:calc(8px + env(safe-area-inset-bottom))!important;
+  height:58px!important;
+  z-index:2147483646!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:3px!important;
+  box-sizing:border-box!important;
+  padding:5px!important;margin:0!important;
+  border:1px solid rgba(80,116,89,.42)!important;
+  border-radius:16px!important;
+  background:rgba(4,9,6,.975)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  backdrop-filter:blur(20px)!important;
+  box-shadow:0 12px 40px rgba(0,0,0,.62)!important;
+  pointer-events:auto!important;
+  opacity:1!important;visibility:visible!important;
+  transform:none!important;-webkit-transform:none!important
+}
+#doombot-viewport-tabs a{
+  min-width:0!important;height:48px!important;
+  display:flex!important;flex-direction:column!important;
+  justify-content:center!important;align-items:center!important;
+  gap:3px!important;box-sizing:border-box!important;
+  border:0!important;border-radius:10px!important;
+  background:transparent!important;color:#67796c!important;
+  text-decoration:none!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  -webkit-tap-highlight-color:transparent!important
+}
+#doombot-viewport-tabs a .db-tab-icon{display:block!important;font-size:16px!important;line-height:15px!important;font-weight:900!important}
+#doombot-viewport-tabs a .db-tab-label{display:block!important;font-size:6px!important;line-height:7px!important;font-weight:900!important;letter-spacing:.045em!important;white-space:nowrap!important}
+#doombot-viewport-tabs a.db-tab-active{
+  color:#91dc9a!important;
+  background:rgba(39,75,46,.36)!important;
+  box-shadow:inset 0 0 0 1px rgba(113,177,123,.19)!important
+}
+@media(max-width:380px){
+  #doombot-viewport-tabs{left:5px!important;right:5px!important;gap:2px!important;padding:4px!important}
+  #doombot-viewport-tabs a .db-tab-label{font-size:5.4px!important}
+}
+</style>
+
 </head><body class="v12-page v13-page analyst-page">
 <div class="wrap">
   <div class="shell">
@@ -984,7 +1034,7 @@ window.addEventListener('beforeinstallprompt',function(e){
         <span class="chip">S.A.L.E.M. ONLINE</span>
       </div>
     </header>
-    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="active" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
+    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="active" href="./analyst.html">ANALYST</a><a class="" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main">
       <section class="v12-page-hero">
       <a class="back-command" href="./index.html">← COMMAND CENTER</a>
@@ -1439,6 +1489,7 @@ window.addEventListener('beforeinstallprompt',function(e){
       <button class="app-tool" type="button" data-open-watchlist aria-label="Open watchlist">☆<span>WATCH</span></button>
       <button class="app-tool" type="button" data-share-app aria-label="Share DOOMBOT">↗<span>SHARE</span></button>
       <button class="app-tool" type="button" data-open-help aria-label="Help">?<span>HELP</span></button>
+      <a class="app-tool v201-account-tool" href="./account.html" aria-label="Account">◎<span>ACCOUNT</span></a>
       <a class="app-tool" href="./settings.html" aria-label="Settings">⚙<span>SETTINGS</span></a>`;
     top.appendChild(tools);
   }
@@ -1888,5 +1939,28 @@ window.addEventListener('beforeinstallprompt',function(e){
 </script>
 
 <script src="./v18-common.js"></script>
+
+<script id="doombot-v201-viewport-tabs-runtime">
+(function(){
+  var HTML='<a href="./index.html"><span class="db-tab-icon">⌂</span><span class="db-tab-label">HOME</span></a><a href="./leaks.html"><span class="db-tab-icon">▣</span><span class="db-tab-label">LEAKS</span></a><a href="./warroom.html"><span class="db-tab-icon">◈</span><span class="db-tab-label">WAR ROOM</span></a><a href="./theories.html"><span class="db-tab-icon">◇</span><span class="db-tab-label">THEORIES</span></a><a href="./map.html"><span class="db-tab-icon">⬡</span><span class="db-tab-label">MAP</span></a>';
+  function mountViewportTabs(){
+    document.querySelectorAll('.bottom-nav').forEach(function(n){n.remove();});
+    var old=document.getElementById('doombot-viewport-tabs');if(old)old.remove();
+    var nav=document.createElement('nav');
+    nav.id='doombot-viewport-tabs';
+    nav.setAttribute('aria-label','DOOMBOT primary navigation');
+    nav.innerHTML=HTML;
+    document.documentElement.appendChild(nav);
+    document.body.style.setProperty('transform','none','important');
+    document.body.style.setProperty('animation','none','important');
+    document.body.style.setProperty('padding-bottom','calc(82px + env(safe-area-inset-bottom))','important');
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountViewportTabs,{once:true});
+  else mountViewportTabs();
+  window.addEventListener('pageshow',mountViewportTabs);
+  window.addEventListener('orientationchange',function(){setTimeout(mountViewportTabs,80)});
+})();
+</script>
+
 </body>
 </html>

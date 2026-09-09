@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="DOOMBOT">
-<meta name="description" content="999SALEM Avengers: Doomsday theory archive.">
-<title>DOOMBOT // Theory Archive</title>
+<meta name="description" content="DOOMBOT Theory Map — 999SALEM Doomsday relationship model powered by S.A.L.E.M.">
+<title>DOOMBOT // Theory Map</title>
 <link rel="icon" href="./salem-mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./icon-192.png">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -813,6 +813,29 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
 
 
 
+/* DOOMBOT V13.1 — launch stability */
+.install-nudge{
+  position:fixed;z-index:590;left:50%;bottom:calc(82px + env(safe-area-inset-bottom));
+  width:min(430px,calc(100% - 24px));transform:translate(-50%,18px);
+  opacity:0;pointer-events:none;display:grid;grid-template-columns:1fr auto auto;
+  align-items:center;gap:8px;border:1px solid #35513b;border-radius:13px;
+  background:rgba(7,16,10,.96);backdrop-filter:blur(16px);
+  padding:10px 10px 10px 12px;box-shadow:0 14px 45px rgba(0,0,0,.5);
+  transition:.2s ease
+}
+.install-nudge.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.install-nudge b{display:block;color:#d7e1d9;font-size:8px;letter-spacing:.06em}
+.install-nudge span{display:block;color:#708175;font-size:7px;margin-top:2px}
+.install-nudge button{
+  border:1px solid #375943;border-radius:8px;background:#102016;color:#9dffa4;
+  padding:8px;font-size:7px;font-weight:900;letter-spacing:.06em
+}
+.install-nudge .nudge-x{width:31px;height:31px;padding:0;background:#0a120d;color:#829286;font-size:16px}
+.welcome-screen{pointer-events:none}
+.welcome-screen .welcome-inner{pointer-events:auto}
+@media(min-width:761px){.install-nudge{bottom:18px}}
+
+
 
 /* =========================================================
    DOOMBOT V13.2 — MOBILE HEADER POLISH
@@ -954,90 +977,9 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
 }
 @keyframes cloudPulse{50%{opacity:.35;transform:scale(.7)}}
 
-/* =========================================================
-   DOOMBOT V14 — USER THEORY CREATOR
-   ========================================================= */
-.theory-create-row{
-  display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;
-  margin:0 0 12px;padding:11px 12px;border:1px solid #31472e;border-radius:11px;
-  background:linear-gradient(90deg,rgba(194,169,109,.045),transparent 38%),#08100b
-}
-.theory-create-row>div span{display:block;color:#7c8c80;font-size:7px;letter-spacing:.12em;font-weight:900}
-.theory-create-row>div b{display:block;margin-top:4px;font-size:11px}
-.add-theory-btn{
-  border:1px solid #77653d;border-radius:9px;background:#17140c;color:#e2cc8b;
-  padding:10px 13px;font-size:8px;font-weight:900;letter-spacing:.08em
-}
-.custom-theory{border-color:#6b5936!important;position:relative}
-.custom-theory::before{
-  content:"MY ADDED THEORY";position:absolute;top:10px;right:10px;
-  color:#bfa86c;font-size:6px;font-weight:900;letter-spacing:.09em
-}
-.custom-theory .custom-evidence{
-  margin-top:10px;border-left:2px solid #5f5336;padding:8px 9px;background:#100f0a;
-  color:#96917d;font-size:9px;line-height:1.5
-}
-.custom-theory-actions{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
-.custom-theory-actions button{
-  border:1px solid #3a433a;border-radius:7px;background:#0a110c;color:#849287;
-  padding:7px 9px;font-size:7px;font-weight:900;letter-spacing:.06em
-}
-.custom-theory-actions .delete-custom-theory{border-color:#4d302f;color:#c28b87}
-.theory-builder-modal .app-modal-card{width:min(620px,100%)}
-.theory-form-grid{display:grid;grid-template-columns:1fr 150px;gap:9px}
-.theory-form-field{display:grid;gap:5px;margin-top:9px}
-.theory-form-field label{color:#788a7c;font-size:7px;font-weight:900;letter-spacing:.1em}
-.theory-form-field input,.theory-form-field select,.theory-form-field textarea{
-  width:100%;border:1px solid #2b4131;border-radius:9px;background:#061009;color:#dce6de;
-  padding:10px;font:500 10px/1.45 Inter,system-ui,-apple-system,sans-serif;outline:none
-}
-.theory-form-field textarea{min-height:100px;resize:vertical}
-.theory-form-field input:focus,.theory-form-field select:focus,.theory-form-field textarea:focus{border-color:#50745a}
-.theory-form-actions{display:flex;gap:7px;margin-top:12px}
-.theory-form-actions button{flex:1}
-.theory-source-line{margin-top:9px}
-.theory-source-line a{color:#bca66c;font-size:8px;font-weight:900;letter-spacing:.06em}
-@media(max-width:600px){
-  .theory-form-grid{grid-template-columns:1fr}
-  .theory-create-row{align-items:stretch}
-  .add-theory-btn{width:100%}
-}
 
-
-
-/* =========================================================
-   DOOMBOT V17.1 — RELIABLE INLINE THEORY BUILDER
-   ========================================================= */
-.theory-builder-modal{
-  position:relative!important;inset:auto!important;z-index:auto!important;
-  display:none!important;visibility:visible!important;pointer-events:auto!important;
-  width:100%!important;padding:0!important;margin:0 0 14px!important
-}
-.theory-builder-modal.open{display:block!important}
-.theory-builder-modal .modal-backdrop{display:none!important}
-.theory-builder-modal .app-modal-card{
-  width:100%!important;max-height:none!important;overflow:visible!important;
-  opacity:1!important;transform:none!important;
-  border-color:#53633e!important;
-  background:radial-gradient(circle at 82% 0,rgba(209,186,111,.065),transparent 31%),#08100b!important
-}
-.theory-builder-modal .modal-x{display:none}
-.theory-builder-modal h2{margin-right:0!important}
-.theory-builder-open-note{
-  display:flex;align-items:center;gap:7px;margin-bottom:10px;color:#778779;
-  font-size:7px;font-weight:900;letter-spacing:.07em
-}
-.theory-builder-open-note::before{
-  content:"●";color:#d8c276
-}
-.theory-form-actions .btn{min-height:40px}
-@media(max-width:600px){
-  .theory-builder-modal{margin-bottom:10px!important}
-  .theory-builder-modal .app-modal-card{
-    border-radius:12px!important;padding:14px!important
-  }
-}
-
+/* V17 modules */
+.plot-module{border-color:#5a2b2b!important;background:linear-gradient(180deg,#160b0b,#090707)!important}.plot-module>i{color:#ff8d8d!important}.credits-module{border-color:#584b2f!important;background:linear-gradient(180deg,#151209,#090806)!important}.credits-module>i{color:#e6ce87!important}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -1049,6 +991,18 @@ window.addEventListener('beforeinstallprompt',function(e){
 });
 </script>
 
+<script id="doombot-launch-guard">
+(function(){
+  window.addEventListener('pageshow',function(){
+    if(document.body)document.body.classList.remove('modal-open','page-exit');
+  });
+  setTimeout(function(){
+    var w=document.querySelector('.welcome-screen');
+    if(w)w.remove();
+    if(document.body)document.body.classList.remove('modal-open','page-exit');
+  },4000);
+})();
+</script>
 <link rel="stylesheet" href="./v18-community.css?v=20.1">
 
 
@@ -1106,7 +1060,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 }
 </style>
 
-</head><body class="v12-page v13-page theories-page theories-v20">
+</head><body class="v12-page v13-page home-page v201-map-page">
 <div class="wrap">
   <div class="shell">
     <div class="topline"></div>
@@ -1124,412 +1078,218 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
         <span class="chip">S.A.L.E.M. ONLINE</span>
       </div>
     </header>
-    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="active" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
-    <main class="main">
-      <section class="v12-page-hero">
-      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">999SALEM // PREDICTION FILES</div>
-      <h1>Theory Archive</h1>
-      <p>My original theories and theory remixes, kept separate from sourced leaks so the receipts stay clean.</p>
-    </section><section class="section" id="my-theories">
-        <div class="section-title"><span>999SALEM // THEORY ARCHIVE</span></div>
-        <p class="section-intro">
-          Three of these are theories I was already pushing. The rest are my own remixes built from current fan speculation,
-          comic structure and the leak trail. I keep the inspiration links attached so nobody confuses a remix with an original scoop.
-        </p>
+    <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="active" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
+    <main class="main v201-map-main">
 
+<section class="v201-map-hero">
+  <a class="back-command" href="./index.html">← COMMAND CENTER</a>
+  <div class="eyebrow">DOOMBOT V20.1 // S.A.L.E.M. THEORY ENGINE</div>
+  <div class="v201-map-hero-grid">
+    <div>
+      <h1>THEORY MAP</h1>
+      <p>One visual model for how the current Doomsday theories connect. This is not a leak chart — it is the relationship layer between evidence, predictions and the road to Battleworld.</p>
+    </div>
+    <div class="v201-map-state">
+      <span>MODEL STATUS</span>
+      <b>10 LINKED THEORY NODES</b>
+      <small>CORE → COLLISION → BATTLEWORLD → SECRET WARS</small>
+    </div>
+  </div>
+  <div class="v201-map-metrics">
+    <div><span>BACKBONE</span><b>89%</b><small>INCURSIONS</small></div>
+    <div><span>END STATE</span><b>85%</b><small>BATTLEWORLD</small></div>
+    <div><span>FINAL FORM</span><b>86%</b><small>GOD EMPEROR</small></div>
+    <div><span>POWER KEY</span><b>77%</b><small>FRANKLIN</small></div>
+  </div>
+</section>
 
-        <div class="theory-create-row js-only"><div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButton" type="button">＋ ADD THEORY</button></div>
-        <div class="toolbar2">
-          <div class="filter-row">
-            <button class="filter2 active theory-filter" data-theory-filter="all" type="button">ALL FILES</button>
-            <button class="filter2 theory-filter" data-theory-filter="core" type="button">ORIGINALS</button>
-            <button class="filter2 theory-filter" data-theory-filter="remix" type="button">REMIXES</button>
-            <button class="filter2 theory-filter" data-theory-filter="locked" type="button">LOCKED PICKS</button>
-            <button class="filter2 theory-filter" data-theory-filter="favorites" type="button">★ FAVORITES</button><button class="filter2 theory-filter" data-theory-filter="custom" type="button">MY ADDED</button>
+<section class="v201-map-toolbar" aria-label="Map controls">
+  <div>
+    <span>MAP CONTROL</span>
+    <b>DRAG / TAP / INSPECT</b>
+  </div>
+  <div class="v201-map-buttons">
+    <button type="button" data-map-zoom="-1">−</button>
+    <button type="button" data-map-fit>FIT</button>
+    <button type="button" data-map-zoom="1">＋</button>
+  </div>
+</section>
+
+<section class="section" id="evidence">
+        <div class="section-title"><span>THEORY MAP // S.A.L.E.M. RELATIONSHIP MODEL</span></div>
+        <div class="home-map-actions">
+          <span>Tap a node to inspect the connection. Drag horizontally on mobile to move across the full model.</span>
+          <a class="btn" href="./theories.html">OPEN ALL THEORY FILES →</a>
+        </div>
+        <div class="map-title-row">
+          <div>
+            <b>999SALEM // CURRENT DOOMSDAY MODEL</b><br>
+            <span>The model tracks how Doom, Incursions, Loki, Franklin, Avengers vs X-Men and Battleworld connect.</span>
           </div>
-          <input class="search2" id="theorySearch" placeholder="Search Stark, Loki, Battleworld, Franklin...">
+          <span>CORE → COLLISION → BATTLEWORLD → SECRET WARS</span>
         </div>
 
-        <div class="theory-grid" id="theoryGrid">
-          <article class="theory-card core-file" id="theory-rdj-stark" data-theory-type="core" data-key="rdj-stark">
-            <div class="theory-label"><span class="mini-tag hot">CORE THEORY</span><span class="mini-tag">IDENTITY</span></div>
-            <h3>RDJ Doom is cover for Tony Stark returning</h3>
-            <p>
-              My biggest theory: announcing RDJ as Doom is the perfect smokescreen. Marvel can bring RDJ back as Tony Stark in Secret Wars
-              without every trade instantly exposing the surprise, because everyone already expects RDJ to be on set.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>76%</b></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="rdj-stark">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="rdj-stark">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="rdj-stark">
-              <textarea class="theory-note" data-note="rdj-stark" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="rdj-stark">SAVE NOTE</button>
-            </div>
+        <div class="board">
+          <div class="v201-map-canvas" id="mapCanvas">
+          <svg id="theoryMapSvg" viewBox="0 0 1080 650" role="img" aria-label="999Salem Doomsday theory constellation">
+            <!-- Core backbone -->
+            <path class="edge strong" d="M540 95 C540 150 430 160 390 225"/>
+            <path class="edge strong" d="M390 225 C410 300 470 330 510 390"/>
+            <path class="edge strong" d="M510 390 C530 455 555 480 575 540"/>
+            <path class="edge strong" d="M575 540 C610 555 645 555 675 540"/>
 
-          </article>
+            <!-- Doom identity / Stark branch -->
+            <path class="edge identity" d="M540 95 C445 85 355 90 270 125"/>
+            <path class="edge identity" d="M270 125 C250 195 245 250 260 315"/>
+            <path class="edge identity" d="M260 315 C345 330 435 345 510 390"/>
 
-          <article class="theory-card core-file" id="theory-battleworld" data-theory-type="core" data-key="battleworld">
-            <div class="theory-label"><span class="mini-tag hot">CORE THEORY</span><span class="mini-tag">ENDING</span></div>
-            <h3>Doomsday ends with Battleworld</h3>
-            <p>
-              I think Doomsday ends as a loss. The surviving pieces of reality get forced together and the final reveal is not a repaired multiverse —
-              it is Doom's new world. Secret Wars starts after the nightmare has already won.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>85%</b></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="battleworld">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="battleworld">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="battleworld">
-              <textarea class="theory-note" data-note="battleworld" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="battleworld">SAVE NOTE</button>
-            </div>
+            <!-- X-Men / universe conflict -->
+            <path class="edge conflict" d="M390 225 C305 235 235 255 170 300"/>
+            <path class="edge conflict" d="M390 225 C470 235 560 250 650 285"/>
+            <path class="edge conflict" d="M170 300 C285 355 390 380 510 390"/>
+            <path class="edge conflict" d="M650 285 C605 325 555 350 510 390"/>
 
-          </article>
+            <!-- Loki / Franklin power branch -->
+            <path class="edge power" d="M540 95 C650 110 745 140 825 190"/>
+            <path class="edge power" d="M825 190 C760 260 700 325 650 390"/>
+            <path class="edge power" d="M650 390 C620 445 600 490 575 540"/>
+            <path class="edge power" d="M540 95 C665 75 775 75 900 115"/>
+            <path class="edge power" d="M900 115 C845 225 770 315 650 390"/>
 
-          <article class="theory-card core-file" id="theory-incursions" data-theory-type="core" data-key="incursions">
-            <div class="theory-label"><span class="mini-tag hot">CORE THEORY</span><span class="mini-tag">STRUCTURE</span></div>
-            <h3>Incursions are the actual backbone of the movie</h3>
-            <p>
-              Even if Marvel heavily remixes Hickman, I still think the movie is built around realities colliding, heroes choosing their own Earth,
-              and Doom being the only person willing to make the horrible decision nobody else will.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>89%</b></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="incursions">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="incursions">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="incursions">
-              <textarea class="theory-note" data-note="incursions" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="incursions">SAVE NOTE</button>
-            </div>
+            <!-- Doom savior / God Emperor -->
+            <path class="edge theory" d="M540 95 C570 185 565 260 550 315"/>
+            <path class="edge theory" d="M550 315 C555 400 565 470 575 540"/>
+            <path class="edge theory" d="M575 540 C505 555 445 565 385 555"/>
 
-          </article>
+            <!-- Core nodes -->
+            <a class="map-node-link" href="./theories.html#theory-doom-savior" data-node="doom">
+              <g class="node core" transform="translate(540 95)">
+                <circle r="62"></circle><text text-anchor="middle" y="-4">DOCTOR DOOM</text><text class="sub" text-anchor="middle" y="14">CENTER OF EVERYTHING</text>
+              </g>
+            </a>
 
-          <article class="theory-card remix-file" id="theory-avx" data-theory-type="remix" data-key="avx">
-            <div class="theory-label"><span class="mini-tag hot">STRONG REMIX</span><span class="mini-tag">AVENGERS vs X-MEN</span></div>
-            <h3>The giant “team-up” scene is actually heroes fighting heroes</h3>
-            <p>
-              My version: the emotional equivalent of Endgame's portals scene happens when multiple teams finally meet — except nobody is united.
-              The Avengers and legacy X-Men are trying to save different universes, so the crossover everybody wanted begins as a war.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>84%</b></div>
-            <div class="theory-source">INSPIRED BY CURRENT FAN THEORY + TIME RUNS OUT STRUCTURE · <a href="https://www.reddit.com/r/MCUTheories/comments/1qk86ok/avengers_doomsday_final_battle_theory/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="avx">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="avx">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="avx">
-              <textarea class="theory-note" data-note="avx" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="avx">SAVE NOTE</button>
-            </div>
+            <a class="map-node-link" href="./theories.html#theory-incursions" data-node="incursions">
+              <g class="node" transform="translate(390 225)">
+                <circle r="52"></circle><text text-anchor="middle" y="-3">INCURSIONS</text><text class="sub" text-anchor="middle" y="14">89% THEORY</text>
+              </g>
+            </a>
 
-          </article>
+            <g class="node" transform="translate(510 390)">
+              <circle r="56"></circle><text text-anchor="middle" y="-3">MULTIVERSE</text><text class="sub" text-anchor="middle" y="14">COLLAPSE</text>
+            </g>
 
-          <article class="theory-card remix-file" id="theory-doom-savior" data-theory-type="remix" data-key="doom-savior">
-            <div class="theory-label"><span class="mini-tag">MORAL FLIP</span><span class="mini-tag wild">DARK</span></div>
-            <h3>Doom is right about the problem — and monstrous about the solution</h3>
-            <p>
-              I don't think Doomsday needs Doom to be lying about everything. He may genuinely understand that the multiverse is dying before the heroes do.
-              The twist is that his solution works: sacrifice worlds, take control, build one survivable reality, and make himself its god.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>78%</b></div>
-            <div class="theory-source">REMIXED FROM “DOOM AS PROTAGONIST / BEYONDERS THREAT” SPECULATION · <a href="https://www.reddit.com/r/MCUTheories/comments/1sohw4r/all_of_my_avengers_doomsday_theories/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="doom-savior">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="doom-savior">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="doom-savior">
-              <textarea class="theory-note" data-note="doom-savior" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="doom-savior">SAVE NOTE</button>
-            </div>
+            <a class="map-node-link" href="./theories.html#theory-battleworld" data-node="battleworld">
+              <g class="node leak-node" transform="translate(575 540)">
+                <circle r="57"></circle><text text-anchor="middle" y="-3">BATTLEWORLD</text><text class="sub" text-anchor="middle" y="14">85% THEORY</text>
+              </g>
+            </a>
 
-          </article>
+            <g class="node core" transform="translate(675 540)">
+              <circle r="57"></circle><text text-anchor="middle" y="-3">SECRET WARS</text><text class="sub" text-anchor="middle" y="14">DESTINATION</text>
+            </g>
 
-          <article class="theory-card remix-file" id="theory-loki" data-theory-type="remix" data-key="loki">
-            <div class="theory-label"><span class="mini-tag">POWER SOURCE</span><span class="mini-tag wild">LOKI</span></div>
-            <h3>Doom needs Loki because Loki is literally holding the multiverse together</h3>
-            <p>
-              My version of the Loki theory: Doom does not just want to beat Loki. He needs access to whatever Loki is doing at the end of time —
-              either to redirect dying timelines, steal that power, or use Loki as the map that tells him which realities can still be saved.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>71%</b></div>
-            <div class="theory-source">INSPIRED BY FAN THEORIES CONNECTING DOOM TO LOKI'S MULTIVERSAL POWER · <a href="https://www.reddit.com/r/marvelstudios/comments/1jnid3i/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="loki">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="loki">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="loki">
-              <textarea class="theory-note" data-note="loki" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="loki">SAVE NOTE</button>
-            </div>
+            <!-- Identity branch -->
+            <a class="map-node-link" href="./theories.html#theory-face" data-node="face">
+              <g class="node theory-node" transform="translate(270 125)">
+                <circle r="48"></circle><text text-anchor="middle" y="-3">RDJ FACE</text><text class="sub" text-anchor="middle" y="14">PSYCHOLOGICAL</text>
+              </g>
+            </a>
 
-          </article>
+            <a class="map-node-link" href="./theories.html#theory-rdj-stark" data-node="stark">
+              <g class="node theory-node" transform="translate(260 315)">
+                <circle r="53"></circle><text text-anchor="middle" y="-5">TONY STARK</text><text class="sub" text-anchor="middle" y="13">RETURN THEORY</text>
+              </g>
+            </a>
 
-          <article class="theory-card remix-file" id="theory-franklin" data-theory-type="remix" data-key="franklin">
-            <div class="theory-label"><span class="mini-tag">FANTASTIC FOUR</span><span class="mini-tag">BATTLEWORLD KEY</span></div>
-            <h3>Franklin Richards is the missing “battery” that makes Battleworld possible</h3>
-            <p>
-              My version: Doom can understand the Incursions and still lack the raw ability to rebuild reality. Franklin is the missing piece.
-              Doom either steals, borrows or manipulates Franklin's reality-warping power to turn collapsing universes into Battleworld.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>77%</b></div>
-            <div class="theory-source">REMIXED FROM CURRENT FRANKLIN / DOOM / SECRET WARS SPECULATION · <a href="https://www.reddit.com/r/marvelstudios/comments/1me25bh/theory_on_what_will_start_off_avengers_doomsday/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="franklin">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="franklin">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="franklin">
-              <textarea class="theory-note" data-note="franklin" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="franklin">SAVE NOTE</button>
-            </div>
+            <!-- Conflict branch -->
+            <g class="node leak-node" transform="translate(170 300)">
+              <circle r="50"></circle><text text-anchor="middle" y="-3">X-MEN</text><text class="sub" text-anchor="middle" y="14">LEGACY EARTH</text>
+            </g>
 
-          </article>
+            <a class="map-node-link" href="./theories.html#theory-avx" data-node="avx">
+              <g class="node theory-node" transform="translate(650 285)">
+                <circle r="54"></circle><text text-anchor="middle" y="-5">AVENGERS</text><text class="sub" text-anchor="middle" y="13">vs X-MEN</text>
+              </g>
+            </a>
 
-          <article class="theory-card remix-file" id="theory-face" data-theory-type="remix" data-key="face">
-            <div class="theory-label"><span class="mini-tag">RDJ FACE</span><span class="mini-tag wild">PSYCHOLOGICAL</span></div>
-            <h3>Doom looking like Tony is a weapon even if he is NOT a Tony variant</h3>
-            <p>
-              I think Marvel can have it both ways. Victor can genuinely be Victor, but his face still destroys the Avengers emotionally.
-              Doom walking into a room looking like the man who saved their universe gives him an instant psychological advantage over people like Thor and Peter.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>73%</b></div>
-            <div class="theory-source">999SALEM SYNTHESIS FROM THE RDJ IDENTITY DEBATE · <a href="https://www.reddit.com/r/MarvelTheories/comments/1r23bji/possible_avengers_doomsday_meta_theory_about_the/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="face">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="face">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="face">
-              <textarea class="theory-note" data-note="face" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="face">SAVE NOTE</button>
-            </div>
+            <!-- Power branch -->
+            <a class="map-node-link" href="./theories.html#theory-loki" data-node="loki">
+              <g class="node theory-node" transform="translate(825 190)">
+                <circle r="50"></circle><text text-anchor="middle" y="-3">LOKI</text><text class="sub" text-anchor="middle" y="14">MULTIVERSE KEY</text>
+              </g>
+            </a>
 
-          </article>
+            <a class="map-node-link" href="./theories.html#theory-franklin" data-node="franklin">
+              <g class="node theory-node" transform="translate(900 115)">
+                <circle r="52"></circle><text text-anchor="middle" y="-4">FRANKLIN</text><text class="sub" text-anchor="middle" y="13">REALITY POWER</text>
+              </g>
+            </a>
 
-          <article class="theory-card remix-file" id="theory-god-emperor" data-theory-type="remix" data-key="god-emperor">
-            <div class="theory-label"><span class="mini-tag hot">ENDGAME</span><span class="mini-tag">GOD EMPEROR</span></div>
-            <h3>The last image of Doomsday is God Emperor Doom already on the throne</h3>
-            <p>
-              My prediction: Marvel does not save the transformation for halfway through Secret Wars. Doomsday ends with Doom having “saved” existence,
-              the survivors waking up in a new reality, and one final pullback revealing who owns it.
-            </p>
-            <div class="theory-score"><span>MY CONFIDENCE</span><b>86%</b></div>
-            <div class="theory-source">BUILT FROM BATTLEWORLD / GOD EMPEROR SPECULATION · <a href="https://www.reddit.com/r/MarvelTheories/comments/1u3eol6/my_theories_for_avengers_doomsday_secret_wars_and/" target="_blank" rel="noopener">SOURCE TRAIL ↗</a></div>
-          
-            <div class="theory-tools js-only">
-              <button class="lock-btn" type="button" data-lock="god-emperor">LOCK PREDICTION</button>
-              <button class="note-toggle" type="button" data-note-toggle="god-emperor">MY NOTES</button>
-            </div>
-            <div class="note-panel js-only" data-note-panel="god-emperor">
-              <textarea class="theory-note" data-note="god-emperor" placeholder="Add my private notes / evidence / what would prove this wrong..."></textarea>
-              <button class="action-btn save-note" type="button" data-note-save="god-emperor">SAVE NOTE</button>
-            </div>
+            <g class="node core" transform="translate(650 390)">
+              <circle r="52"></circle><text text-anchor="middle" y="-3">POWER</text><text class="sub" text-anchor="middle" y="14">TO REBUILD</text>
+            </g>
 
-          </article>
+            <!-- Moral / final form -->
+            <a class="map-node-link" href="./theories.html#theory-doom-savior" data-node="savior">
+              <g class="node theory-node" transform="translate(550 315)">
+                <circle r="48"></circle><text text-anchor="middle" y="-4">DOOM</text><text class="sub" text-anchor="middle" y="13">“SAVIOR”</text>
+              </g>
+            </a>
+
+            <a class="map-node-link" href="./theories.html#theory-god-emperor" data-node="god-emperor">
+              <g class="node core" transform="translate(385 555)">
+                <circle r="54"></circle><text text-anchor="middle" y="-4">GOD EMPEROR</text><text class="sub" text-anchor="middle" y="13">FINAL REVEAL</text>
+              </g>
+            </a>
+          </svg>
+          </div>
+
+          <div class="board-legend">
+            <span class="legend">GREEN = STORY BACKBONE</span>
+            <span class="legend">PURPLE = MY THEORY / IDENTITY</span>
+            <span class="legend">RED = HERO CONFLICT / LEAK DEPENDENT</span>
+            <span class="legend">GOLD = POWER / BATTLEWORLD MECHANISM</span>
+          </div>
+
+
+          <div class="map-inspector js-only">
+            <div class="inspect-summary">
+              <div class="eyebrow" id="inspectClass">Core Node</div>
+              <h3 id="inspectTitle">Doctor Doom</h3>
+              <p id="inspectText">The highest-density node in my current model. Almost every route to Battleworld passes through Doom.</p>
+              <div class="inspect-stats">
+                <div class="inspect-stat"><span>CONFIDENCE</span><b id="inspectConfidence">94%</b></div>
+                <div class="inspect-stat"><span>LINKS</span><b id="inspectLinks">7</b></div>
+                <div class="inspect-stat"><span>STATUS</span><b id="inspectStatus">ANCHOR</b></div>
+              </div>
+              <a class="inspect-link" id="inspectLink" href="./theories.html#theory-doom-savior">OPEN CONNECTED THEORY FILE →</a>
+            </div>
+            <div class="inspect-detail">
+              <div class="eyebrow">S.A.L.E.M. Read</div>
+              <p id="inspectAnalysis" style="margin-top:7px">
+                Doom is not just another character on this board — he is the mechanism connecting the identity mystery,
+                the Incursion crisis, the power needed to rebuild reality and the eventual God Emperor endpoint.
+              </p>
+            </div>
+          </div>
+
+          <div class="map-rail">
+            <a href="./theories.html#theory-rdj-stark">RDJ → TONY</a>
+            <a href="./theories.html#theory-avx">AVENGERS vs X-MEN</a>
+            <a href="./theories.html#theory-loki">LOKI POWER</a>
+            <a href="./theories.html#theory-franklin">FRANKLIN KEY</a>
+            <a href="./theories.html#theory-god-emperor">GOD EMPEROR ENDING</a>
+          </div>
         </div>
       </section>
-    </main>
+</main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
       <span>CREATED & CURATED BY 999SALEM // BUILD 20.1</span>
     </footer>
   </div>
 </div>
-<nav class="bottom-nav" aria-label="Mobile navigation"><a class="" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./warroom.html"><b>◈</b><span>WAR ROOM</span></a><a class="active" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./account.html"><b>◎</b><span>ACCOUNT</span></a></nav>
-
-<script id="doombot-v14-custom-theories">
-(function(){
-  const KEY='doombot-custom-theories-v1';
-  const STAMP='doombot-cloud-local-updated-v14';
-  const $=(s,r=document)=>r.querySelector(s);
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const cleanUrl=u=>{try{const x=new URL(String(u||''));return /^https?:$/.test(x.protocol)?x.href:''}catch(e){return ''}};
-  const read=()=>{try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}};
-  const write=list=>{
-    try{
-      localStorage.setItem(KEY,JSON.stringify(list));
-      localStorage.setItem(STAMP,String(Date.now()));
-      window.DOOMBOT_CLOUD_TOUCH?.(KEY);
-      return true;
-    }catch(e){return false}
-  };
-  const slug=s=>String(s||'theory').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,45)||'theory';
-
-  const grid=$('#theoryGrid');
-  if(!grid)return;
-
-  function renderCard(t){
-    const id=String(t.id||Date.now());
-    const key='custom-'+id;
-    const type=t.type==='remix'?'remix':'core';
-    const score=Math.max(1,Math.min(100,Number(t.confidence)||50));
-    const source=cleanUrl(t.source);
-    const evidence=String(t.evidence||'').trim();
-    const klass=type==='remix'?'remix-file':'core-file';
-    const label=type==='remix'?'MY THEORY REMIX':'MY ORIGINAL THEORY';
-    return `<article class="theory-card ${klass} custom-theory" id="theory-${esc(key)}" data-theory-type="${type}" data-key="${esc(key)}" data-custom="1" data-custom-id="${esc(id)}">
-      <div class="theory-label"><span class="mini-tag gold">${label}</span><span class="mini-tag">PERSONAL FILE</span></div>
-      <h3>${esc(t.title)}</h3>
-      <p>${esc(t.summary)}</p>
-      ${evidence?`<div class="custom-evidence"><b>EVIDENCE / REASONING:</b><br>${esc(evidence)}</div>`:''}
-      ${source?`<div class="theory-source-line"><a href="${esc(source)}" target="_blank" rel="noopener">OPEN ATTACHED SOURCE ↗</a></div>`:''}
-      <div class="theory-score"><span>MY CONFIDENCE</span><b>${score}%</b></div>
-      <div class="theory-tools js-only">
-        <button class="lock-btn" type="button" data-lock="${esc(key)}">LOCK PREDICTION</button>
-        <button class="note-toggle" type="button" data-note-toggle="${esc(key)}">MY NOTES</button>
-      </div>
-      <div class="note-panel js-only" data-note-panel="${esc(key)}">
-        <textarea class="theory-note" data-note="${esc(key)}" placeholder="Add private notes / evidence / what would prove this wrong..."></textarea>
-        <button class="action-btn save-note" type="button" data-note-save="${esc(key)}">SAVE NOTE</button>
-      </div>
-      <div class="custom-theory-actions js-only">
-        <button type="button" class="edit-custom-theory" data-edit-custom="${esc(id)}">EDIT THEORY</button>
-        <button type="button" class="delete-custom-theory" data-delete-custom="${esc(id)}">DELETE</button>
-      </div>
-    </article>`;
-  }
-
-  read().forEach(t=>grid.insertAdjacentHTML('beforeend',renderCard(t)));
-
-  // Add MY ADDED filter before the app binds filter listeners.
-  const filters=$('.toolbar2 .filter-row')||$('.toolbar2');
-  if(filters&&!$('[data-theory-filter="custom"]')){
-    const b=document.createElement('button');
-    b.className='filter2 theory-filter';b.type='button';b.dataset.theoryFilter='custom';b.textContent='MY ADDED';
-    filters.appendChild(b);
-  }
-
-  // Creator strip
-  const toolbar=$('.toolbar2');
-  if(false&&toolbar&&!$('#addTheoryButton')){
-    const row=document.createElement('div');row.className='theory-create-row js-only';
-    row.innerHTML='<div><span>PERSONAL THEORY FILES</span><b>Add your own prediction to DOOMBOT.</b></div><button class="add-theory-btn" id="addTheoryButtonLegacy" type="button">＋ ADD THEORY</button>';
-    toolbar.parentNode.insertBefore(row,toolbar);
-  }
-
-  // Builder modal
-  const modal=document.createElement('div');
-  modal.className='app-modal theory-builder-modal';modal.id='theoryBuilderModal';
-  modal.innerHTML=`<div class="modal-backdrop" data-close-theory-builder></div>
-    <div class="app-modal-card" role="dialog" aria-modal="true" aria-labelledby="theoryBuilderTitle">
-      <button class="modal-x" type="button" data-close-theory-builder aria-label="Close">×</button>
-      <div class="eyebrow">S.A.L.E.M. // PERSONAL THEORY FILE</div>
-      <h2 id="theoryBuilderTitle">ADD THEORY</h2>
-      <p class="modal-copy">This theory belongs to your personal DOOMBOT profile. It does not rewrite 999SALEM's public master archive.</p>
-      <div class="theory-builder-open-note">PRIVATE THEORY FORM // SAVES TO YOUR DOOMBOT CLOUD PROFILE</div>
-      <form id="customTheoryForm">
-        <input type="hidden" id="customTheoryId">
-        <div class="theory-form-field">
-          <label for="customTheoryTitle">THEORY TITLE</label>
-          <input id="customTheoryTitle" maxlength="140" required placeholder="Example: Doom steals Loki's throne before the final Incursion">
-        </div>
-        <div class="theory-form-grid">
-          <div class="theory-form-field">
-            <label for="customTheoryType">FILE TYPE</label>
-            <select id="customTheoryType"><option value="core">ORIGINAL THEORY</option><option value="remix">THEORY REMIX</option></select>
-          </div>
-          <div class="theory-form-field">
-            <label for="customTheoryConfidence">CONFIDENCE %</label>
-            <input id="customTheoryConfidence" type="number" min="1" max="100" value="60" required>
-          </div>
-        </div>
-        <div class="theory-form-field">
-          <label for="customTheorySummary">PREDICTION / SUMMARY</label>
-          <textarea id="customTheorySummary" maxlength="1600" required placeholder="Write the actual theory here..."></textarea>
-        </div>
-        <div class="theory-form-field">
-          <label for="customTheoryEvidence">EVIDENCE / REASONING</label>
-          <textarea id="customTheoryEvidence" maxlength="2200" placeholder="Leaks, comic parallels, trailer clues, why it fits..."></textarea>
-        </div>
-        <div class="theory-form-field">
-          <label for="customTheorySource">OPTIONAL SOURCE LINK</label>
-          <input id="customTheorySource" type="url" placeholder="https://...">
-        </div>
-        <div class="theory-form-actions">
-          <button class="btn" type="button" data-close-theory-builder>CANCEL</button>
-          <button class="btn primary" type="submit">SAVE THEORY</button>
-        </div>
-      </form>
-    </div>`;
-  const creatorRow=$('.theory-create-row');
-  if(creatorRow) creatorRow.insertAdjacentElement('afterend',modal);
-  else document.body.appendChild(modal);
-
-  function openBuilder(item=null){
-    $('#theoryBuilderTitle').textContent=item?'EDIT THEORY':'ADD THEORY';
-    $('#customTheoryId').value=item?.id||'';
-    $('#customTheoryTitle').value=item?.title||'';
-    $('#customTheoryType').value=item?.type==='remix'?'remix':'core';
-    $('#customTheoryConfidence').value=item?.confidence||60;
-    $('#customTheorySummary').value=item?.summary||'';
-    $('#customTheoryEvidence').value=item?.evidence||'';
-    $('#customTheorySource').value=item?.source||'';
-    modal.classList.add('open');
-    setTimeout(()=>{
-      modal.scrollIntoView({behavior:'smooth',block:'start'});
-      $('#customTheoryTitle')?.focus();
-    },60);
-  }
-  function closeBuilder(){modal.classList.remove('open')}
-
-  $('#addTheoryButton')?.addEventListener('click',()=>openBuilder());
-  modal.addEventListener('click',e=>{if(e.target.closest('[data-close-theory-builder]'))closeBuilder()});
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'&&modal.classList.contains('open'))closeBuilder();
-  });
-
-  $('#customTheoryForm')?.addEventListener('submit',e=>{
-    e.preventDefault();
-    const id=$('#customTheoryId').value||String(Date.now());
-    const item={
-      id,
-      title:$('#customTheoryTitle').value.trim(),
-      type:$('#customTheoryType').value==='remix'?'remix':'core',
-      confidence:Math.max(1,Math.min(100,Number($('#customTheoryConfidence').value)||50)),
-      summary:$('#customTheorySummary').value.trim(),
-      evidence:$('#customTheoryEvidence').value.trim(),
-      source:cleanUrl($('#customTheorySource').value.trim()),
-      updated:new Date().toISOString()
-    };
-    if(!item.title||!item.summary)return;
-    const list=read(),idx=list.findIndex(x=>String(x.id)===String(id));
-    if(idx>=0)list[idx]=item;else list.unshift(item);
-    if(write(list))location.reload();
-  });
-
-  document.querySelectorAll('[data-edit-custom]').forEach(btn=>btn.addEventListener('click',()=>{
-    const item=read().find(x=>String(x.id)===String(btn.dataset.editCustom));
-    if(item)openBuilder(item);
-  }));
-  document.querySelectorAll('[data-delete-custom]').forEach(btn=>btn.addEventListener('click',()=>{
-    const id=String(btn.dataset.deleteCustom),list=read(),item=list.find(x=>String(x.id)===id);
-    if(!item||!confirm('Delete this personal theory?'))return;
-    const key='custom-'+id;
-    try{
-      localStorage.removeItem('salem-lock-'+key);
-      localStorage.removeItem('salem-note-'+key);
-      localStorage.removeItem('doombot-fav-theory-'+key);
-      const watch=JSON.parse(localStorage.getItem('doombot-watchlist-v1')||'{}');
-      delete watch['theory:'+key];
-      localStorage.setItem('doombot-watchlist-v1',JSON.stringify(watch));
-    }catch(e){}
-    write(list.filter(x=>String(x.id)!==id));
-    location.reload();
-  }));
-})();
-</script>
-
+<nav class="bottom-nav" aria-label="Mobile navigation"><a class="active" href="./index.html"><b>⌂</b><span>HOME</span></a><a class="" href="./leaks.html"><b>▣</b><span>LEAKS</span></a><a class="" href="./warroom.html"><b>◈</b><span>WAR ROOM</span></a><a class="" href="./theories.html"><b>◇</b><span>THEORIES</span></a><a class="" href="./account.html"><b>◎</b><span>ACCOUNT</span></a></nav>
 <script id="doombot-v13-app">
 (function(){
   const $=(s,r=document)=>r.querySelector(s);
@@ -1811,6 +1571,21 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 
 
 // =========================================================
+// DOOMBOT V13.1 — STABILITY RECOVERY
+// =========================================================
+(function(){
+  const recover=()=>{
+    try{
+      document.body?.classList.remove('modal-open','page-exit');
+      document.querySelectorAll('.welcome-screen.closing').forEach(x=>x.remove());
+    }catch(e){}
+  };
+  window.addEventListener('pageshow',recover);
+  window.addEventListener('unhandledrejection',recover);
+  window.addEventListener('error',e=>{if(e.error)recover()});
+})();
+
+// =========================================================
 // DOOMBOT V13 — APP SHELL
 // =========================================================
 (function(){
@@ -1821,6 +1596,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   const set=(k,v)=>{try{localStorage.setItem(k,v);window.DOOMBOT_CLOUD_TOUCH?.(k);return true}catch(e){return false}};
   const jget=(k,f)=>{try{return JSON.parse(get(k,""))||f}catch(e){return f}};
   const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  document.body.classList.remove('modal-open','page-exit');
   const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
   const slug=s=>String(s||'file').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,64)||'file';
 
@@ -2048,6 +1824,17 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   window.DOOMBOT_OPEN_INSTALL=()=>openInstall(true);
   window.addEventListener('appinstalled',()=>{set('doombot-installed','1');closeInstall(false)});
 
+  // ---------- Non-blocking install nudge ----------
+  function showInstallNudge(){
+    if(isStandalone()||get('doombot-install-nudge-dismissed','0')==='1'||!document.body.classList.contains('home-page'))return;
+    const n=document.createElement('div');n.className='install-nudge';
+    n.innerHTML='<div><b>ADD DOOMBOT TO YOUR HOME SCREEN</b><span>Optional — opens full-screen like an app.</span></div><button type="button" data-nudge-install>VIEW</button><button class="nudge-x" type="button" data-nudge-close aria-label="Dismiss">×</button>';
+    document.body.appendChild(n);
+    requestAnimationFrame(()=>n.classList.add('show'));
+    n.querySelector('[data-nudge-install]').addEventListener('click',()=>{n.remove();openInstall(true)});
+    n.querySelector('[data-nudge-close]').addEventListener('click',()=>{set('doombot-install-nudge-dismissed','1');n.remove()});
+  }
+
   // ---------- First-open boot ----------
   function showWelcome(){
     if(!document.body.classList.contains('home-page')||get('doombot-v13-onboarded','0')==='1')return false;
@@ -2059,14 +1846,15 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
       <button type="button" class="btn primary enter-app">ENTER COMMAND CENTER</button>
       <button type="button" class="skip-intro">SKIP INTRO</button>
     </div>`;
-    document.body.appendChild(welcome);document.body.classList.add('modal-open');
-    const exit=()=>{set('doombot-v13-onboarded','1');welcome.classList.add('closing');document.body.classList.remove('modal-open');setTimeout(()=>welcome.remove(),300);setTimeout(()=>openInstall(false),1100)};
+    document.body.appendChild(welcome);
+    const exit=()=>{set('doombot-v13-onboarded','1');welcome.classList.add('closing');setTimeout(()=>welcome.remove(),300)};
     welcome.querySelector('.enter-app').addEventListener('click',exit);
     welcome.querySelector('.skip-intro').addEventListener('click',exit);
+    setTimeout(()=>{if(document.body.contains(welcome))exit()},2400);
     return true;
   }
   const welcomed=showWelcome();
-  if(!welcomed&&document.body.classList.contains('home-page'))setTimeout(()=>openInstall(false),2400);
+  if(document.body.classList.contains('home-page'))setTimeout(showInstallNudge,welcomed?3300:1400);
 
   // ---------- New badges + "since last visit" ----------
   const SEEN_KEY='doombot-seen-v13';
@@ -2318,14 +2106,14 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 </script>
 
 <script src="./v18-common.js?v=20"></script>
-<script src="./v18-theory-share.js?v=20"></script>
+
 
 
 
 
 <script id="doombot-v201-viewport-tabs-runtime">
 (function(){
-  var HTML='<a href="./index.html"><span class="db-tab-icon">⌂</span><span class="db-tab-label">HOME</span></a><a href="./leaks.html"><span class="db-tab-icon">▣</span><span class="db-tab-label">LEAKS</span></a><a href="./warroom.html"><span class="db-tab-icon">◈</span><span class="db-tab-label">WAR ROOM</span></a><a href="./theories.html" class="db-tab-active"><span class="db-tab-icon">◇</span><span class="db-tab-label">THEORIES</span></a><a href="./map.html"><span class="db-tab-icon">⬡</span><span class="db-tab-label">MAP</span></a>';
+  var HTML='<a href="./index.html"><span class="db-tab-icon">⌂</span><span class="db-tab-label">HOME</span></a><a href="./leaks.html"><span class="db-tab-icon">▣</span><span class="db-tab-label">LEAKS</span></a><a href="./warroom.html"><span class="db-tab-icon">◈</span><span class="db-tab-label">WAR ROOM</span></a><a href="./theories.html"><span class="db-tab-icon">◇</span><span class="db-tab-label">THEORIES</span></a><a href="./map.html" class="db-tab-active"><span class="db-tab-icon">⬡</span><span class="db-tab-label">MAP</span></a>';
   function mountViewportTabs(){
     document.querySelectorAll('.bottom-nav').forEach(function(n){n.remove();});
     var old=document.getElementById('doombot-viewport-tabs');if(old)old.remove();
@@ -2342,6 +2130,33 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   else mountViewportTabs();
   window.addEventListener('pageshow',mountViewportTabs);
   window.addEventListener('orientationchange',function(){setTimeout(mountViewportTabs,80)});
+})();
+</script>
+
+
+
+<script id="doombot-v201-map-controls">
+(function(){
+  var canvas=document.getElementById('mapCanvas');
+  var svg=document.getElementById('theoryMapSvg');
+  if(!canvas||!svg)return;
+  var zoom=1;
+  function apply(){
+    if(zoom===1){
+      svg.style.removeProperty('width');
+    }else{
+      svg.style.width=(1080*zoom)+'px';
+    }
+  }
+  document.querySelectorAll('[data-map-zoom]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      zoom=Math.max(.85,Math.min(1.6,zoom+(Number(btn.dataset.mapZoom)*.15)));
+      apply();
+    });
+  });
+  document.querySelector('[data-map-fit]')?.addEventListener('click',function(){
+    zoom=1;apply();canvas.scrollTo({left:0,behavior:'smooth'});
+  });
 })();
 </script>
 

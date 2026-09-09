@@ -2,7 +2,7 @@
   "id": "./",
   "name": "DOOMBOT",
   "short_name": "DOOMBOT",
-  "description": "999SALEM's Avengers: Doomsday intelligence archive, theories and War Room community powered by S.A.L.E.M.",
+  "description": "999SALEM's Avengers: Doomsday intelligence archive, War Room and interactive Theory Map powered by S.A.L.E.M.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -28,6 +28,18 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "Theory Map",
+      "short_name": "Map",
+      "url": "./map.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
     {
       "name": "War Room",
       "short_name": "War Room",
@@ -56,18 +68,6 @@
       "name": "Theory Archive",
       "short_name": "Theories",
       "url": "./theories.html",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Latest Intel",
-      "short_name": "Intel",
-      "url": "./intel.html",
       "icons": [
         {
           "src": "icon-192.png",
