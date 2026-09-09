@@ -957,6 +957,70 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
 
 /* V17 plot + credits */
 .archive-warning{border:1px solid #5d3432;border-radius:13px;background:linear-gradient(90deg,rgba(255,90,90,.055),transparent 42%),#100808;padding:13px;margin-bottom:13px;color:#b99b98;font-size:9px;line-height:1.55}.archive-warning b{color:#ffaaa4}.timeline-stack,.plot-stack{display:grid;gap:10px}.credit-file,.plot-file{border:1px solid #25392b;border-radius:13px;background:linear-gradient(180deg,#0b130e,#070b08);padding:14px}.credit-file{display:grid;grid-template-columns:95px 1fr auto;gap:12px;align-items:start}.credit-year{min-height:72px;border:1px solid #493f29;border-radius:10px;background:#121008;display:grid;place-items:center;color:#dfc885;font:700 20px/1 Georgia,"Times New Roman",serif;text-align:center;padding:8px}.credit-year small{display:block;color:#81745a;font:800 7px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:5px}.credit-copy h3,.plot-file h3{margin:0 0 6px;font-size:15px}.credit-copy p,.plot-file p{color:#8a9a8e;font-size:9px;line-height:1.55;margin:0}.connection-chip{border:1px solid #3b513f;border-radius:99px;padding:6px 8px;font-size:7px;font-weight:900;letter-spacing:.07em;white-space:nowrap}.connection-chip.direct{color:#92ff99;border-color:#3f7548}.connection-chip.strong{color:#dfc780;border-color:#6a5c34}.connection-chip.legacy{color:#b2a4cc;border-color:#4d415e}.credit-source,.plot-source{display:inline-block;margin-top:9px;color:#96b29c;font-size:7px;font-weight:900;letter-spacing:.06em}.plot-source{color:#d5bb75}.plot-file{position:relative}.plot-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.plot-score{font:800 22px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#e4cc88}.plot-score small{display:block;color:#786e54;font-size:6px;margin-top:4px;letter-spacing:.07em;text-align:right}.plot-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}.plot-tag{border:1px solid #3b3c32;border-radius:99px;padding:4px 6px;color:#8c9086;font-size:6px;font-weight:900;letter-spacing:.06em}.plot-overlap{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.plot-overlap div{border:1px solid #263c2c;border-radius:9px;padding:9px;background:#08100b}.plot-overlap b{display:block;font-size:8px;color:#a9b9ac}.plot-overlap span{display:block;margin-top:3px;font-size:7px;color:#6f8073;line-height:1.4}.spoiler-gate{border:1px solid #63312f;border-radius:16px;background:radial-gradient(circle at 50% 0,rgba(255,70,70,.08),transparent 32%),#0e0707;padding:28px 18px;text-align:center}.spoiler-gate h2{font:700 32px/1 Georgia,"Times New Roman",serif;margin:7px 0}.spoiler-gate p{max-width:600px;margin:0 auto;color:#9e8583;font-size:10px;line-height:1.55}.spoiler-gate .btn{margin-top:14px}.plot-spoilers{display:none}.plot-spoilers.revealed{display:block}@media(max-width:700px){.credit-file{grid-template-columns:70px 1fr}.connection-chip{grid-column:1/-1;justify-self:start}.credit-year{min-height:58px;font-size:16px}.plot-overlap{grid-template-columns:1fr 1fr}}
+
+
+/* =========================================================
+   DOOMBOT V17.1 — END-CREDIT MEDIA PLAYER
+   ========================================================= */
+.credit-media-actions{
+  display:flex;gap:7px;flex-wrap:wrap;margin-top:10px
+}
+.watch-credit-btn,.credit-unavailable{
+  border:1px solid #536d58;border-radius:8px;background:#0a150e;color:#a8d3ae;
+  padding:8px 10px;font-size:7px;font-weight:900;letter-spacing:.07em
+}
+.watch-credit-btn{cursor:pointer}
+.watch-credit-btn:hover{border-color:#7ba784;color:#d5ffda}
+.watch-credit-btn.breakdown{border-color:#5d5238;color:#d7c284;background:#151208}
+.credit-unavailable{opacity:.55;cursor:not-allowed;border-color:#3b403b;color:#747f76}
+.credit-media-label{
+  display:inline-flex;align-items:center;gap:5px;margin-top:8px;color:#65756a;
+  font-size:6px;font-weight:900;letter-spacing:.08em
+}
+.credit-media-label::before{content:"●";color:#72d27b}
+
+.credit-video-modal{
+  position:fixed;inset:0;z-index:900;display:none;place-items:center;padding:14px
+}
+.credit-video-modal.open{display:grid}
+.credit-video-backdrop{
+  position:absolute;inset:0;background:rgba(0,0,0,.86);backdrop-filter:blur(8px)
+}
+.credit-video-shell{
+  position:relative;z-index:2;width:min(900px,100%);border:1px solid #3a5f42;border-radius:16px;
+  background:radial-gradient(circle at 50% 0,rgba(105,255,120,.06),transparent 35%),#060d08;
+  box-shadow:0 28px 100px rgba(0,0,0,.75);overflow:hidden
+}
+.credit-video-head{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;
+  border-bottom:1px solid #1f3425
+}
+.credit-video-head>div span{display:block;color:#65776a;font-size:6px;font-weight:900;letter-spacing:.1em}
+.credit-video-head>div b{display:block;margin-top:3px;font-size:11px}
+.credit-video-close{
+  width:34px;height:34px;border:1px solid #415448;border-radius:8px;background:#0a130d;color:#9faf9f;
+  font-size:18px;line-height:1
+}
+.credit-video-frame{
+  position:relative;aspect-ratio:16/9;background:#000
+}
+.credit-video-frame iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0
+}
+.credit-video-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;
+  color:#718075;font-size:7px;line-height:1.45
+}
+.credit-video-foot a{
+  color:#d8c37f;font-size:7px;font-weight:900;letter-spacing:.06em;white-space:nowrap
+}
+.credit-embed-note{max-width:650px}
+@media(max-width:700px){
+  .credit-video-modal{padding:8px;align-items:center}
+  .credit-video-shell{border-radius:14px}
+  .credit-video-foot{align-items:flex-start;flex-direction:column}
+}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -988,17 +1052,45 @@ window.addEventListener('beforeinstallprompt',function(e){
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="active" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./index.html#evidence">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main"><section class="v12-page-hero"><a class="back-command" href="./index.html">← COMMAND CENTER</a><div class="eyebrow">ROAD TO DOOMSDAY // MCU STINGERS</div><h1>Post-Credit Archive</h1><p>The major MCU mid/post-credit scenes that progressively built the multiverse, Incursions, X-Men crossover, Fantastic Four arrival and Doctor Doom setup.</p></section><section class="section"><div class="section-title"><span>THE ROAD TO DOOMSDAY</span></div><div class="timeline-stack">
-<article class="credit-file"><div class="credit-year">2022<small>MULTIVERSE OF MADNESS</small></div><div class="credit-copy"><h3>Clea warns Strange about an Incursion</h3><p>The MCU names the universe-collision mechanic that sits at the center of Secret Wars-style multiversal collapse.</p><a class="credit-source" href="https://www.washingtonpost.com/comics/2022/05/08/doctor-strange-multiverse-madness-post-credits/" target="_blank" rel="noopener">SOURCE / WASHINGTON POST ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
-<article class="credit-file"><div class="credit-year">2023<small>THE MARVELS</small></div><div class="credit-copy"><h3>Monica wakes in an X-Men reality</h3><p>Beast appears and Monica is stranded in a parallel reality, establishing an active X-Men universe adjacent to the MCU.</p><a class="credit-source" href="https://comicbook.com/movies/news/the-marvels-post-credits-scenes-explained-mcu-beast-maria-monica-binary/" target="_blank" rel="noopener">SOURCE / COMICBOOK ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
-<article class="credit-file"><div class="credit-year">2025<small>BRAVE NEW WORLD</small></div><div class="credit-copy"><h3>Samuel Sterns warns Sam about “other worlds”</h3><p>The warning reframes the next threat around other worlds and multiversal conflict rather than a normal invasion.</p><a class="credit-source" href="https://www.latimes.com/entertainment-arts/movies/story/2025-07-24/fantastic-four-post-credits-scene-doomsday-avengers" target="_blank" rel="noopener">SOURCE TRAIL / LA TIMES ↗</a></div><span class="connection-chip strong">STRONG</span></article>
-<article class="credit-file"><div class="credit-year">2025<small>THUNDERBOLTS*</small></div><div class="credit-copy"><h3>The Fantastic Four ship enters Earth-616</h3><p>The New Avengers detect an extra-dimensional ship bearing the Fantastic Four logo. The sequence was filmed by the Russos and directly bridges into Doomsday.</p><a class="credit-source" href="https://ew.com/thunderbolts-post-credits-scene-avengers-doomsday-explained-11725457" target="_blank" rel="noopener">SOURCE / ENTERTAINMENT WEEKLY ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
-<article class="credit-file"><div class="credit-year">2025<small>FIRST STEPS</small></div><div class="credit-copy"><h3>Doctor Doom approaches Franklin Richards</h3><p>Doom appears beside Franklin four years later, directly linking him to the Fantastic Four and their reality-altering child before Doomsday.</p><a class="credit-source" href="https://www.latimes.com/entertainment-arts/movies/story/2025-07-24/fantastic-four-post-credits-scene-doomsday-avengers" target="_blank" rel="noopener">SOURCE / LOS ANGELES TIMES ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
-<article class="credit-file"><div class="credit-year">2026<small>BRAND NEW DAY</small></div><div class="credit-copy"><h3>Spider-Man’s tracker leaves Earth</h3><p>Ned’s tracker zooms away from Earth, leaving Spider-Man’s location unresolved immediately before Doomsday.</p><a class="credit-source" href="https://www.latimes.com/entertainment-arts/movies/story/2026-07-30/spider-man-brand-new-day-post-credits-avengers-doomsday-secret-wars-explained" target="_blank" rel="noopener">SOURCE / LOS ANGELES TIMES ↗</a></div><span class="connection-chip strong">STRONG</span></article>
-<article class="credit-file"><div class="credit-year">2023<small>QUANTUMANIA</small></div><div class="credit-copy"><h3>Council of Kangs / Victor Timely</h3><p>Originally a central Multiverse Saga setup, preserved here as a legacy path after the Avengers story pivoted from Kang toward Doctor Doom.</p><a class="credit-source" href="https://www.washingtonpost.com/comics/2023/02/19/ant-man-wasp-quantumania-post-credits-scenes/" target="_blank" rel="noopener">SOURCE / WASHINGTON POST ↗</a></div><span class="connection-chip legacy">LEGACY PATH</span></article>
+<article class="credit-file"><div class="credit-year">2022<small>MULTIVERSE OF MADNESS</small></div><div class="credit-copy"><h3>Clea warns Strange about an Incursion</h3><p>The MCU names the universe-collision mechanic that sits at the center of Secret Wars-style multiversal collapse.</p><div class="credit-media-actions">
+          <button class="watch-credit-btn" type="button" data-video-id="LT5KNgr9kK0" data-video-title="Doctor Strange // Clea & the Incursion" data-video-label="POST-CREDIT CLIP" data-video-url="https://www.youtube.com/watch?v=LT5KNgr9kK0">▶ WATCH CLIP</button>
+        </div>
+        <div class="credit-media-label">POST-CREDIT CLIP AVAILABLE</div>
+        <a class="credit-source" href="https://www.washingtonpost.com/comics/2022/05/08/doctor-strange-multiverse-madness-post-credits/" target="_blank" rel="noopener">SOURCE / WASHINGTON POST ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
+<article class="credit-file"><div class="credit-year">2023<small>THE MARVELS</small></div><div class="credit-copy"><h3>Monica wakes in an X-Men reality</h3><p>Beast appears and Monica is stranded in a parallel reality, establishing an active X-Men universe adjacent to the MCU.</p><div class="credit-media-actions">
+          <button class="watch-credit-btn breakdown" type="button" data-video-id="RK84AmYXLK4" data-video-title="The Marvels // Beast & Monica" data-video-label="SCENE BREAKDOWN" data-video-url="https://www.youtube.com/watch?v=RK84AmYXLK4">▶ WATCH BREAKDOWN</button>
+        </div>
+        <div class="credit-media-label">BREAKDOWN AVAILABLE // DIRECT CLIP NOT VERIFIED</div>
+        <a class="credit-source" href="https://comicbook.com/movies/news/the-marvels-post-credits-scenes-explained-mcu-beast-maria-monica-binary/" target="_blank" rel="noopener">SOURCE / COMICBOOK ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
+<article class="credit-file"><div class="credit-year">2025<small>BRAVE NEW WORLD</small></div><div class="credit-copy"><h3>Samuel Sterns warns Sam about “other worlds”</h3><p>The warning reframes the next threat around other worlds and multiversal conflict rather than a normal invasion.</p>
+<div class="credit-media-actions"><span class="credit-unavailable">CLIP CURRENTLY UNAVAILABLE</span></div>
+<div class="credit-media-label">NO RELIABLE EMBEDDABLE CLIP YET</div>
+<a class="credit-source" href="https://www.denofgeek.com/movies/captain-america-4-post-credits-scene-avengers-doomsday/" target="_blank" rel="noopener">SOURCE TRAIL / DEN OF GEEK ↗</a></div><span class="connection-chip strong">STRONG</span></article>
+<article class="credit-file"><div class="credit-year">2025<small>THUNDERBOLTS*</small></div><div class="credit-copy"><h3>The Fantastic Four ship enters Earth-616</h3><p>The New Avengers detect an extra-dimensional ship bearing the Fantastic Four logo. The sequence was filmed by the Russos and directly bridges into Doomsday.</p>
+<div class="credit-media-actions">
+  <button class="watch-credit-btn breakdown" type="button" data-video-id="ExnPd15IMNc" data-video-start="332" data-video-title="Thunderbolts* // Fantastic Four Ship" data-video-label="SCENE BREAKDOWN" data-video-url="https://www.youtube.com/watch?v=ExnPd15IMNc&t=332s">▶ WATCH BREAKDOWN</button>
+</div>
+<div class="credit-media-label">BREAKDOWN JUMPS TO POST-CREDIT SECTION</div>
+<a class="credit-source" href="https://ew.com/thunderbolts-post-credits-scene-avengers-doomsday-explained-11725457" target="_blank" rel="noopener">SOURCE / ENTERTAINMENT WEEKLY ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
+<article class="credit-file"><div class="credit-year">2025<small>FIRST STEPS</small></div><div class="credit-copy"><h3>Doctor Doom approaches Franklin Richards</h3><p>Doom appears beside Franklin four years later, directly linking him to the Fantastic Four and their reality-altering child before Doomsday.</p><div class="credit-media-actions">
+          <button class="watch-credit-btn" type="button" data-video-id="HZ3PlgafyMM" data-video-title="Fantastic Four // Doom & Franklin Richards" data-video-label="POST-CREDIT CLIP" data-video-url="https://www.youtube.com/watch?v=HZ3PlgafyMM">▶ WATCH CLIP</button>
+        </div>
+        <div class="credit-media-label">POST-CREDIT CLIP AVAILABLE</div>
+        <a class="credit-source" href="https://www.latimes.com/entertainment-arts/movies/story/2025-07-24/fantastic-four-post-credits-scene-doomsday-avengers" target="_blank" rel="noopener">SOURCE / LOS ANGELES TIMES ↗</a></div><span class="connection-chip direct">DIRECT</span></article>
+<article class="credit-file"><div class="credit-year">2026<small>BRAND NEW DAY</small></div><div class="credit-copy"><h3>Spider-Man’s tracker leaves Earth</h3><p>Ned’s tracker zooms away from Earth, leaving Spider-Man’s location unresolved immediately before Doomsday.</p><div class="credit-media-actions">
+          <span class="credit-unavailable">CLIP CURRENTLY UNAVAILABLE</span>
+        </div>
+        <div class="credit-media-label">NO RELIABLE EMBEDDABLE CLIP YET</div>
+        <a class="credit-source" href="https://www.latimes.com/entertainment-arts/movies/story/2026-07-30/spider-man-brand-new-day-post-credits-avengers-doomsday-secret-wars-explained" target="_blank" rel="noopener">SOURCE / LOS ANGELES TIMES ↗</a></div><span class="connection-chip strong">STRONG</span></article>
+<article class="credit-file"><div class="credit-year">2023<small>QUANTUMANIA</small></div><div class="credit-copy"><h3>Council of Kangs / Victor Timely</h3><p>Originally a central Multiverse Saga setup, preserved here as a legacy path after the Avengers story pivoted from Kang toward Doctor Doom.</p><div class="credit-media-actions">
+          <button class="watch-credit-btn breakdown" type="button" data-video-id="8v6lzpWKZUA" data-video-start="44" data-video-title="Quantumania // Council of Kangs" data-video-label="SCENE BREAKDOWN" data-video-url="https://www.youtube.com/watch?v=8v6lzpWKZUA&t=44s">▶ WATCH BREAKDOWN</button>
+        </div>
+        <div class="credit-media-label">LEGACY PATH BREAKDOWN</div>
+        <a class="credit-source" href="https://www.washingtonpost.com/comics/2023/02/19/ant-man-wasp-quantumania-post-credits-scenes/" target="_blank" rel="noopener">SOURCE / WASHINGTON POST ↗</a></div><span class="connection-chip legacy">LEGACY PATH</span></article>
 </div></section></main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 17</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 17.1</span>
     </footer>
   </div>
 </div>
@@ -1777,6 +1869,74 @@ window.addEventListener('beforeinstallprompt',function(e){
   addEventListener('offline',()=>status('offline','No connection. Local save is active.'));
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveCloud()});
   init();
+})();
+</script>
+
+
+<div class="credit-video-modal" id="creditVideoModal" aria-hidden="true">
+  <div class="credit-video-backdrop" data-close-credit-video></div>
+  <div class="credit-video-shell" role="dialog" aria-modal="true" aria-labelledby="creditVideoTitle">
+    <div class="credit-video-head">
+      <div><span id="creditVideoLabel">POST-CREDIT MEDIA</span><b id="creditVideoTitle">DOOMBOT PLAYER</b></div>
+      <button class="credit-video-close" type="button" data-close-credit-video aria-label="Close video">×</button>
+    </div>
+    <div class="credit-video-frame">
+      <iframe id="creditVideoFrame" title="DOOMBOT end-credit video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <div class="credit-video-foot">
+      <span class="credit-embed-note">Video is embedded from YouTube. If the uploader disables embedding or removes it, use the fallback link.</span>
+      <a id="creditVideoFallback" href="https://www.youtube.com/" target="_blank" rel="noopener">OPEN ON YOUTUBE ↗</a>
+    </div>
+  </div>
+</div>
+
+<script id="doombot-v17-1-credit-player">
+(function(){
+  const modal=document.getElementById('creditVideoModal');
+  const frame=document.getElementById('creditVideoFrame');
+  const title=document.getElementById('creditVideoTitle');
+  const label=document.getElementById('creditVideoLabel');
+  const fallback=document.getElementById('creditVideoFallback');
+  if(!modal||!frame)return;
+
+  function closePlayer(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    frame.src='about:blank';
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.watch-credit-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id=btn.dataset.videoId;
+      if(!id)return;
+      const start=Math.max(0,Number(btn.dataset.videoStart||0));
+      const params=new URLSearchParams({
+        autoplay:'1',
+        rel:'0',
+        modestbranding:'1',
+        playsinline:'1'
+      });
+      if(start)params.set('start',String(start));
+
+      title.textContent=btn.dataset.videoTitle||'DOOMBOT PLAYER';
+      label.textContent=btn.dataset.videoLabel||'POST-CREDIT MEDIA';
+      fallback.href=btn.dataset.videoUrl||('https://www.youtube.com/watch?v='+id);
+      frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?'+params.toString();
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+    });
+  });
+
+  modal.addEventListener('click',e=>{
+    if(e.target.closest('[data-close-credit-video]'))closePlayer();
+  });
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&modal.classList.contains('open'))closePlayer();
+  });
 })();
 </script>
 

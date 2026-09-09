@@ -1,4 +1,4 @@
-const CACHE='doombot-v17-1';
+const CACHE='doombot-v17-1-media-theory-fix';
 const CORE=[
   './','./index.html','./intel.html','./leaks.html','./theories.html',
   './analyst.html','./plot.html','./credits.html','./about.html','./settings.html','./offline.html',
