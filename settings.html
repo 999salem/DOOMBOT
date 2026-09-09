@@ -812,6 +812,121 @@ html.reduce-motion *,html.reduce-motion *::before,html.reduce-motion *::after{
 }
 
 
+
+
+/* =========================================================
+   DOOMBOT V13.2 — MOBILE HEADER POLISH
+   ========================================================= */
+.brand small{
+  max-width:460px;
+}
+
+/* Phone header becomes two clean rows:
+   1) brand
+   2) utility controls */
+@media(max-width:760px){
+  .topbar{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    align-items:stretch!important;
+    gap:9px!important;
+    padding:11px 12px 10px!important;
+  }
+
+  .brand{
+    width:100%!important;
+    gap:10px!important;
+    align-items:center!important;
+  }
+
+  .brand>div:last-child{
+    min-width:0;
+    flex:1;
+  }
+
+  .brand b{
+    display:block;
+    font-size:17px!important;
+    letter-spacing:.22em!important;
+    line-height:1!important;
+  }
+
+  .brand small{
+    display:block!important;
+    margin-top:5px!important;
+    max-width:none!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    color:#bfa873!important;
+    font-size:7px!important;
+    line-height:1.35!important;
+    letter-spacing:.12em!important;
+  }
+
+  .mask{
+    width:43px!important;
+    height:45px!important;
+  }
+
+  .chips{
+    display:none!important;
+  }
+
+  .app-tools{
+    width:100%!important;
+    margin:0!important;
+    padding:8px 0 0!important;
+    border-top:1px solid #192c1f!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:6px!important;
+  }
+
+  .app-tool{
+    width:100%!important;
+    min-width:0!important;
+    height:42px!important;
+    padding:4px 3px!important;
+    border-radius:9px!important;
+    flex-direction:column!important;
+    gap:3px!important;
+    font-size:12px!important;
+    line-height:1!important;
+  }
+
+  .app-tool span{
+    display:block!important;
+    font-size:6px!important;
+    line-height:1!important;
+    letter-spacing:.08em!important;
+  }
+}
+
+@media(max-width:430px){
+  .topbar{
+    padding:10px 10px 9px!important;
+  }
+
+  .brand b{
+    font-size:16px!important;
+  }
+
+  .brand small{
+    font-size:6.5px!important;
+    letter-spacing:.105em!important;
+  }
+
+  .mask{
+    width:40px!important;
+    height:42px!important;
+  }
+
+  .app-tool{
+    height:40px!important;
+  }
+}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script>
@@ -832,7 +947,7 @@ window.addEventListener('beforeinstallprompt',function(e){
         <div class="mask" aria-hidden="true"></div>
         <div>
           <b>DOOMBOT</b>
-          <small>S.A.L.E.M. DOOMSDAY INTELLIGENCE MATRIX // CREATED BY 999SALEM</small>
+          <small>S.A.L.E.M. // CREATED BY 999SALEM</small>
         </div>
       </div>
       <div class="chips">
@@ -914,7 +1029,7 @@ window.addEventListener('beforeinstallprompt',function(e){
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 13</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 13.2</span>
     </footer>
   </div>
 </div>
