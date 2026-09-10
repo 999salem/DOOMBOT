@@ -1079,6 +1079,13 @@ footer{opacity:.70!important}
 }
 </style>
 
+
+<style id="doombot-v2021-seed-visual-normalize">
+.wr-card.seed{opacity:1!important;filter:none!important}
+.wr-card.seed:before,.wr-card.seed:after{display:none!important}
+.wr-link.seed-static{opacity:1!important}
+</style>
+
 </head><body class="v12-page v13-page about-page war-v20">
 <div class="wrap">
   <div class="shell">
@@ -1103,7 +1110,7 @@ footer{opacity:.70!important}
   <header class="wr-top">
     <div>
       <a class="back-command" href="./index.html">← HOME</a>
-      <div class="eyebrow">DOOMBOT V20.2 // COMMUNITY</div>
+      <div class="eyebrow">DOOMBOT V20.2.1 // COMMUNITY</div>
       <h1>WAR ROOM</h1>
       <p>Leaks, theories, spoilers, and whatever everyone is arguing about today.</p>
     </div>
@@ -1217,7 +1224,7 @@ footer{opacity:.70!important}
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 20.2</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 20.2.1</span>
     </footer>
   </div>
 </div>
@@ -2011,6 +2018,70 @@ footer{opacity:.70!important}
 
 <script src="./v18-common.js?v=20"></script>
 <script src="./v18-warroom.js?v=20"></script>
+
+
+<script id="doombot-v2021-warroom-runtime-copy">
+(function(){
+  function cleanWarRoomRuntime(){
+    document.querySelectorAll('.wr-guest').forEach(function(el){
+      var t=(el.textContent||'').toLowerCase();
+      if(t.includes('live community offline') ||
+         t.includes('founding archive seed posts') ||
+         t.includes('starter discussions')){
+        el.remove();
+      }
+    });
+
+    var feedLabel=document.getElementById('warFeedLabel');
+    if(feedLabel && feedLabel.textContent.trim()==='ALL FILES'){
+      feedLabel.textContent='ALL';
+    }
+
+    var feedStatus=document.getElementById('warFeedStatus');
+    if(feedStatus){
+      var s=feedStatus.textContent.trim();
+      var m=s.match(/^(\d+)\s+FILES?\s+VISIBLE$/i);
+      if(m) feedStatus.textContent=m[1]+' DISCUSSIONS';
+    }
+
+    document.querySelectorAll(
+      '.wr-author-sub span,.v18-channel span,#threadChannel option,.war-meta span'
+    ).forEach(function(el){
+      if(el.textContent.trim()==='THEORY LAB') el.textContent='THEORIES';
+    });
+
+    document.querySelectorAll('.war-empty').forEach(function(el){
+      var s=el.textContent.trim();
+      if(s==='NO ARCHIVE REPLIES') el.textContent='NO REPLIES YET';
+      if(s==='NO ACTIVE SIGNAL IN THIS CHANNEL') el.textContent='NO DISCUSSIONS HERE YET';
+    });
+
+    document.querySelectorAll('.war-account-gate').forEach(function(el){
+      var t=(el.textContent||'').toLowerCase();
+      if(t.includes('starter thread') || t.includes('starter discussion')){
+        el.innerHTML='<b>READ-ONLY THREAD</b><span>This discussion is closed to new replies.</span>';
+      }
+    });
+
+    document.querySelectorAll('.v18-loading').forEach(function(el){
+      if((el.textContent||'').includes('S.A.L.E.M. // LOADING WAR ROOM')){
+        el.textContent='LOADING DISCUSSIONS…';
+      }
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',cleanWarRoomRuntime,{once:true});
+  }else{
+    cleanWarRoomRuntime();
+  }
+
+  var observer=new MutationObserver(cleanWarRoomRuntime);
+  observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+  window.addEventListener('pageshow',cleanWarRoomRuntime);
+})();
+</script>
+
 
 
 
