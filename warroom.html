@@ -1022,6 +1022,63 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 }
 </style>
 
+
+<style id="doombot-v202-human-pass">
+/* DOOMBOT V20.2 // HUMAN PASS
+   Keeps the Doom-tech identity while removing common dashboard-template tells. */
+body:before{opacity:.15!important}
+.shell{border-radius:15px!important;box-shadow:0 18px 55px rgba(0,0,0,.24)!important}
+.topline{opacity:.42!important}
+.topbar{
+  background:rgba(6,11,8,.96)!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.brand b{letter-spacing:.17em!important}
+.brand small{letter-spacing:.08em!important}
+.chip{
+  border-radius:6px!important;
+  background:transparent!important;
+  border-color:rgba(115,145,122,.12)!important;
+  letter-spacing:.045em!important
+}
+.chip.live{box-shadow:none!important;text-shadow:none!important}
+.nav{
+  gap:2px!important;
+  background:rgba(5,9,6,.96)!important;
+  border-bottom-color:rgba(115,145,122,.08)!important
+}
+.nav a{
+  border:0!important;
+  border-radius:5px!important;
+  background:transparent!important;
+  padding:8px 10px!important;
+  letter-spacing:.035em!important
+}
+.nav a:hover,.nav a:focus,.nav a.active{
+  background:rgba(78,113,85,.08)!important;
+  box-shadow:none!important
+}
+.eyebrow{
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important
+}
+.section-title{
+  letter-spacing:.06em!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.panel,.module-card,.creator-card,.social-card,.theory-card,.leak-card{
+  box-shadow:none!important
+}
+.btn,.filter2,.app-tool{
+  box-shadow:none!important;
+  border-radius:6px!important
+}
+footer{opacity:.70!important}
+@media(max-width:700px){
+  .chips .chip:not(.live):not(.gold){display:none!important}
+}
+</style>
+
 </head><body class="v12-page v13-page about-page war-v20">
 <div class="wrap">
   <div class="shell">
@@ -1035,9 +1092,9 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
         </div>
       </div>
       <div class="chips">
-        <span class="chip live">● ARCHIVE ONLINE</span>
+        <span class="chip live">● ONLINE</span>
         <span class="chip gold">999SALEM</span>
-        <span class="chip">S.A.L.E.M. ONLINE</span>
+        <span class="chip">S.A.L.E.M.</span>
       </div>
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="active" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
@@ -1045,14 +1102,14 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 <section class="wr-shell">
   <header class="wr-top">
     <div>
-      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-      <div class="eyebrow">DOOMBOT V20 // COMMUNITY INTELLIGENCE</div>
+      <a class="back-command" href="./index.html">← HOME</a>
+      <div class="eyebrow">DOOMBOT V20.2 // COMMUNITY</div>
       <h1>WAR ROOM</h1>
-      <p>Leaks, theories and spoiler discussion in one live intelligence feed.</p>
+      <p>Leaks, theories, spoilers, and whatever everyone is arguing about today.</p>
     </div>
     <div class="wr-status">
       <i></i>
-      <div><b>ROOM ONLINE</b><span id="warIdentity">CONNECTING IDENTITY…</span></div>
+      <div><b>WAR ROOM LIVE</b><span id="warIdentity">CHECKING ACCOUNT…</span></div>
     </div>
   </header>
 
@@ -1073,7 +1130,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
       <button class="v18-channel" data-channel="general"><span>GENERAL</span><em data-channel-count="general">0</em></button>
       <button class="v18-channel" data-channel="leaks"><span>LEAKS</span><em data-channel-count="leaks">0</em></button>
       <button class="v18-channel" data-channel="plot"><span>PLOT</span><em data-channel-count="plot">0</em></button>
-      <button class="v18-channel" data-channel="theory"><span>THEORY LAB</span><em data-channel-count="theory">0</em></button>
+      <button class="v18-channel" data-channel="theory"><span>THEORIES</span><em data-channel-count="theory">0</em></button>
       <button class="v18-channel" data-channel="secret-wars"><span>SECRET WARS</span><em data-channel-count="secret-wars">0</em></button>
     </div>
 
@@ -1087,7 +1144,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 
   <div id="warComposer" class="war-composer wr-composer">
     <div class="wr-composer-top">
-      <div><span>NEW TRANSMISSION</span><h2>Start a discussion</h2></div>
+      <div><span>NEW THREAD</span><h2>Start a discussion</h2></div>
       <button id="cancelThreadButton" class="wr-close" type="button">×</button>
     </div>
     <div id="theoryDraftPreview" class="war-theory-snapshot" hidden></div>
@@ -1098,7 +1155,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
             <option value="general">GENERAL</option>
             <option value="leaks">LEAK ROOM</option>
             <option value="plot">PLOT SPOILERS</option>
-            <option value="theory">THEORY LAB</option>
+            <option value="theory">THEORIES</option>
             <option value="secret-wars">SECRET WARS</option>
           </select>
         </label>
@@ -1119,7 +1176,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   <div class="wr-layout">
     <section class="wr-feed-pane">
       <div class="wr-feed-title">
-        <div><span>ACTIVE FEED</span><b id="warFeedLabel">ALL FILES</b></div>
+        <div><span>DISCUSSIONS</span><b id="warFeedLabel">ALL</b></div>
         <small id="warFeedStatus">SYNCING…</small>
       </div>
 
@@ -1127,7 +1184,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 
       <div id="warDetail" class="war-detail wr-detail">
         <div class="wr-detail-bar">
-          <div><span>DISCUSSION FILE</span><b>THREAD DETAIL</b></div>
+          <div><span>THREAD</span><b>DISCUSSION</b></div>
           <button class="wr-close" type="button" onclick="document.getElementById('warDetail').classList.remove('open')">×</button>
         </div>
         <div id="warDetailContent"></div>
@@ -1136,12 +1193,12 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 
     <aside class="wr-side">
       <section class="wr-panel">
-        <div class="wr-panel-head"><span>HOT FILES</span><small>ENGAGEMENT</small></div>
-        <div id="warHotThreads" class="wr-hot"><div class="v18-loading">ANALYZING…</div></div>
+        <div class="wr-panel-head"><span>TRENDING</span><small>RIGHT NOW</small></div>
+        <div id="warHotThreads" class="wr-hot"><div class="v18-loading">LOADING…</div></div>
       </section>
 
       <section class="wr-panel">
-        <div class="wr-panel-head"><span>ROOM PROTOCOL</span><small>READ FIRST</small></div>
+        <div class="wr-panel-head"><span>RULES</span><small>KEEP IT CLEAN</small></div>
         <div class="wr-rules">
           <p><b>01</b><span>Tag unreleased footage and plot spoilers.</span></p>
           <p><b>02</b><span>Source leaks. Theory is not insider info.</span></p>
@@ -1156,16 +1213,11 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
       </section>
     </aside>
   </div>
-
-  <div class="wr-simulated-note">
-    Community note: some starter discussions are simulated while the War Room grows.
-  </div>
-
 </section>
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 20.1</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 20.2</span>
     </footer>
   </div>
 </div>
@@ -1801,7 +1853,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   document.body.appendChild(offline);
   function updateNetwork(){
     const off=!navigator.onLine;offline.classList.toggle('show',off);
-    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ARCHIVE ONLINE';c.classList.toggle('offline',off)});
+    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ONLINE';c.classList.toggle('offline',off)});
   }
   offline.querySelector('button').addEventListener('click',()=>offline.classList.remove('show'));
   addEventListener('online',updateNetwork);addEventListener('offline',updateNetwork);updateNetwork();

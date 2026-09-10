@@ -1016,6 +1016,63 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 }
 </style>
 
+
+<style id="doombot-v202-human-pass">
+/* DOOMBOT V20.2 // HUMAN PASS
+   Keeps the Doom-tech identity while removing common dashboard-template tells. */
+body:before{opacity:.15!important}
+.shell{border-radius:15px!important;box-shadow:0 18px 55px rgba(0,0,0,.24)!important}
+.topline{opacity:.42!important}
+.topbar{
+  background:rgba(6,11,8,.96)!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.brand b{letter-spacing:.17em!important}
+.brand small{letter-spacing:.08em!important}
+.chip{
+  border-radius:6px!important;
+  background:transparent!important;
+  border-color:rgba(115,145,122,.12)!important;
+  letter-spacing:.045em!important
+}
+.chip.live{box-shadow:none!important;text-shadow:none!important}
+.nav{
+  gap:2px!important;
+  background:rgba(5,9,6,.96)!important;
+  border-bottom-color:rgba(115,145,122,.08)!important
+}
+.nav a{
+  border:0!important;
+  border-radius:5px!important;
+  background:transparent!important;
+  padding:8px 10px!important;
+  letter-spacing:.035em!important
+}
+.nav a:hover,.nav a:focus,.nav a.active{
+  background:rgba(78,113,85,.08)!important;
+  box-shadow:none!important
+}
+.eyebrow{
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important
+}
+.section-title{
+  letter-spacing:.06em!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.panel,.module-card,.creator-card,.social-card,.theory-card,.leak-card{
+  box-shadow:none!important
+}
+.btn,.filter2,.app-tool{
+  box-shadow:none!important;
+  border-radius:6px!important
+}
+footer{opacity:.70!important}
+@media(max-width:700px){
+  .chips .chip:not(.live):not(.gold){display:none!important}
+}
+</style>
+
 </head><body class="v12-page v13-page intel-page">
 <div class="wrap">
   <div class="shell">
@@ -1029,15 +1086,15 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
         </div>
       </div>
       <div class="chips">
-        <span class="chip live">● ARCHIVE ONLINE</span>
+        <span class="chip live">● ONLINE</span>
         <span class="chip gold">999SALEM</span>
-        <span class="chip">S.A.L.E.M. ONLINE</span>
+        <span class="chip">S.A.L.E.M.</span>
       </div>
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="active" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main">
       <section class="v12-page-hero">
-      <a class="back-command" href="./index.html">← COMMAND CENTER</a>
+      <a class="back-command" href="./index.html">← HOME</a>
       <div class="eyebrow">S.A.L.E.M. // PUBLIC INTELLIGENCE</div>
       <h1>Latest Intel</h1>
       <p>The changing part of DOOMBOT. Official material sits above trades, scoopers and rumor chains.</p>
@@ -1746,7 +1803,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   document.body.appendChild(offline);
   function updateNetwork(){
     const off=!navigator.onLine;offline.classList.toggle('show',off);
-    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ARCHIVE ONLINE';c.classList.toggle('offline',off)});
+    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ONLINE';c.classList.toggle('offline',off)});
   }
   offline.querySelector('button').addEventListener('click',()=>offline.classList.remove('show'));
   addEventListener('online',updateNetwork);addEventListener('offline',updateNetwork);updateNetwork();

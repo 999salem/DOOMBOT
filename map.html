@@ -1060,6 +1060,63 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 }
 </style>
 
+
+<style id="doombot-v202-human-pass">
+/* DOOMBOT V20.2 // HUMAN PASS
+   Keeps the Doom-tech identity while removing common dashboard-template tells. */
+body:before{opacity:.15!important}
+.shell{border-radius:15px!important;box-shadow:0 18px 55px rgba(0,0,0,.24)!important}
+.topline{opacity:.42!important}
+.topbar{
+  background:rgba(6,11,8,.96)!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.brand b{letter-spacing:.17em!important}
+.brand small{letter-spacing:.08em!important}
+.chip{
+  border-radius:6px!important;
+  background:transparent!important;
+  border-color:rgba(115,145,122,.12)!important;
+  letter-spacing:.045em!important
+}
+.chip.live{box-shadow:none!important;text-shadow:none!important}
+.nav{
+  gap:2px!important;
+  background:rgba(5,9,6,.96)!important;
+  border-bottom-color:rgba(115,145,122,.08)!important
+}
+.nav a{
+  border:0!important;
+  border-radius:5px!important;
+  background:transparent!important;
+  padding:8px 10px!important;
+  letter-spacing:.035em!important
+}
+.nav a:hover,.nav a:focus,.nav a.active{
+  background:rgba(78,113,85,.08)!important;
+  box-shadow:none!important
+}
+.eyebrow{
+  letter-spacing:.11em!important;
+  text-transform:uppercase!important
+}
+.section-title{
+  letter-spacing:.06em!important;
+  border-bottom-color:rgba(115,145,122,.10)!important
+}
+.panel,.module-card,.creator-card,.social-card,.theory-card,.leak-card{
+  box-shadow:none!important
+}
+.btn,.filter2,.app-tool{
+  box-shadow:none!important;
+  border-radius:6px!important
+}
+footer{opacity:.70!important}
+@media(max-width:700px){
+  .chips .chip:not(.live):not(.gold){display:none!important}
+}
+</style>
+
 </head><body class="v12-page v13-page home-page v201-map-page">
 <div class="wrap">
   <div class="shell">
@@ -1073,25 +1130,25 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
         </div>
       </div>
       <div class="chips">
-        <span class="chip live">● ARCHIVE ONLINE</span>
+        <span class="chip live">● ONLINE</span>
         <span class="chip gold">999SALEM</span>
-        <span class="chip">S.A.L.E.M. ONLINE</span>
+        <span class="chip">S.A.L.E.M.</span>
       </div>
     </header>
     <nav class="nav v12-nav"><a class="" href="./index.html">HOME</a><a class="" href="./intel.html">INTEL</a><a class="" href="./leaks.html">LEAKS</a><a class="" href="./plot.html">PLOT</a><a class="" href="./credits.html">CREDITS</a><a class="" href="./theories.html">THEORIES</a><a class="" href="./warroom.html">WAR ROOM</a><a class="" href="./analyst.html">ANALYST</a><a class="active" href="./map.html">MAP</a><a class="" href="./about.html">ABOUT</a><a class="" href="./account.html">ACCOUNT</a><a class="" href="./settings.html">SETTINGS</a></nav>
     <main class="main v201-map-main">
 
 <section class="v201-map-hero">
-  <a class="back-command" href="./index.html">← COMMAND CENTER</a>
-  <div class="eyebrow">DOOMBOT V20.1 // S.A.L.E.M. THEORY ENGINE</div>
+  <a class="back-command" href="./index.html">← HOME</a>
+  <div class="eyebrow">DOOMBOT V20.2 // DOOMSDAY THEORY MAP</div>
   <div class="v201-map-hero-grid">
     <div>
       <h1>THEORY MAP</h1>
-      <p>One visual model for how the current Doomsday theories connect. This is not a leak chart — it is the relationship layer between evidence, predictions and the road to Battleworld.</p>
+      <p>A visual map of how the current Doomsday theories connect — from Incursions and Loki to Franklin, Battleworld and Secret Wars.</p>
     </div>
     <div class="v201-map-state">
-      <span>MODEL STATUS</span>
-      <b>10 LINKED THEORY NODES</b>
+      <span>CURRENT MAP</span>
+      <b>10 THEORIES CONNECTED</b>
       <small>CORE → COLLISION → BATTLEWORLD → SECRET WARS</small>
     </div>
   </div>
@@ -1105,8 +1162,8 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 
 <section class="v201-map-toolbar" aria-label="Map controls">
   <div>
-    <span>MAP CONTROL</span>
-    <b>DRAG / TAP / INSPECT</b>
+    <span>NAVIGATION</span>
+    <b>DRAG TO MOVE · TAP A NODE</b>
   </div>
   <div class="v201-map-buttons">
     <button type="button" data-map-zoom="-1">−</button>
@@ -1116,14 +1173,14 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 </section>
 
 <section class="section" id="evidence">
-        <div class="section-title"><span>THEORY MAP // S.A.L.E.M. RELATIONSHIP MODEL</span></div>
+        <div class="section-title"><span>THEORY MAP // S.A.L.E.M. THEORY MAP</span></div>
         <div class="home-map-actions">
           <span>Tap a node to inspect the connection. Drag horizontally on mobile to move across the full model.</span>
           <a class="btn" href="./theories.html">OPEN ALL THEORY FILES →</a>
         </div>
         <div class="map-title-row">
           <div>
-            <b>999SALEM // CURRENT DOOMSDAY MODEL</b><br>
+            <b>999SALEM // CURRENT DOOMSDAY THEORY MAP</b><br>
             <span>The model tracks how Doom, Incursions, Loki, Franklin, Avengers vs X-Men and Battleworld connect.</span>
           </div>
           <span>CORE → COLLISION → BATTLEWORLD → SECRET WARS</span>
@@ -1285,7 +1342,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
 </main>
     <footer>
       <span>DOOMBOT // POWERED BY S.A.L.E.M.</span>
-      <span>CREATED & CURATED BY 999SALEM // BUILD 20.1</span>
+      <span>CREATED & CURATED BY 999SALEM // BUILD 20.2</span>
     </footer>
   </div>
 </div>
@@ -1949,7 +2006,7 @@ body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
   document.body.appendChild(offline);
   function updateNetwork(){
     const off=!navigator.onLine;offline.classList.toggle('show',off);
-    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ARCHIVE ONLINE';c.classList.toggle('offline',off)});
+    $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ONLINE';c.classList.toggle('offline',off)});
   }
   offline.querySelector('button').addEventListener('click',()=>offline.classList.remove('show'));
   addEventListener('online',updateNetwork);addEventListener('offline',updateNetwork);updateNetwork();
