@@ -2000,15 +2000,11 @@ footer{opacity:.70!important}
     new MutationObserver(refreshDisputed).observe(leakGallery,{childList:true});
   }
 
-  // ---------- Offline banner ----------
-  const offline=document.createElement('div');offline.className='offline-banner';
-  offline.innerHTML='<b>CONNECTION LOST</b><span>LOCAL ARCHIVE AVAILABLE</span><button type="button" aria-label="Dismiss">×</button>';
-  document.body.appendChild(offline);
+  // ---------- Network status (banner removed in V20.2.2) ----------
   function updateNetwork(){
-    const off=!navigator.onLine;offline.classList.toggle('show',off);
+    const off=!navigator.onLine;
     $$('.chip.live').forEach(c=>{c.textContent=off?'● OFFLINE ARCHIVE':'● ONLINE';c.classList.toggle('offline',off)});
   }
-  offline.querySelector('button').addEventListener('click',()=>offline.classList.remove('show'));
   addEventListener('online',updateNetwork);addEventListener('offline',updateNetwork);updateNetwork();
 
   // ---------- App-like page transitions ----------
